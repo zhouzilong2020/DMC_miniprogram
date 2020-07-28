@@ -62,20 +62,27 @@ Page({
   //初次渲染完成进行登录，获得用户相关信息
   onReady: function () {
     wx.cloud.callFunction({
-      name : 'login',
-      data : {}
+        name : 'login',
+        data : {}
     }).then((res) =>{
-    //   console.log(res);
-      db.collection('users').where({
+    console.log("login", res);
+    db.collection('users').where({
         _openid : res.result.openid
-      }).get().then((res) =>{
+    }).get().then((res) =>{
         if( res.data.length ){
-          app.userInfo = Object.assign( app.userInfo, res.data[0]);
-          this.setData({
+            app.userInfo = Object.assign( app.userInfo, res.data[0]);
+            this.setData({
             nickName : app.userInfo.nickName,
             logged : true,
             openid : app.userInfo._openid,
           });
+        } else{
+            wx.showToast({
+                title: "请先打开（我的）获取授权！"
+            })
+            wx.reLaunch({
+                url: '../homepage_grid/homepage_grid',
+            })
         }
       });
     });

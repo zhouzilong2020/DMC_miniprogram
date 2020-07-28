@@ -94,6 +94,9 @@ Page({
   },
 
   bindGetUserInfo(e){
+    wx.showLoading({
+      title: '正在授权',
+    })
     console.log(e);
     let userInfo = e.detail.userInfo;
     if(!this.data.logged && userInfo){//创建一个用户的表
@@ -119,6 +122,10 @@ Page({
         console.log(res);
       });
     }
+    wx.showToast({
+      title: '授权成功',
+      icon: 'success',
+    });
   }
 
 })
