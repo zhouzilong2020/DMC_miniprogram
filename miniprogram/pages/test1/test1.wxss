@@ -1,3 +1,4 @@
 /* miniprogram/pages/test1/test1.wxss */
 
 image { width: 250rpx; height: 90rpx; margin: 0 auto; border-bottom: 1px black solid; position: relative; top: 20rpx; display:block; text-align: center;}
+.footer{position: relative;}

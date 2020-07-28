@@ -11,3 +11,5 @@
 .index-list-item image{ width:90%; height:300rpx; margin: 0 auto; display:block; border-radius:10rpx; overflow:hidden; }
 
 .index-list-text{ width:90%; display: flex; justify-content: space-between; margin: 0 auto;}
+
+.footer{position: relative;}

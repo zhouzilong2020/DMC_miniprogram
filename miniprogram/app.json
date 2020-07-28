@@ -12,7 +12,9 @@
     "pages/form/form",
     "pages/grading/grading",
     "pages/test1/test1",
-    "pages/homepage_grid/homepage_grid"
+    "pages/homepage_grid/homepage_grid",
+    "pages/mes_fail/mes_fail",
+    "pages/mes_success/mes_success"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

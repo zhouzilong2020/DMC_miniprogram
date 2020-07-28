@@ -1,0 +1,26 @@
+<view class="page" data-weui-theme="{{theme}}">
+	<view class="weui-msg">
+		<view class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></view>
+		<view class="weui-msg__text-area">
+			<h2 class="weui-msg__title">提交成功</h2>
+			<view class="weui-msg__desc">您的本次提交单号为</view>
+      <view class="weui-msg__desc">{{id}}</view>
+		</view>
+		<view class="weui-msg__opr-area">
+			<view class="weui-btn-area">
+				<a href="../index/index" class="weui-btn weui-btn_primary">返回到哪里？（未实现）</a>
+			</view>
+		</view>
+		<view class="weui-msg__tips-area">
+			<view class="weui-msg__tips">您可以在我发布的畸形空间中查看该项目的进展（未实现）</view>
+		</view>
+		<view class="weui-msg__extra-area">
+			<view class="weui-footer weui-footer_fixed-bottom footer">
+        <view class="weui-footer__links">
+          <a href="javascript:home();" class="weui-footer__link">一个连接</a>
+        </view>
+        <view class="weui-footer__text">Copyright &copy; 2019-2020 城市“微新”团队</view>
+      </view>
+		</view>
+	</view>
+</view>
