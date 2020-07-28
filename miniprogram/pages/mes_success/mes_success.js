@@ -15,6 +15,12 @@ Page({
     this.setData({
       id: options.id,
     })
+
+    setTimeout(() => {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
+    }, 5000)
   },
 
   /**
