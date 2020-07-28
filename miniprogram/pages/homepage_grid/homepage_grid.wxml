@@ -1,0 +1,77 @@
+<!--miniprogram/pages/homepage_grid/homepage_frid.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+
+	<view class="user-info">
+    <image src="{{userPhoto}}"></image>
+		<button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" disabled="{{disabled}}">授权登录</button>
+		<view wx:else>
+			<text class='user-name'>欢迎您！{{nickName}}</text>
+			<view class="weui-grids">
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont iconedit"></text>
+					</view>
+					<view class="weui-grid__label">修改个人信息</view>
+				</view>
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont iconcalendar"></text>
+					</view>
+					<view class="weui-grid__label">我发布的项目</view>
+				</view>
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont iconcomplete"></text>
+					</view>
+					<view class="weui-grid__label">已完成的项目</view>
+				</view>
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont icontiaoxingtu"></text>
+					</view>
+					<view class="weui-grid__label">我的评分</view>
+				</view>
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont iconwodeshoucang"></text>
+					</view>
+					<view class="weui-grid__label">收藏</view>
+				</view>
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont iconlianxiwomen1"></text>
+					</view>
+					<view class="weui-grid__label">联系我们</view>
+				</view>
+<!-- 占位 -->
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont iconlianxiwomen1"></text>
+					</view>
+					<view class="weui-grid__label">联系我们</view>
+				</view>
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont iconlianxiwomen1"></text>
+					</view>
+					<view class="weui-grid__label">联系我们</view>
+				</view>
+				<view class="weui-grid">
+					<view class="weui-grid__icon">
+						<text class="iconfont iconlianxiwomen1"></text>
+					</view>
+					<view class="weui-grid__label">联系我们</view>
+				</view>
+<!-- 占位结束 -->
+	
+			</view>
+		</view>
+  </view>
+
+	<view class="weui-footer weui-footer_fixed-bottom">
+		<view class="weui-footer__links">
+			<a href="javascript:home();" class="weui-footer__link">一个连接</a>
+		</view>
+		<view class="weui-footer__text">Copyright &copy; 2019-2020 城市“微新”团队</view>
+	</view>
+</view>

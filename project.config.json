@@ -34,6 +34,7 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -102,6 +103,13 @@
 					"id": -1,
 					"name": "pages/test1/test1",
 					"pathName": "pages/test1/test1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homepage_grid/homepage_grid",
+					"pathName": "pages/homepage_grid/homepage_grid",
 					"scene": null
 				}
 			]

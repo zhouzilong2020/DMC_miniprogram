@@ -117,7 +117,7 @@ Page({
             success(res){
                 console.log("location got", res);
                 that.setData({
-                    scale:20,
+                    scale:18,
                     latitude: res.latitude,
                     longitude: res.longitude,
                     ['markers[0].latitude']: res.latitude,
