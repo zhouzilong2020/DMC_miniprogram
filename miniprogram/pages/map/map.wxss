@@ -1,0 +1,17 @@
+/* miniprogram/pages/map/map.wxss */
+
+map{ height:100vh; width:100%; }
+.map{justify-items: center; align-items: center; display: flex;}
+.map .cover-icon{ left:0; top: 0; width: 120px; height:40px; }
+.map .cover-btn{ position:absolute; text-align: center; bottom: 10px; border-radius:10px; overflow:hidden; left: 50%;transform: translateX(-50%); background-color: #1B68FD; color: #FFFFFF; z-index: 9;}
+/* controls: [{
+  iconPath: "/images/company.png",
+  id: 1,
+  position: {
+    left: 0,
+    top: 0,
+    width: 90,
+    height: 40
+  },
+  clickable: false
+}] */

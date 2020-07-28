@@ -1,0 +1,11 @@
+/* miniprogram/pages/homepage/homepage.wxss */
+
+.user-info{height :250rpx; border:1px #707070 solid; border-left: none; border-right: none; justify-items: center;}
+
+.user-info image{ margin: 30rpx auto;  width: 100rpx; height:100rpx; border-radius:50%; overflow: hidden; display: block;}
+.user-info button{ display:block; margin: 0 auto;}
+.user-info text{ display:block; margin: 0 auto; text-align: center;}
+
+
+.user-list{ margin-top: 10rpx; }
+.user-list-item{ height:60rpx; border-bottom: 1px #707070 dashed; padding: 10rpx; display: flex; align-items:center; justify-content: space-between; }

@@ -1,0 +1,61 @@
+{
+
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  },
+
+  "pages": [
+    "pages/index/index",
+    "pages/homepage/homepage",
+    "pages/map/map",
+    "pages/myPublished/myPublished",
+    "pages/upload/upload",
+    "pages/editUserInfo/editUserInfo",
+    "pages/form/form",
+    "pages/grading/grading",
+    "pages/test1/test1"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "城市“微新”   DMC平台",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将被用于记录畸形地块的位置"
+    }
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/homepage.png",
+        "selectedIconPath": "images/tabbar/homepage-selected.png"
+      },
+      {
+        "pagePath": "pages/test1/test1",
+        "text": "上传畸形地块",
+        "iconPath": "images/tabbar/upload.png",
+        "selectedIconPath": "images/tabbar/upload-selected.png"
+      },
+      {
+        "pagePath": "pages/grading/grading",
+        "text": "评价我的项目",
+        "iconPath": "images/tabbar/pingfen.png",
+        "selectedIconPath": "images/tabbar/pingfen-selected.png"
+      },
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "我的",
+        "iconPath": "images/tabbar/my.png",
+        "selectedIconPath": "images/tabbar/my-selected.png"
+      }
+    ]
+  }
+}

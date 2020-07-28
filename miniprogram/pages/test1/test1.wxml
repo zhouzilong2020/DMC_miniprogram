@@ -1,0 +1,61 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="form">
+    <image src="../../images/company.png"></image>
+    
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+    </mp-form>
+
+    <mp-form-page title="上传身边的畸形空间" subtitle="只需要简单几步，就能马上上传身边的畸形空间，经过审核后，我们会及时与您取得联系">
+        <view class="form-category">
+            <mp-cells title="畸形空间分类">
+                <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
+                    <mp-checkbox wx:for="{{radioItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+                </mp-checkbox-group>
+            </mp-cells>
+        </view>
+    
+        <view class="form-userInfro">
+            <mp-cells title="联系方式">
+                <mp-cell prop="mobile" title="手机号" ext-class=" weui-cell_vcode">
+                    <input type="number" bindblur="phoneInputHandle" data-field="mobile" class="weui-input" placeholder="请输入手机号"/>
+                    <!-- <view slot="footer" class="weui-vcode-btn">获取验证码</view>
+                    <input type="number" bindblur="vcodeInputHandle" class="weui-input" placeholder="请输入验证码"/> -->
+                </mp-cell>
+            </mp-cells>
+        </view>
+
+        <view class="form-position">
+            <mp-cells title="位置信息">
+                <mp-cell>
+                    <map latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" markers="{{markers}}"></map>
+                </mp-cell>
+                <mp-cell>
+                    <button class="weui-btn" type="default" bindtap="getPos">获取我的位置</button>
+                </mp-cell>
+                
+            </mp-cells>
+        </view>
+
+        <view class="form-image">
+            <mp-cells title="上传图片">
+                <mp-cell>
+                    <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5" title="畸形空间图片" tips="随手拍一拍，或者直接从相册中上传身边的畸形地块图片，可以帮助我们更好的了解您身边的畸形空间，并作出最合适的改造方案"></mp-uploader>
+                </mp-cell>
+            </mp-cells>
+        </view>
+
+        <view class="form-text">
+            <mp-cells title="补充信息">
+                <mp-cell class="weui-cells weui-cells_after-title">
+                    <textarea class="weui-textarea" placeholder="请输入需要补充的信息文本" style="height: 5.6em"  maxlength="200" bindinput="inputHandle"/>
+                    <view class="weui-textarea-counter counter">{{inputLength}}/200</view>
+                </mp-cell>
+            </mp-cells>
+        </view>
+        
+        <view slot="button">
+            <button class="weui-btn" type="primary" bindtap="submitForm">提交</button>
+        </view>
+
+    </mp-form-page>
+</view>

@@ -1,0 +1,40 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="index">
+  <!-- 页顶轮播 -->
+  <swiper class="index-swiper" indicator-dots="{{true}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+        <block wx:for="{{slideImages}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150" mode="widthFix"></image>
+          </swiper-item>
+        </block>
+  </swiper>
+
+  <view class="index-tab">
+    <view class="active">周围案例</view>
+    <view>全部案例</view>
+  </view>
+
+  <view class="index-list">
+
+    <view class="index-list-item">
+      <image mode="aspectFill" src="/images/slide-images/南丹·邻里汇.png"></image>
+      <view class="index-list-text">
+        <text>
+          <text class="iconfont ">icon</text>
+        </text>
+        <text>南丹·邻里汇</text>
+      </view>
+    </view>
+    
+    <view class="index-list-item">
+      <image mode="aspectFill" src="/images/slide-images/四平-同济新村院落空间.png"></image>
+    </view> 
+
+    <view class="index-list-item">
+      <image mode="aspectFill"src="/images/slide-images/徐汇-衡复微空间.png"></image>
+    </view>
+
+  </view>
+
+</view>

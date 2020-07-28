@@ -1,0 +1,32 @@
+<!--miniprogram/pages/homepage/homepage.wxml-->
+<view class="homepage">
+
+  <view class="user-info">
+    <image src="{{userPhoto}}"></image>
+    <text wx:if="{{logged}}">欢迎您！{{nickName}}</text>
+    <button wx:else open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" disabled="{{disabled}}">授权登录</button>
+  </view>
+
+  <view wx:if="{{logged}}" class="user-list">
+    <navigator url="../myPublished/myPublished" open-type="navigate">
+      <view class="user-list-item">
+        <text>我的项目</text><text class="iconfont iconnext"></text>
+      </view>
+    </navigator>
+
+    <navigator url="../editUserInfo/editUserInfo" open-type="navigate">
+      <view class="user-list-item">
+        <text>我的评价</text><text class="iconfont iconnext"></text>
+      </view>
+    </navigator>
+
+    <navigator url="#" open-type="navigate">
+      <view class="user-list-item">
+        <text>个人信息</text><text class="iconfont iconnext"></text>
+      </view>
+    </navigator>
+  
+  
+  </view>
+
+</view>
