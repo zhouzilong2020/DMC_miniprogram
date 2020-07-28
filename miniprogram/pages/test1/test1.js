@@ -140,13 +140,9 @@ Page({
                     title: "提交成功！"
                 })
 
-                wx.navigateTo({
-                    url: '../mes_success/mes_success',
-                    success: function(res) {
-                        var id = that.data.openid + timestamp;
-                        // 通过eventChannel向被打开页面传送数据
-                        res.eventChannel.emit('acceptID', { id: id })
-                    }
+                var id = that.data.openid + timestamp;
+                wx.reLaunch({
+                    url: '../mes_success/mes_success' + "?id=" + id,
                 })
             }
         })

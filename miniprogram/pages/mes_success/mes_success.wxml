@@ -8,7 +8,7 @@
 		</view>
 		<view class="weui-msg__opr-area">
 			<view class="weui-btn-area">
-				<a href="../index/index" class="weui-btn weui-btn_primary">返回到哪里？（未实现）</a>
+				<a href="../index/index" class="weui-btn weui-btn_primary">返回到哪（未实现）</a>
 			</view>
 		</view>
 		<view class="weui-msg__tips-area">
