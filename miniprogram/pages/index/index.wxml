@@ -16,28 +16,9 @@
   </view>
 
 
+  <!-- 项目展示 -->
+  <project-list imageData="{{imageData}}" />
 
-  <view class="index-list">
-
-    <view class="index-list-item">
-      <image mode="aspectFill" src="/images/slide-images/南丹·邻里汇.png"></image>
-      <view class="index-list-text">
-        <text>
-          <text class="iconfont ">icon</text>
-        </text>
-        <text>南丹·邻里汇</text>
-      </view>
-    </view>
-    
-    <view class="index-list-item">
-      <image mode="aspectFill" src="/images/slide-images/四平-同济新村院落空间.png"></image>
-    </view> 
-
-    <view class="index-list-item">
-      <image mode="aspectFill"src="/images/slide-images/徐汇-衡复微空间.png"></image>
-    </view>
-
-  </view>
 
   <view class='index-list'>
     <view clas='index-list-item' wx:for=" {{listData}} " wx:key="index">

@@ -7,27 +7,50 @@ Page({
    * 页面的初始数据
    */
   data: {
-    a:{
-      b : []
-    },
+    imageData: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var ass = 1;
     var that = this;
-    this.setData({
-      ['a.b']: that.data.a.b.concat(ass)
+    wx.showLoading({
+      title: '数据加载中',
     })
-    console.log(that.data.a.b);
-    db.collection('images').add({
-      data:{
-        data: this.data.a,
+    db.collection('images').where({
+      _openid: app.userInfo._openid,
+    }).orderBy('timestamp', 'asc').get().then((res)=>{
+      // 获取照片
+      var images = res.data
+      console.log(" ", images)
+      var cnt = 0;
+      var imageData = [];
+      for(var i = 0, len = images.length; i < len; i++){
+        let image = images[i];
+        wx.cloud.downloadFile({
+          fileID: image.fileID[0], // 文件 ID
+          success: res => {
+            // console.log(res.tempFilePath)
+            imageData = imageData.concat({src : res.tempFilePath, title : "哈哈", timestamp : image.timestamp});
+            // console.log(" ", imageData)
+            if(++cnt == len){
+              imageData.sort((a, b) =>{
+                return a.timestamp - b.timestamp
+              })
+              // console.log(" ", imageData)
+              that.setData({
+                imageData: that.data.imageData.concat(imageData)
+              })
+              wx.showToast({
+                title: '加载成功',
+              })
+            }
+          },
+          fail: console.error
+        })
       }
-    }).then((res)=>{
-      console.log("add success", res)
+
     })
   },
 

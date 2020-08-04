@@ -126,6 +126,20 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "project",
+					"pathName": "components/project/project",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test_component/test_component",
+					"pathName": "pages/test_component/test_component",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

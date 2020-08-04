@@ -1,41 +1,21 @@
-// miniprogram/pages/index/index.js
-const db = wx.cloud.database();
-const app = getApp();
+// miniprogram/pages/test_component/test_component.js
 Page({
-  
+
   /**
    * 页面的初始数据
    */
   data: {
-    slideImages:["/images/slide-images/南丹·邻里汇.png",
-              "/images/slide-images/四平-同济新村院落空间.png",
-              "/images/slide-images/徐汇-衡复微空间.png"
-    ],
     imageData:[{
       src : "../../images/slide-images/南丹·邻里汇.png",
       title :  "南丹·邻里汇"
     },{
       src : "../../images/slide-images/四平-同济新村院落空间.png",
-      title : "四平-同济新村院落"
+      title : "同济新村·院落"
     },{
       src : "../../images/slide-images/徐汇-衡复微空间.png",
       title : "徐汇-衡复微空间",
     }],
 
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    interval: 2000,
-    duration: 500
-  },
-  regionchange(e) {
-    console.log(e.type)
-  },
-  markertap(e) {
-    console.log(e.detail.markerId)
-  },
-  controltap(e) {
-    console.log(e.detail.controlId)
   },
 
   /**

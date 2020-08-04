@@ -1,0 +1,6 @@
+/* components/project.wxss */
+
+.list{ display:flex; flex-wrap: wrap;}
+.list-item{ width:50%;  margin:10rpx 0; }
+.image{ width:90%; height:300rpx; margin: 0 auto; display:block; border-radius:10rpx; overflow:hidden; }
+.list-text{ width:90%; display: flex; justify-content: space-between; margin: 0 auto;}

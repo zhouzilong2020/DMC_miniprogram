@@ -12,7 +12,7 @@
 			</view>
 		</view>
 		<view class="weui-msg__tips-area">
-			<view class="weui-msg__tips">您可以在我发布的畸形空间中查看该项目的进展（未实现）</view>
+			<view class="weui-msg__tips">您可以在我发布的畸形空间中查看该项目的进展</view>
 		</view>
 		<view class="weui-msg__extra-area">
 			<view class="weui-footer weui-footer_fixed-bottom footer">

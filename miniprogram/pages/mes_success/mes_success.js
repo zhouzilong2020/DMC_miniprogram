@@ -18,7 +18,7 @@ Page({
 
     setTimeout(() => {
       wx.switchTab({
-        url: '/pages/index/index'
+        url: 'pages/homepage_grid/homepage_grid'
       })
     }, 5000)
   },

@@ -1,0 +1,10 @@
+<!--components/project.wxml-->
+<view wx:if="{{imageData.length}}" class="list">
+  <view class="list-item" wx:for="{{imageData}}" wx:for-index="i" wx:for-item="item" wx:key="i">
+    <image class="image" mode="aspectFill" src="{{item.src}}"></image>
+    <view class="list-text">
+      <text class="iconfont iconchuiziicon"></text>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+</view>

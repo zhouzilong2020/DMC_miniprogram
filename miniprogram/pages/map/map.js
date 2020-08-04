@@ -13,7 +13,6 @@ Page({
     path:"/images/company.png",
     accuracy:10,
     markers: [{
-      iconPath: "/images/map-marker.png",
       id: 0,
       latitude: 31.28540017791541,
       longitude: 121.49854302406311,
@@ -34,28 +33,21 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var self = this;
-    wx.getLocation({
-      type:"wgs84",
-      success (res){
-        const latitude = res.latitude;
-        const longitude = res.longitude;
-        const accuracy = res.accuracy;
-        self.setData({
-          longitude:longitude,
-          latitude:latitude,
-          accuracy:accuracy,
-          markers:[{
-            latitude:latitude,
-            longitude:longitude,
-          }],
-        });
-        // app.userInfo.position = Object.assign( app.userInfo.position, [longitude, latitude]);
-        
+    var newMarkers = []
+    var that = this;
+    db.collection('images').orderBy('timestamp', 'asc').field({
+      formData : true,
+    }).get().then((res) => {
+      for(var i = 0, len = res.data.length; i < len; i++){
+        newMarkers = newMarkers.concat({latitude : res.data[i].formData.latitude, 
+                                        longitude : res.data[i].formData.longitude,
+                                        width: 30, height: 30, id : i+1});
       }
-    });
+      that.setData({
+        markers : that.data.markers.concat(newMarkers)
+      })
+    })
   },
-
   /**
    * 生命周期函数--监听页面显示
    */

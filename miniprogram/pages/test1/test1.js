@@ -139,7 +139,7 @@ Page({
                                     wx.showToast({
                                         title: "提交成功！"
                                     });
-                                    wx.reLaunch({
+                                    wx.redirectTo({
                                         url: '../mes_success/mes_success' + "?id=" + res._id,
                                     });
                                 })
