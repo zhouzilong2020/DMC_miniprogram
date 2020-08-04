@@ -8,16 +8,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    longitude:121.49854302406311,
-    latitude:31.28540017791541,
+    longitude : 121.501837,
+    latitude : 31.282640,
     path:"/images/company.png",
     accuracy:10,
     markers: [{
       id: 0,
-      latitude: 31.28540017791541,
-      longitude: 121.49854302406311,
-      width: 30,
-      height: 30
+      latitude: 31.282640,
+      longitude: 121.501837,
     }],
    
   },
@@ -41,7 +39,7 @@ Page({
       for(var i = 0, len = res.data.length; i < len; i++){
         newMarkers = newMarkers.concat({latitude : res.data[i].formData.latitude, 
                                         longitude : res.data[i].formData.longitude,
-                                        width: 30, height: 30, id : i+1});
+                                        id : i+1});
       }
       that.setData({
         markers : that.data.markers.concat(newMarkers)
