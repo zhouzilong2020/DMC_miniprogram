@@ -86,9 +86,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/myPublished/myPublished",
-					"pathName": "pages/myPublished/myPublished",
+					"id": 4,
+					"name": "pages/myProject/myProject",
+					"pathName": "pages/myProject/myProject",
 					"query": "",
 					"scene": null
 				},
@@ -117,6 +117,14 @@
 					"id": -1,
 					"name": "pages/mes_success/mes_success",
 					"pathName": "pages/mes_success/mes_success",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
 					"scene": null
 				}
 			]

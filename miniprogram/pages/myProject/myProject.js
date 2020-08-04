@@ -1,18 +1,34 @@
-// miniprogram/pages/myPublished/myPublished.js
+// miniprogram/pages/myProject/myProject.js
+const app = getApp();
+const db = wx.cloud.database();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    a:{
+      b : []
+    },
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var ass = 1;
+    var that = this;
+    this.setData({
+      ['a.b']: that.data.a.b.concat(ass)
+    })
+    console.log(that.data.a.b);
+    db.collection('images').add({
+      data:{
+        data: this.data.a,
+      }
+    }).then((res)=>{
+      console.log("add success", res)
+    })
   },
 
   /**

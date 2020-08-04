@@ -13,12 +13,16 @@
 					</view>
 					<view class="weui-grid__label">修改个人信息</view>
 				</view>
+
 				<view class="weui-grid">
-					<view class="weui-grid__icon">
-						<text class="iconfont iconcalendar"></text>
-					</view>
-					<view class="weui-grid__label">我发布的项目</view>
+					<navigator url="../myProject/myProject">
+						<view class="weui-grid__icon">
+							<text class="iconfont iconcalendar"></text>
+						</view>
+						<view class="weui-grid__label" >我发布的项目</view>
+					</navigator>
 				</view>
+
 				<view class="weui-grid">
 					<view class="weui-grid__icon">
 						<text class="iconfont iconcomplete"></text>

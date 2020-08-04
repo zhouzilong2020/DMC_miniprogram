@@ -1,4 +1,6 @@
 // miniprogram/pages/index/index.js
+const db = wx.cloud.database();
+const app = getApp();
 Page({
   
   /**

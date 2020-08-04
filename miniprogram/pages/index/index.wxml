@@ -15,6 +15,8 @@
     <view>全部案例</view>
   </view>
 
+
+
   <view class="index-list">
 
     <view class="index-list-item">
@@ -37,11 +39,21 @@
 
   </view>
 
+  <view class='index-list'>
+    <view clas='index-list-item' wx:for=" {{listData}} " wx:key="index">
+      <image mode='aspectFill' src="{{ item.projectImage}}"></image>
+      <view class="index-list-text">
+        <text>{{ item.projectName }}</text>
+        <text>{{ item.links }}</text>
+      </view>
+    </view>
+  </view>
+
+<!-- footer -->
   <view class="footer weui-footer weui-footer_fixed-bottom">
 		<view class="weui-footer__links">
 			<a href="javascript:home();" class="weui-footer__link">一个连接</a>
 		</view>
 		<view class="weui-footer__text">Copyright &copy; 2019-2020 城市“微新”团队</view>
 	</view>
-
 </view>

@@ -18,7 +18,7 @@
         <view class="form-userInfro">
             <mp-cells title="联系方式">
                 <mp-cell prop="mobile" title="手机号" ext-class=" weui-cell_vcode">
-                    <input type="number" bindblur="phoneInputHandle" data-field="mobile" class="weui-input" placeholder="请输入手机号"/>
+                    <input type="number"  bindblur="phoneInputHandle" data-field="mobile" class="weui-input" placeholder="请输入手机号"/>
                     <!-- <view slot="footer" class="weui-vcode-btn">获取验证码</view>
                     <input type="number" bindblur="vcodeInputHandle" class="weui-input" placeholder="请输入验证码"/> -->
                 </mp-cell>

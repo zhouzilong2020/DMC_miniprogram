@@ -1,36 +1,33 @@
 const app = getApp()
 const db = wx.cloud.database()
-wx.cloud.init({
-  env:'test-0xsoi',
-})
 Page({
-  data: {
-    //   登录相关信息
-    logged:false,
-    openid:'',
-    //   错误提示
-     error:'',
-    //   输入控制
-     rules:[{
-        name: 'type',
-            rules: {required: true, message: '请选择畸形空间分类'},
-    },{
-        name: 'mobile',
-            rules: [{required: true, message: '请填写手机号'}, {mobile: true, message: '请输入正确的手机号'}],
-    },{
-        name: 'latitude',
-            rules: [{required: true, message: '请获取您的位置'}],
-    },{
-        name: 'imageCnt',
-        rules: [{required: true, message: '请至少上传一张畸形地块的照片'}],
-    }],
+    data: {
+        //   登录相关信息
+        logged:false,
+        openid:'',
+        //   错误提示
+        error:'',
+        //   输入控制
+        rules:[{
+            name: 'type',
+                rules: {required: true, message: '请选择畸形空间分类'},
+        },{
+            name: 'mobile',
+                rules: [{required: true, message: '请填写手机号'}, {mobile: true, message: '请输入正确的手机号'}],
+        },{
+            name: 'latitude',
+                rules: [{required: true, message: '请获取您的位置'}],
+        },{
+            name: 'imageCnt',
+            rules: [{required: true, message: '请至少上传一张畸形地块的照片'}],
+        }],
     //   输入文本框
-      inputLength :0,
+        inputLength :0,
     //   地图信息
-      scale:16,
-      latitude: 31.289027,
-      longitude: 121.508532,
-      markers:[{id:0,
+        scale:16,
+        latitude: 31.289027,
+        longitude: 121.508532,
+        markers:[{id:0,
                 latitude: 31.289027,
                 longitude: 121.508532,
                 // label:{
@@ -39,20 +36,20 @@ Page({
                 // }
             }],
     //   用户提交的表单信息
-      formData:{type:'',
+        formData:{type:'',
                 latitude:'',
                 longitude:'',
                 mobile:'',
                 imageCnt:0,
-                extraInfo:'',
-                urls:[],},
+                extraInfo:'',},
+        fileID:[],
     //   选项框
-      radioItems:[
-          {name:"商业型畸零空间", value:'0'},
-          {name:"休闲型畸零空间", value:'1'},
-          {name:"文化型畸零空间", value:'2'},
-          {name:"社交型畸零空间", value:'3'},
-          {name:"废弃型畸零空间", value:'4'}
+        radioItems:[
+            {name:"商业型畸零空间", value:'0'},
+            {name:"休闲型畸零空间", value:'1'},
+            {name:"文化型畸零空间", value:'2'},
+            {name:"社交型畸零空间", value:'3'},
+            {name:"废弃型畸零空间", value:'4'}
       ],
     //   照片上传
       files: [],
@@ -116,41 +113,40 @@ Page({
                 var timestamp = Date.parse(new Date()); 
                 //提交照片
                 var tempFilePaths = that.data.tempFilePaths;
-                var cloudPaths = [];
-                console.log("outside upload", tempFilePaths)
-                for (let i = 0; i < tempFilePaths.length; i++){
+                // console.log("outside upload", tempFilePaths)
+                for (let i = 0, len = tempFilePaths.length; i < len; i++){
                     var filePath = tempFilePaths[i];
                     var cloudPath = './' + that.data.openid + '/'  + timestamp + '_' + i + filePath.match(/\.[^.]+?$/)[0];
-                    console.log("in upload", cloudPath)
+                    // console.log("in upload", cloudPath)
                     wx.cloud.uploadFile({
                         cloudPath: cloudPath, //云
                         filePath: filePath,   //本地
                         success: (res) =>{
                             that.setData({
-                                ['formData.urls']: that.data.formData.urls.concat(cloudPath)
+                                fileID: that.data.fileID.concat(res.fileID)
                             })
+                            if (i == len - 1){
+                                // 照片全部提交成功 
+                                console.log("on submmiting database", that.data);
+                                // 提交其他信息
+                                db.collection('images').add({
+                                    data:{
+                                        formData: that.data.formData,
+                                        fileID: that.data.fileID,
+                                        timestamp : timestamp
+                                    }
+                                }).then((res) => {
+                                    wx.showToast({
+                                        title: "提交成功！"
+                                    });
+                                    wx.reLaunch({
+                                        url: '../mes_success/mes_success' + "?id=" + res._id,
+                                    });
+                                })
+                            }
                         }
                     })
-
-                }
-                // 照片全部提交成功 
-                console.log("on submmiting database", this.data.formData);
-                // 提交其他信息
-                db.collection("images").add({
-                    data:{
-                        openid: that.data.openid,
-                        formData: that.data.formData,
-                        timestamp : timestamp
-                    }
-                  })
-                wx.showToast({
-                    title: "提交成功！"
-                })
-
-                var id = that.data.openid + timestamp;
-                wx.reLaunch({
-                    url: '../mes_success/mes_success' + "?id=" + id,
-                })
+                }    
             }
         })
     },
