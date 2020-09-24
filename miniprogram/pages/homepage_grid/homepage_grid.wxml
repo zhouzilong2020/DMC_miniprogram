@@ -2,7 +2,7 @@
 <view class="page" data-weui-theme="{{theme}}">
 
 	<view class="user-info">
-    <image src="{{userPhoto}}"></image>
+		<image src="{{userPhoto}}"></image>
 		<button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" disabled="{{disabled}}">授权登录</button>
 		<view wx:else>
 			<text class='user-name'>欢迎您！{{nickName}}</text>
@@ -19,7 +19,7 @@
 						<view class="weui-grid__icon">
 							<text class="iconfont iconcalendar"></text>
 						</view>
-						<view class="weui-grid__label" >我发布的项目</view>
+						<view class="weui-grid__label">我发布的项目</view>
 					</navigator>
 				</view>
 
@@ -47,7 +47,7 @@
 					</view>
 					<view class="weui-grid__label">联系我们</view>
 				</view>
-<!-- 占位 -->
+				<!-- 占位 -->
 				<view class="weui-grid">
 					<view class="weui-grid__icon">
 						<text class="iconfont iconlianxiwomen1"></text>
@@ -66,11 +66,11 @@
 					</view>
 					<view class="weui-grid__label">联系我们</view>
 				</view>
-<!-- 占位结束 -->
-	
+				<!-- 占位结束 -->
+
 			</view>
 		</view>
-  </view>
+	</view>
 
 	<view class="weui-footer weui-footer_fixed-bottom footer">
 		<view class="weui-footer__links">

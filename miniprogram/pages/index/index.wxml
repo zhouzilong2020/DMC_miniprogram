@@ -1,13 +1,13 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="index">
   <!-- 页顶轮播 -->
-  <swiper class="index-swiper" indicator-dots="{{true}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
-        <block wx:for="{{slideImages}}" wx:key="*this">
-          <swiper-item>
-            <image src="{{item}}" class="slide-image" width="355" height="150" mode="widthFix"></image>
-          </swiper-item>
-        </block>
+  <swiper class="index-swiper" indicator-dots="{{true}}" autoplay="{{autoplay}}" interval="{{interval}}"
+    duration="{{duration}}" circular="{{true}}">
+    <block wx:for="{{slideImages}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150" mode="widthFix"></image>
+      </swiper-item>
+    </block>
   </swiper>
 
   <view class="index-tab">
@@ -19,22 +19,21 @@
   <!-- 项目展示 -->
   <project-list imageData="{{imageData}}" />
 
-
-  <view class='index-list'>
-    <view clas='index-list-item' wx:for=" {{listData}} " wx:key="index">
+  <!-- <view class='index-list'>
+    <view clas='index-list-item' wx:for=" {{listData}} " wx:key="index" bindtap="click">
       <image mode='aspectFill' src="{{ item.projectImage}}"></image>
       <view class="index-list-text">
         <text>{{ item.projectName }}</text>
         <text>{{ item.links }}</text>
       </view>
     </view>
-  </view>
+  </view> -->
 
-<!-- footer -->
+  <!-- footer -->
   <view class="footer weui-footer weui-footer_fixed-bottom">
-		<view class="weui-footer__links">
-			<a href="javascript:home();" class="weui-footer__link">一个连接</a>
-		</view>
-		<view class="weui-footer__text">Copyright &copy; 2019-2020 城市“微新”团队</view>
-	</view>
+    <view class="weui-footer__links">
+      <a href="javascript:home();" class="weui-footer__link">一个连接</a>
+    </view>
+    <view class="weui-footer__text">Copyright &copy; 2019-2020 城市“微新”团队</view>
+  </view>
 </view>

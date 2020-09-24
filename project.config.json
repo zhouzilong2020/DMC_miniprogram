@@ -100,9 +100,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/test1/test1",
-					"pathName": "pages/test1/test1",
+					"id": 6,
+					"name": "上传畸形地块表格",
+					"pathName": "pages/uploadProject/uploadProject",
 					"query": "",
 					"scene": null
 				},
@@ -138,6 +138,13 @@
 					"id": -1,
 					"name": "pages/test_component/test_component",
 					"pathName": "pages/test_component/test_component",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的项目",
+					"pathName": "components/myProject/myProject",
 					"query": "",
 					"scene": null
 				}

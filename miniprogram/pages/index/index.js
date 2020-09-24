@@ -2,24 +2,28 @@
 const db = wx.cloud.database();
 const app = getApp();
 Page({
-  
+
   /**
    * 页面的初始数据
    */
   data: {
-    slideImages:["/images/slide-images/南丹·邻里汇.png",
-              "/images/slide-images/四平-同济新村院落空间.png",
-              "/images/slide-images/徐汇-衡复微空间.png"
+    slideImages: [
+      "/images/slide-images/南丹·邻里汇.png",
+      "/images/slide-images/四平-同济新村院落空间.png",
+      "/images/slide-images/徐汇-衡复微空间.png"
     ],
-    imageData:[{
-      src : "../../images/slide-images/南丹·邻里汇.png",
-      title :  "南丹·邻里汇"
-    },{
-      src : "../../images/slide-images/四平-同济新村院落空间.png",
-      title : "四平-同济新村院落"
-    },{
-      src : "../../images/slide-images/徐汇-衡复微空间.png",
-      title : "徐汇-衡复微空间",
+    imageData: [{
+      src: "../../images/slide-images/南丹·邻里汇.png",
+      title: "南丹·邻里汇",
+      _id:'1'
+    }, {
+      src: "../../images/slide-images/四平-同济新村院落空间.png",
+      title: "四平-同济新村院落",
+      _id:'2'
+    }, {
+      src: "../../images/slide-images/徐汇-衡复微空间.png",
+      title: "徐汇-衡复微空间",
+      _id:'3'
     }],
 
     indicatorDots: true,
@@ -36,6 +40,9 @@ Page({
   },
   controltap(e) {
     console.log(e.detail.controlId)
+  },
+  click: function(e){
+    console.log('e')
   },
 
   /**

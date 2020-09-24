@@ -20,22 +20,29 @@ Page({
     })
     db.collection('images').where({
       _openid: app.userInfo._openid,
-    }).orderBy('timestamp', 'asc').get().then((res)=>{
+    }).orderBy('timestamp', 'asc').get().then((res) => {
       // 获取照片
       var images = res.data
-      console.log(" ", images)
+      console.log('in db retrieve data', images)
       var cnt = 0;
       var imageData = [];
-      for(var i = 0, len = images.length; i < len; i++){
+      for (var i = 0, len = images.length; i < len; i++) {
         let image = images[i];
+        //  将云端文件下载到本地
         wx.cloud.downloadFile({
           fileID: image.fileID[0], // 文件 ID
           success: res => {
-            // console.log(res.tempFilePath)
-            imageData = imageData.concat({src : res.tempFilePath, title : "哈哈", timestamp : image.timestamp});
+            // console.log('in downloading file', res)
+            imageData = imageData.concat({
+              src: res.tempFilePath,
+              title: "哈哈",
+              _id : image._id,
+              formData : image.formData,
+              timestamp: image.timestamp
+            });
             // console.log(" ", imageData)
-            if(++cnt == len){
-              imageData.sort((a, b) =>{
+            if (++cnt == len) {
+              imageData.sort((a, b) => {
                 return a.timestamp - b.timestamp
               })
               // console.log(" ", imageData)
@@ -45,12 +52,13 @@ Page({
               wx.showToast({
                 title: '加载成功',
               })
+
+              console.log(this.data)
             }
           },
           fail: console.error
         })
       }
-
     })
   },
 

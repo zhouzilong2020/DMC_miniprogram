@@ -1,15 +1,58 @@
 /* miniprogram/pages/index/index.wxss */
-.index-swiper { height:400rpx; margin:20rpx; border-radius:10rpx; overflow:hidden; }
-.index-swiper image{ width:100%; border-radius:10rpx; overflow:hidden; }
+.index-swiper {
+  height: 400rpx;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
 
-.index-tab{display:flex; }
-.index-tab view{ flex:1; text-align: center; padding:10rpx; margin:10rpx}
-.index-tab view.active{ border-bottom: 1px red solid;}
+.index-swiper image {
+  width: 100%;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
 
-.index-list{ display:flex; flex-wrap: wrap;}
-.index-list-item{ width:50%;  margin:10rpx 0; }
-.index-list-item image{ width:90%; height:300rpx; margin: 0 auto; display:block; border-radius:10rpx; overflow:hidden; }
+.index-tab {
+  display: flex;
+}
 
-.index-list-text{ width:90%; display: flex; justify-content: space-between; margin: 0 auto;}
+.index-tab view {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx;
+  margin: 10rpx
+}
 
-.footer{position: relative;}
+.index-tab view.active {
+  border-bottom: 1px red solid;
+}
+
+.index-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.index-list-item {
+  width: 50%;
+  margin: 10rpx 0;
+}
+
+.index-list-item image {
+  width: 90%;
+  height: 300rpx;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.index-list-text {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.footer {
+  position: relative;
+}

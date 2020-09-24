@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-row": "../row/index",
+    "i-col": "../col/index"
+  }
+}

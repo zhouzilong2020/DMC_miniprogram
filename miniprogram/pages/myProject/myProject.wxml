@@ -1,3 +1,11 @@
 <!--miniprogram/pages/myProject/myProject.wxml-->
-<text style="text-align:center" > 这里需要一些排版和UI设计 </text>
+<!-- <text style="text-align:center" > 这里需要一些排版和UI设计 </text> -->
 <project-list imageData="{{imageData}}" />
+
+<!-- <i-card title="啊实打实的" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+  <view slot="btn">
+    <text class="iconfont iconlajitong"></text>
+  </view>
+  <view slot="content">畸形空间</view>
+  <view slot="footer">发布于</view>
+</i-card> -->

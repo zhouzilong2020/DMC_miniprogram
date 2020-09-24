@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "project-list" : "../../components/project/project"
+    "project-list" : "../../components/project/project",
+    "i-card" : "../../components/iViewUI/card/index"
   }
 }
