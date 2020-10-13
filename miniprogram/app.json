@@ -6,16 +6,12 @@
   "pages": [
     "pages/index/index",
     "pages/editUserInfo/editUserInfo",
-    "pages/form/form",
-    "pages/grading/grading",
     "pages/uploadProject/uploadProject",
     "pages/homepage_grid/homepage_grid",
     "pages/mes_fail/mes_fail",
     "pages/mes_success/mes_success",
     "pages/myProject/myProject",
-    "pages/test_component/test_component",
     "pages/map/map",
-    "pages/detail",
     "pages/detail/detail"
   ],
   "window": {
@@ -33,8 +29,7 @@
     }
   },
   "tabBar": {
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/tabbar/index.png",

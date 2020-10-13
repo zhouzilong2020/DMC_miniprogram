@@ -8,6 +8,12 @@ Page({
     id:'',
   },
 
+  showState(){
+    wx.redirectTo({
+      url: '../myProject/myProject',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -15,12 +21,6 @@ Page({
     this.setData({
       id: options.id,
     })
-
-    setTimeout(() => {
-      wx.switchTab({
-        url: 'pages/homepage_grid/homepage_grid'
-      })
-    }, 5000)
   },
 
   /**

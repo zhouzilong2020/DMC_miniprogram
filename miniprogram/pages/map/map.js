@@ -8,16 +8,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    longitude : 121.501837,
-    latitude : 31.282640,
-    path:"/images/company.png",
-    accuracy:10,
+    longitude: 121.501837,
+    latitude: 31.282640,
+    path: "/images/company.png",
+    accuracy: 10,
     markers: [{
       id: 0,
       latitude: 31.282640,
       longitude: 121.501837,
     }],
-   
+
   },
 
   /**
@@ -31,19 +31,32 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var newMarkers = []
-    var that = this;
+    var cnt = 0;
     db.collection('images').orderBy('timestamp', 'asc').field({
-      formData : true,
+      formData: true,
+      fileID: true,
     }).get().then((res) => {
-      for(var i = 0, len = res.data.length; i < len; i++){
-        newMarkers = newMarkers.concat({latitude : res.data[i].formData.latitude, 
-                                        longitude : res.data[i].formData.longitude,
-                                        id : i+1});
+      for (var i = 0, len = res.data.length; i < len; i++) {
+        // 异步函数,注意同步
+        wx.cloud.downloadFile({
+          fileID: res.data[i].fileID[0], // 文件 ID
+          success: imagePath => {
+            // console.log('in downloading file', cnt)
+            this.setData({
+              markers: this.data.markers.concat({
+                latitude: res.data[cnt].formData.latitude,
+                longitude: res.data[cnt].formData.longitude,
+                iconPath: imagePath.tempFilePath,
+                width: 40,
+                height: 40,
+                id: cnt + 1
+              })
+            })
+            cnt += 1
+            // console.log('2')
+          }
+        })
       }
-      that.setData({
-        markers : that.data.markers.concat(newMarkers)
-      })
     })
   },
   /**
@@ -103,12 +116,12 @@ Page({
     console.log(e.detail)
   },
 
-  uploadPhoto(){
+  uploadPhoto() {
     wx.chooseImage({
       count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
-      success:(res) =>{
+      success: (res) => {
 
         wx.showLoading({
           title: '正在上传',
@@ -119,7 +132,7 @@ Page({
         wx.cloud.uploadFile({
           cloudPath: cloudPath,
           filePath: filePath,
-          success:(res)=>{
+          success: (res) => {
             console.log(res);
           },
           // 上传完成
@@ -130,12 +143,12 @@ Page({
               icon: 'success',
               duration: 2000,
             })
-            
+
           }
         });
 
       }
     });
   }
-  
+
 })

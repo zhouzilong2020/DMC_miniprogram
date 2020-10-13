@@ -1,4 +1,6 @@
 // miniprogram/pages/detail/detail.js
+const app = getApp()
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -12,6 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 拿到URL中的参数
+    let projectId = options.projectId
+    let data = db.collection('images').where({
+      _id: projectId
+    }).get().then((res) => {
+      console.log(res.data)
+    })
+    console.log(options)
 
   },
 

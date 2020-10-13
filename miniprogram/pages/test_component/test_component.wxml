@@ -1,3 +1,0 @@
-<!--miniprogram/pages/test_component/test_component.wxml-->
-<project-list imageData="{{imageData}}" >
-</project-list>

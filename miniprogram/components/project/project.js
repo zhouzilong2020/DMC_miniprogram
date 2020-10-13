@@ -1,4 +1,5 @@
 // components/project.js
+const db = wx.cloud.database();
 Component({
   /**
    * 组件的属性列表
@@ -30,25 +31,60 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleTap(e) {
-      let id = e.currentTarget.dataset.id
-      console.log(e.currentTarget.dataset.id)
-      wx.cloud.callFunction({
-        name: 'update',
-        data: {
-          collection: 'users',
-          doc: id,
-          data:{
-            // 需要更新的数据
-            a:'a'
+    handleLongPress(e) {
+      console.log('you r in long press')
+
+    },
+
+    handleRemove(e) {
+      let id = e.target.dataset.id
+      // console.log(id)
+      // 两个同步的信号量，用于判断整个删除操作是否完成
+      let isRemoved = false
+
+      //数据库进行删除记录操作
+      db.collection('images').doc(id).remove({
+        success: res => {
+          console.log('succeed deleting record in db', isRemoved)
+          if (!isRemoved) {
+            isRemoved = true
+          } else {
+            this.renewData(id)
           }
         }
-      }).then((res) =>{
-        console.log(res)
       })
+      // 删除相应的图片
+      wx.cloud.deleteFile({
+        fileList: [id],
+        success: res => {
+          console.log('succeed deleting image file', isRemoved)
+          if (!isRemoved) {
+            isRemoved = true
+          } else {
+            this.renewData(id)
+          }
+        }
+      })
+    },
+    renewData(removeId) {
+      let cloneList = [...this.data.imageData]
+      console.log('in renew data', cloneList, len(cloneList))
 
-    }
+      for (let i = 0, len = len(cloneList); i < len; i++) {
+        console.log('in for loop')
+        if (cloneList._id == removeId) {
+          console.log('in if condition')
+          cloneList.splice(i, 1)
+          break;
+        }
+      }
+      console.log(cloneList)
+      this.setData({
+        imageData: cloneList
+      })
+    },
   },
+  
 
   lifetimes: {
     attached: function () {
