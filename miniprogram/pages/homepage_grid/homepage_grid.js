@@ -3,7 +3,6 @@ const app = getApp(); //拿到app对象，得到全剧对象
 const db = wx.cloud.database();
 import {
   login,
-
   whoAmI,
 } from '../../utils/userInfo'
 Page({

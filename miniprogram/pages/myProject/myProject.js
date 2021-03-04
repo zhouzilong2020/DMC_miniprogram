@@ -55,10 +55,9 @@ Page({
                 // console.log('in downloading file', res)
                 imageData = imageData.concat({
                   src: res.tempFilePath,
-                  title: "哈哈",
                   _id: image._id,
                   formData: image.formData,
-                  timestamp: image.timestamp
+                  date:  new Date(image.timestamp).toLocaleString().substr(0, 8)
                 });
                 // console.log(" ", imageData)
                 if (++cnt == len) {

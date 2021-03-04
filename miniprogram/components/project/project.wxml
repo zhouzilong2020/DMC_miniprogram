@@ -1,14 +1,13 @@
 <!--components/project.wxml-->
 <!--  -->
-<view wx:if="{{imageData.length}}" class="list">
-  <view class="list-item" wx:for="{{imageData}}" wx:for-index="i" wx:for-item="item" wx:key="_id" 
-    data-id="{{item._id}}"
-    >
+<view wx:if=" {{imageData.length}}" class="list">
+  <view class="list-item" wx:for="{{imageData}}" wx:for-index="i" wx:for-item="item" wx:key="_id"
+    data-id="{{item._id}}">
     <image class="image" mode="aspectFill" src="{{item.src}}"></image>
     <view class="list-text">
       <text class="iconfont iconchuiziicon"></text>
-      <text>{{item.title}}</text>
-      <text class="iconfont iconlajitong1"  data-id="{{item._id}}" bindtap="handleRemove"></text>
+      <text>{{ item.date}}</text>
+      <text class="iconfont iconlajitong1" data-id="{{item._id}}" bindtap="handleClick"></text>
     </view>
   </view>
 </view>

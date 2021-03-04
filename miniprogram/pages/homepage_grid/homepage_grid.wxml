@@ -26,31 +26,6 @@
 
 				<view class="weui-grid">
 					<view class="weui-grid__icon">
-						<text class="iconfont iconcomplete"></text>
-					</view>
-					<view class="weui-grid__label">已完成的项目</view>
-				</view>
-				<view class="weui-grid">
-					<view class="weui-grid__icon">
-						<text class="iconfont iconongoing"></text>
-					</view>
-					<view class="weui-grid__label">进行中的项目</view>
-				</view>
-				<view class="weui-grid">
-					<view class="weui-grid__icon">
-						<text class="iconfont icontiaoxingtu "></text>
-					</view>
-					<view class="weui-grid__label">我的评分</view>
-				</view>
-				<view class="weui-grid">
-					<view class="weui-grid__icon">
-						<text class="iconfont iconwodeshoucang"></text>
-					</view>
-					<view class="weui-grid__label">收藏</view>
-				</view>
-
-				<view class="weui-grid">
-					<view class="weui-grid__icon">
 						<text class="iconfont iconshanghutiaochawenjuanbiao"></text>
 					</view>
 					<view class="weui-grid__label">基本信息调查</view>
@@ -61,14 +36,6 @@
 					</view>
 					<view class="weui-grid__label">联系我们</view>
 				</view>
-				<!-- 占位 -->
-				<view class="weui-grid">
-					<view class="weui-grid__icon">
-						<text class="iconfont iconlianxiwomen1"></text>
-					</view>
-					<view class="weui-grid__label">联系我们</view>
-				</view>
-				<!-- 占位结束 -->
 
 			</view>
 		</view>

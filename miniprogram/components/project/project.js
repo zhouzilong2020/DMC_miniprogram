@@ -23,7 +23,9 @@ Component({
    */
   data: function () {
     return {
-
+      dialog: {
+        hidden: true,
+      }
     }
   },
 
@@ -33,7 +35,20 @@ Component({
   methods: {
     handleLongPress(e) {
       console.log('you r in long press')
+    },
 
+    handleClick(e) {
+      wx.showModal({
+        title: '提示',
+        content: '删除后就找不回来了哦!',
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            handleClick(e);
+          } else if (res.cancel) {
+          }
+        }
+      })
     },
 
     handleRemove(e) {
@@ -41,7 +56,6 @@ Component({
       // console.log(id)
       // 两个同步的信号量，用于判断整个删除操作是否完成
       let isRemoved = false
-
       //数据库进行删除记录操作
       db.collection('images').doc(id).remove({
         success: res => {
@@ -84,7 +98,7 @@ Component({
       })
     },
   },
-  
+
 
   lifetimes: {
     attached: function () {

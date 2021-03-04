@@ -41,7 +41,7 @@ Page({
         wx.cloud.downloadFile({
           fileID: res.data[i].fileID[0], // 文件 ID
           success: imagePath => {
-            // console.log('in downloading file', cnt)
+            // console.log('in downloading file', res)
             this.setData({
               markers: this.data.markers.concat({
                 latitude: res.data[cnt].formData.latitude,
@@ -49,7 +49,7 @@ Page({
                 iconPath: imagePath.tempFilePath,
                 width: 40,
                 height: 40,
-                id: cnt + 1
+                id: res.data[cnt]._id
               })
             })
             cnt += 1
@@ -149,6 +149,11 @@ Page({
 
       }
     });
+  },
+  markertap(e) {
+    console.log(e.markerId);
+    wx.navigateTo({
+      url: "../detail/detail?_id=" + e.markerId
+    })
   }
-
 })
