@@ -5,12 +5,25 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    isCase: {
+      type: Boolean,
+      value: false
+    },
+    showTel: {
+      type: Boolean,
+      value: false,
+    },
+    canDelete: {
+      type: Boolean,
+      value: true,
+    },
     imageData: {
       type: Array,
       value: [{
         src: "../../images/slide-images/南丹·邻里汇.png",
         title: "南丹·邻里汇",
-        _id: '123'
+        _id: '123',
+        date: '',
       }],
     }
   },
@@ -38,22 +51,30 @@ Component({
     },
 
     handleClick(e) {
+      var that = this
       wx.showModal({
         title: '提示',
         content: '删除后就找不回来了哦!',
         success(res) {
           if (res.confirm) {
-            console.log('用户点击确定')
-            handleClick(e);
-          } else if (res.cancel) {
-          }
+            that.handleRemove(e);
+          } else if (res.cancel) {}
         }
+      })
+    },
+    toDetail(e) {
+      const that = this
+      let url = `../detail/detail?_id=${e.currentTarget.dataset.id}&showTel=${that.data.showTel}&isCase=${that.data.isCase}`
+      console.log(url)
+      wx.navigateTo({
+        url: url,
       })
     },
 
     handleRemove(e) {
+      var that = this
       let id = e.target.dataset.id
-      // console.log(id)
+      console.log(id)
       // 两个同步的信号量，用于判断整个删除操作是否完成
       let isRemoved = false
       //数据库进行删除记录操作
@@ -63,7 +84,8 @@ Component({
           if (!isRemoved) {
             isRemoved = true
           } else {
-            this.renewData(id)
+            console.log("renew data1")
+            that.renewData(id)
           }
         }
       })
@@ -75,37 +97,41 @@ Component({
           if (!isRemoved) {
             isRemoved = true
           } else {
-            this.renewData(id)
+            console.log("renew data2", id)
+            that.renewData(id)
           }
         }
       })
     },
-    renewData(removeId) {
-      let cloneList = [...this.data.imageData]
-      console.log('in renew data', cloneList, len(cloneList))
 
-      for (let i = 0, len = len(cloneList); i < len; i++) {
+    renewData(removeId) {
+      console.log("in renewData", this.data.imageData)
+      let imageData = this.data.imageData
+      console.log('in renew data', imageData)
+
+      for (let i = 0, len = imageData.length; i < len; i++) {
         console.log('in for loop')
-        if (cloneList._id == removeId) {
+        if (imageData[i]._id == removeId) {
           console.log('in if condition')
-          cloneList.splice(i, 1)
+          imageData.splice(i, 1)
           break;
         }
       }
-      console.log(cloneList)
       this.setData({
-        imageData: cloneList
+        imageData: imageData
       })
     },
   },
 
-
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
-      console.log("component created", this.data)
       this.setData({
-        imageData: this.data.imageData
+        imageData: this.data.imageData,
+        canDelete: this.data.canDelete,
+        isLocal: this.data.isLocal,
+        showTel: this.data.showTel,
+        isCase: this.data.isCase
       })
     },
   }

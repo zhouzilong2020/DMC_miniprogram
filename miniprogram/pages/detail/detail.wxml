@@ -3,11 +3,15 @@
     <view class="weui-article">
       <view class="weui-article__h1">畸形空间详情</view>
       <view class="weui-article__section">
+        <view wx:if="{{title}}" class="weui-article__h2">{{title}}</view>
         <view class="weui-article__h2">{{date}}</view>
         <view class="weui-article__section">
           <view class="weui-article__h3">{{type}}</view>
+          <view wx:if="{{showTel}}" class="weui-article__h3">{{formData.mobile}}</view>
+          <process-bar step="{{step}}"></process-bar>
           <view class="weui-article__p">
-            <image class="weui-article__img" src="{{imageSrc}}" style="height: 180px" />
+            <image class="weui-article__img" src="{{imageSrc}}"
+              style="margin:0 0 autu; padding:0;height: 180px; width: 280px;" />
           </view>
           <view class="weui-article__p">
             {{description}}
@@ -16,5 +20,12 @@
         </view>
       </view>
     </view>
+  </view>
+  <!-- footer -->
+  <view class="footer weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+      <a href="javascript:home();" class="weui-footer__link">微新</a>
+    </view>
+    <view class="weui-footer__text">Copyright &copy; 2019-2021 城市“微新”团队</view>
   </view>
 </view>

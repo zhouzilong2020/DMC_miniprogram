@@ -11,29 +11,24 @@
   </swiper>
 
   <view class="index-tab">
-    <view class="active">周围案例</view>
-    <view >全部案例</view>
+    <view bindtap="changeStatus" class="{{activeness.reference?'active':''}}" id="0">参考案例</view>
+    <view bindtap="changeStatus" class="{{activeness.actual?'active':''}}" id="1">实际案例</view>
   </view>
-
-
-  <!-- 项目展示 -->
-  <project-list imageData="{{imageData}}" />
-
-  <!-- <view class='index-list'>
-    <view clas='index-list-item' wx:for=" {{listData}} " wx:key="index" bindtap="click">
-      <image mode='aspectFill' src="{{ item.projectImage}}"></image>
-      <view class="index-list-text">
-        <text>{{ item.projectName }}</text>
-        <text>{{ item.links }}</text>
-      </view>
-    </view>
-  </view> -->
+  
+  <!-- 参考项目展示 -->
+  <view wx:if="{{activeness.reference}}">
+    <project-list canDelete="{{false}}" imageData="{{referenceImageData}}" isCase="{{true}}" />
+  </view>
+  <!-- 实际案例 -->
+  <view wx:else>
+    <project-list canDelete="{{false}}" imageData="{{imageData}}" isCase="{{true}}" />
+  </view>
 
   <!-- footer -->
   <view class="footer weui-footer weui-footer_fixed-bottom">
     <view class="weui-footer__links">
       <a href="javascript:home();" class="weui-footer__link">微新</a>
     </view>
-    <view class="weui-footer__text">Copyright &copy; 2019-2020 城市“微新”团队</view>
+    <view class="weui-footer__text">Copyright &copy; 2019-2021 城市“微新”团队</view>
   </view>
 </view>

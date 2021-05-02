@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">畸形空间详情</view>
+      <view class="weui-article__section">
+        <view class="weui-article__h2">date</view>
+        <view class="weui-article__section">
+          <view class="weui-article__h3">type</view>
+          <view class="weui-article__p">
+            <image class="weui-article__img"  style="height: 180px" />
+          </view>
+          <view class="weui-article__p">
+            description
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

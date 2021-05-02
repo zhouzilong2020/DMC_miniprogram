@@ -57,6 +57,8 @@ Page({
         }],
         //   用户提交的表单信息
         formData: {
+            // 进度
+            step:0,
             type: '',
             latitude: '',
             longitude: '',
@@ -223,7 +225,6 @@ Page({
             sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
             success: function (res) {
                 // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-
             }
         })
     },
@@ -237,11 +238,12 @@ Page({
         // console.log('files', files)
         // 返回false可以阻止某次文件上传
     },
+
     uplaodFile(files) {
         //   console.log('upload files', files)
         // 文件上传的函数，返回一个promise
         return new Promise((resolve, reject) => {
-            // console.log("data:", this.data);
+            console.log("data:", this.data);
             for (let i = 0; i < files.tempFilePaths.length; i++) {
                 this.setData({
                     files: this.data.files.concat({

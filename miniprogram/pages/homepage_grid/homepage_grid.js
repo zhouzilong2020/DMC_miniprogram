@@ -15,6 +15,7 @@ Page({
     nickname: " ",
     logged: false,
     disabled: true,
+    userType:0,
   },
 
   /**
@@ -23,12 +24,12 @@ Page({
   onLoad: function (options) {
     //先检查是否有登录信息
     whoAmI().then(res => {
-      console.log(res)
       // 存储了登录信息, 直接获取
       this.setData({
         userPhoto: res.userPhoto,
         nickName: res.nickName,
         logged: true,
+        userType:res.userType,
       })
     }).catch(e => {
       console.log('get userInfo fail', e)
@@ -39,6 +40,7 @@ Page({
           userPhoto: res.userPhoto,
           nickName: res.nickName,
           logged: true,
+          userType:res.userType,
         })
       })
     })

@@ -1,50 +1,6 @@
 {
-  "miniprogramRoot": "miniprogram/",
-  "cloudfunctionRoot": "cloudfunctions/",
-  "setting": {
-    "urlCheck": true,
-    "es6": true,
-    "enhance": true,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "nodeModules": false,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "useIsolateContext": true,
-    "useCompilerModule": false,
-    "userConfirmedUseCompilerModuleSwitch": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true
-  },
-  "appid": "wx65c12d992ef99c25",
-  "projectname": "city-360",
-  "libVersion": "2.8.1",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-  "compileType": "miniprogram",
+  "setting": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
@@ -57,15 +13,14 @@
     "miniprogram": {
       "list": [
         {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+          "name": "index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
         },
         {
-          "id": 4,
-          "name": "pages/myProject/myProject",
-          "pathName": "pages/myProject/myProject",
+          "name": "pages/questionnaire/questionnaire",
+          "pathName": "pages/questionnaire/questionnaire",
           "query": "",
           "scene": null
         },
@@ -98,31 +53,27 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "index",
-          "pathName": "pages/index/index",
+          "name": "pages/rollPicture/rollPicture",
+          "pathName": "pages/rollPicture/rollPicture",
           "query": "",
           "scene": null
         },
         {
-          "id": 7,
-          "name": "pages/rollPicture_1/rollPicture",
-          "pathName": "pages/rollPicture_1/rollPicture",
+          "name": "pages/allProject/allProject",
+          "pathName": "pages/allProject/allProject",
           "query": "projectId=d1cc6d125f28c73a0046dfea2f8189ef",
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/homepage_grid/homepage_grid",
-          "pathName": "components/dialog/dialog",
+          "name": "components/switchCard/switchCard",
+          "pathName": "components/switchCard/switchCard",
           "query": "",
           "scene": null
         },
         {
-          "id": -1,
           "name": "detail",
           "pathName": "pages/detail/detail",
-          "query": "",
+          "query": "_id=17453ede606923c3008b66b06e056f9b&showTel=false&isCase=true",
           "scene": null
         },
         {

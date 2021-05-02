@@ -1,0 +1,35 @@
+/* components/process/process.wxss */
+.order_process {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  background-color: #fff;
+}
+
+.process_wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+.process {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.process_icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.process_line {
+  background: #eff3f6;
+  flex: 1;
+  height: 5rpx;
+}
+
+.process_name {
+  font-size: 24rpx;
+}

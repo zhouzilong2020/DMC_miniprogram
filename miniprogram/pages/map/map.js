@@ -17,46 +17,55 @@ Page({
       latitude: 31.282640,
       longitude: 121.501837,
     }],
+    _ids: []
 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onReady: function (options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    var cnt = 0;
+  onLoad: function () {
+    const that = this
     db.collection('images').orderBy('timestamp', 'asc').field({
       formData: true,
       fileID: true,
+      _id: true
     }).get().then((res) => {
-      for (var i = 0, len = res.data.length; i < len; i++) {
-        // 异步函数,注意同步
-        wx.cloud.downloadFile({
-          fileID: res.data[i].fileID[0], // 文件 ID
-          success: imagePath => {
-            // console.log('in downloading file', res)
-            this.setData({
-              markers: this.data.markers.concat({
-                latitude: res.data[cnt].formData.latitude,
-                longitude: res.data[cnt].formData.longitude,
-                iconPath: imagePath.tempFilePath,
-                width: 40,
-                height: 40,
-                id: res.data[cnt]._id
-              })
-            })
-            cnt += 1
-            // console.log('2')
-          }
-        })
+      var data = res.data
+      var fileList = []
+      for (var i = 0, len = data.length; i < len; i++) {
+        fileList.push(data[i].fileID[0])
       }
+      wx.cloud.getTempFileURL({
+        fileList: fileList,
+        success: res => {
+          var imgSrc = res.fileList
+          var result = []
+          var _ids = []
+          for (var i = 0, len = data.length; i < len; i++) {
+            result.push({
+              latitude: data[i].formData.latitude,
+              longitude: data[i].formData.longitude,
+              iconPath: imgSrc[i].tempFileURL,
+              width: 40,
+              height: 40,
+              id: i
+            })
+            _ids.push(data[i]._id)
+          }
+          that.setData({
+            markers: result,
+            _ids: _ids
+          })
+        }
+      })
     })
   },
   /**
@@ -151,9 +160,11 @@ Page({
     });
   },
   markertap(e) {
-    console.log(e.markerId);
+    const that = this
+    var _id = Number(e.detail.markerId)
+    var url = `../detail/detail?_id=${that.data._ids[_id]}&showTel=false&isCase=false`
     wx.navigateTo({
-      url: "../detail/detail?_id=" + e.markerId
+      url: url
     })
   }
 })

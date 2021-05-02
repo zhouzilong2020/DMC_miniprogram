@@ -1,1 +1,4 @@
 /* miniprogram/pages/detail/detail.wxss */
+.footer {
+  position: relative;
+}

@@ -1,0 +1,9 @@
+<!--components/switchCard/switchCard.wxml-->
+<view class="card"
+  style="position: absolute; left:{{left}}rpx; top:{{top}}rpx; z-index:{{isFirstCard?2:1}}; opacity:{{isFirstCard?1:0}}"
+  bindtouchstart="viewTouchInside" bindtouchmove="viewDidMove" bindtouchend="viewTouchUpDownInside"
+  animation="{{animation}}">
+  <view class="name">{{name}}</view>
+  <view class="location">{{location}}</view>
+  <image class="img" src="{{imgSrc}}" mode="cover"></image>
+</view>

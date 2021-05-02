@@ -25,17 +25,53 @@
 				</view>
 
 				<view class="weui-grid">
-					<view class="weui-grid__icon">
-						<text class="iconfont iconshanghutiaochawenjuanbiao"></text>
-					</view>
-					<view class="weui-grid__label">基本信息调查</view>
+					<navigator url="../rollPicture/rollPicture">
+						<view class="weui-grid__icon">
+							<text class="iconfont iconshanghutiaochawenjuanbiao"></text>
+						</view>
+						<view class="weui-grid__label">基本喜好调查</view>
+					</navigator>
 				</view>
+				<view class="weui-grid">
+					<navigator target="miniProgram" open-type="navigate" app-id="wxebadf544ddae62cb"
+						path="pages/survey/index?sid=8404472&hash=8f2b">
+						<view class="weui-grid__icon">
+							<text class="iconfont iconshanghutiaochawenjuanbiao"></text>
+						</view>
+						<view class="weui-grid__label">基本信息调查</view>
+					</navigator>
+				</view>
+
+
 				<view class="weui-grid">
 					<view class="weui-grid__icon">
 						<text class="iconfont iconlianxiwomen1"></text>
 					</view>
 					<view class="weui-grid__label">联系我们</view>
 				</view>
+
+				<!-- 超级用户权限 -->
+				<view wx:if="{{userType}}">
+					<!-- 这里可以尝试使用第三方编辑界面，最后直接给链接就好 -->
+					<view class="weui-grid">
+						<navigator url="../myProject/myProject">
+							<view class="weui-grid__icon">
+								<text class="iconfont iconshanghutiaochawenjuanbiao"></text>
+							</view>
+							<view class="weui-grid__label">添加新的案例</view>
+						</navigator>
+					</view>
+					<view class="weui-grid">
+						<navigator url="../allProject/allProject">
+							<view class="weui-grid__icon">
+								<text class="iconfont iconshanghutiaochawenjuanbiao"></text>
+							</view>
+							<view class="weui-grid__label">查看所有空间</view>
+						</navigator>
+					</view>
+
+				</view>
+
 
 			</view>
 		</view>
@@ -45,6 +81,6 @@
 		<view class="weui-footer__links">
 			<a href="javascript:home();" class="weui-footer__link">微新</a>
 		</view>
-		<view class="weui-footer__text">Copyright &copy; 2019-2020 城市“微新”团队</view>
+		<view class="weui-footer__text">Copyright &copy; 2019-2021 城市“微新”团队</view>
 	</view>
 </view>

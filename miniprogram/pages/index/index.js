@@ -1,103 +1,104 @@
 // miniprogram/pages/index/index.js
 const db = wx.cloud.database();
 const app = getApp();
-Page({
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    slideImages: [
-      "/images/slide-images/南丹·邻里汇.png",
-      "/images/slide-images/四平-同济新村院落空间.png",
-      "/images/slide-images/徐汇-衡复微空间.png"
-    ],
-    imageData: [{
-      src: "../../images/slide-images/南丹·邻里汇.png",
-      title: "南丹·邻里汇",
-      _id:'1'
-    }, {
-      src: "../../images/slide-images/四平-同济新村院落空间.png",
-      title: "四平-同济新村院落",
-      _id:'2'
-    }, {
-      src: "../../images/slide-images/徐汇-衡复微空间.png",
-      title: "徐汇-衡复微空间",
-      _id:'3'
-    }],
-
+    activeness: {
+      reference: 1,
+      actual: 0
+    },
+    slideImages: [],
+    referenceImageData: [],
+    imageData: null,
     indicatorDots: true,
     vertical: false,
     autoplay: true,
     interval: 2000,
     duration: 500
   },
-  regionchange(e) {
-    console.log(e.type)
+
+  onLoad: function () {
+
+    const that = this
+    that.requestData()
+    that.pushData()
   },
-  markertap(e) {
-    console.log(e.detail.markerId)
-  },
-  controltap(e) {
-    console.log(e.detail.controlId)
-  },
-  click: function(e){
-    console.log('e')
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
+  requestData: function () {
+    const that = this
+    db.collection('index_image').orderBy('_createTime', 'asc').get().then((res) => {
+      var fileList = []
+      var data = res.data
+      for (var i = 0, len = data.length; i < len; i++) {
+        fileList.push(data[i].src)
+      }
+      wx.cloud.getTempFileURL({
+        fileList: fileList,
+        success: res => {
+          var data = res.fileList
+          var result = []
+          for (var i = 0, len = data.length; i < len; i++) {
+            result.push(data[i].tempFileURL)
+          }
+          that.setData({
+            slideImages: result
+          })
+        }
+      })
+    })
+    db.collection('cases').orderBy('_createTime', 'asc').get().then((res) => {
+      var fileList = []
+      var data = res.data
+      for (var i = 0, len = data.length; i < len; i++) {
+        if (data[i].img_src.length) {
+          fileList.push(data[i].img_src[0])
+        } else {
+          fileList.push(data[i].img_src)
+        }
+      }
+      wx.cloud.getTempFileURL({
+        fileList: fileList,
+        success: res => {
+          var pathData = res.fileList
+          var result = []
+          for (var i = 0, len = pathData.length; i < len; i++) {
+            result.push({
+              src: pathData[i].tempFileURL,
+              title: data[i].title,
+              _id: data[i]._id
+            })
+          }
+          that.setData({
+            referenceImageData: result
+          })
+        }
+      })
+    })
 
   },
+  pushData: function () {
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  },
 
-  }
+  changeStatus(e) {
+    let id = e.currentTarget.id
+    if (id == '0') {
+      this.setData({
+        activeness: {
+          reference: true,
+          actual: false,
+        }
+      })
+    } else {
+      this.setData({
+        activeness: {
+          actual: true,
+          reference: false,
+        },
+      })
+    }
+  },
 })

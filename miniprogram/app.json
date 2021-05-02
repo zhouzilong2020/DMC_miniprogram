@@ -5,6 +5,7 @@
   },
   "pages": [
     "pages/index/index",
+    "pages/cases/cases1/cases1",
     "pages/editUserInfo/editUserInfo",
     "pages/uploadProject/uploadProject",
     "pages/homepage_grid/homepage_grid",
@@ -12,7 +13,10 @@
     "pages/mes_success/mes_success",
     "pages/myProject/myProject",
     "pages/map/map",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/allProject/allProject",
+    "pages/rollPicture/rollPicture",
+    "pages/questionnaire/questionnaire"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

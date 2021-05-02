@@ -1,0 +1,12 @@
+<!--components/process/process.wxml-->
+<view class='order_process'>
+	<view class='process_wrap' wx:for="{{processData}}" wx:key="_id">
+		<view class='process'>
+			<view class='process_line' style="background:{{item.start}}"></view>
+      <!-- 获取进度 -->
+			<image class='process_icon' src="{{step >= item.step ? icon.complete : icon.incomplete}}"></image>
+			<view class='process_line' style="background:{{item.end}}"></view>
+		</view>
+		<text class='process_name'>{{item.name}}</text>
+	</view>
+</view>
