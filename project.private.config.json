@@ -13,8 +13,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "index",
-          "pathName": "pages/index/index",
+          "name": "pages/test-page/test-page",
+          "pathName": "pages/test-page/test-page",
           "query": "",
           "scene": null
         },
