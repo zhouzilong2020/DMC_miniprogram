@@ -53,6 +53,7 @@ export const tableKey = {
     mobile: 'mobile',
     location: 'location',
     type: 'type',
+    avatar: 'avatar',
 
     // project key
     relevent_project_id: 'relevent_project',
@@ -65,6 +66,9 @@ export const tableKey = {
     // message key
     unread_message_id: 'unread_message_id',
     read_message_id: 'read_message_id',
+
+    // comment key
+    punlished_comment_id: 'punlished_comment_id',
 
     create_time,
     update_time,
@@ -98,11 +102,15 @@ export const tableKey = {
 
     name: 'name',
     status: 'status',
+    status_time: 'status_time',
     image: 'image',
     location: 'location',
 
     // questionnaire key
     questionnaire_id: 'questionnaire_id',
+
+    // user_id
+    publish_user_id: 'publish_user_id',
 
     view_cnt,
     create_time,
@@ -120,6 +128,9 @@ export const tableKey = {
       detail: 'detail',
     },
 
+    // comment key
+    relevent_comment_id: 'relevent_comment_id',
+
     view_cnt,
     create_time,
     update_time,
@@ -130,6 +141,10 @@ export const tableKey = {
     id,
 
     detail: 'detail',
+
+    // user key
+    published_user_name: 'published_user_id',
+    published_user_avatar: 'published_user_avatar',
 
     create_time,
     update_time,
