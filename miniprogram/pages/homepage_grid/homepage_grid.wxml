@@ -3,8 +3,8 @@
 
 	<view class="user-info">
 		<image src="{{userPhoto}}"></image>
-		<button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"
-			disabled="{{disabled}}">授权登录</button>
+		<button wx:if="{{!logged}}" bindtap="getUserProfile" disabled="{{disabled}}">授权登录</button>
+
 		<view wx:else>
 			<text class='user-name'>欢迎您！{{nickName}}</text>
 			<view class="weui-grids">

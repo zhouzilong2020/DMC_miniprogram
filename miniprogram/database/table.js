@@ -5,7 +5,7 @@ const view_cnt = 'view_cnt'
 
 export const tableKey = {
   carousel: {
-    image: image,
+    image: 'image',
     location: 'location',
 
     // news_key
@@ -34,7 +34,6 @@ export const tableKey = {
   designer: {
     _name: 'designer',
     id,
-
     name: 'name',
     label: 'label',
     style: 'style',
@@ -47,29 +46,23 @@ export const tableKey = {
   user: {
     _name: 'user',
     id,
-
     open_id: 'open_id',
     name: 'name',
     mobile: 'mobile',
     location: 'location',
     type: 'type',
     avatar: 'avatar',
-
     // project key
-    relevent_project_id: 'relevent_project',
-    my_project_id: 'my_project_id',
-
+    relevent_project_id_list: 'relevent_project_list',
+    my_project_id_list: 'my_project_id_list',
     // questionnaire key
-    todo_questionnarie_id: 'todo_questionnarie_id',
-    done_questionnarie_id: 'done_questionnarie_id',
-
+    todo_questionnarie_id_list: 'todo_questionnarie_id_list',
+    done_questionnarie_id_list: 'done_questionnarie_id_list',
     // message key
-    unread_message_id: 'unread_message_id',
-    read_message_id: 'read_message_id',
-
+    unread_message_id_list: 'unread_message_id_list',
+    read_message_id_list: 'read_message_id_list',
     // comment key
-    punlished_comment_id: 'punlished_comment_id',
-
+    punlished_comment_id_list: 'punlished_comment_id_list',
     create_time,
     update_time,
   },
@@ -107,9 +100,9 @@ export const tableKey = {
     location: 'location',
 
     // questionnaire key
-    questionnaire_id: 'questionnaire_id',
+    questionnaire_id_list: 'questionnaire_id_list',
 
-    // user_id
+    // user key
     publish_user_id: 'publish_user_id',
 
     view_cnt,
@@ -129,7 +122,7 @@ export const tableKey = {
     },
 
     // comment key
-    relevent_comment_id: 'relevent_comment_id',
+    relevent_comment_id_list: 'relevent_comment_id_list',
 
     view_cnt,
     create_time,

@@ -33,7 +33,7 @@
   },
   "appid": "wx65c12d992ef99c25",
   "projectname": "city-360",
-  "libVersion": "2.8.1",
+  "libVersion": "2.16.1",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",

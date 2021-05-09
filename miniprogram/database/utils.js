@@ -15,10 +15,12 @@ export function getAttrMapping(key, value) {
   for (var _key in key) {
     if (value[_key]) {
       _key_value_map[_key] = value[_key]
-    } else if (_key in systemDateAttr) { // 如果字段是系统添加字段
+    } else if (systemDateAttr.includes(_key)) { // 如果字段是系统添加字段
       _key_value_map[_key] = _cur_date
-    } else if (env === 'debug') {
-      console.log(`missing value of ${_key}`)
+    } else if (_key.includes('list')) {
+      _key_value_map[_key] = []
+    } else {
+      _key_value_map[_key] = null
     }
   }
   return _key_value_map

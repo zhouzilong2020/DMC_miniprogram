@@ -1,10 +1,15 @@
 // miniprogram/pages/homepage/homepage.js
 const app = getApp(); //拿到app对象，得到全剧对象
-const db = wx.cloud.database();
+const db = wx.cloud.database()
 import {
   login,
   whoAmI,
 } from '../../utils/userInfo'
+
+import {
+  addUser
+} from '../../database/userInfo';
+
 Page({
 
   /**
@@ -15,7 +20,7 @@ Page({
     nickname: " ",
     logged: false,
     disabled: true,
-    userType:0,
+    userType: 0,
   },
 
   /**
@@ -29,10 +34,9 @@ Page({
         userPhoto: res.userPhoto,
         nickName: res.nickName,
         logged: true,
-        userType:res.userType,
+        userType: res.userType,
       })
     }).catch(e => {
-      console.log('get userInfo fail', e)
       // 没有存储登录信息,重新登录
       login().then(res => {
         console.log(res)
@@ -40,7 +44,11 @@ Page({
           userPhoto: res.userPhoto,
           nickName: res.nickName,
           logged: true,
-          userType:res.userType,
+          userType: res.userType,
+        })
+      }).catch(err => {
+        this.setData({
+          disabled: false,
         })
       })
     })
@@ -96,40 +104,18 @@ Page({
 
   },
 
-  bindGetUserInfo(e) {
-    wx.showLoading({
-      title: '正在授权',
+  getUserProfile: function (e) {
+    wx.getUserProfile({
+      desc: 'desc',
+      success: res => {
+        const userInfo = res.userInfo
+        addUser(null, userInfo)
+          .then(res => {
+            console.log(res)
+          }).catch(err => {
+            console.log(err)
+          })
+      }
     })
-    console.log(e);
-    let userInfo = e.detail.userInfo;
-    if (!this.data.logged && userInfo) { //创建一个用户的表
-      db.collection("users").add({
-        data: {
-          userPhoto: userInfo.avatarUrl,
-          nickName: userInfo.nickName,
-          signature: " ",
-          phoneNumber: ' ',
-          wechatNumber: " ",
-          address: " ",
-          time: new Date()
-        }
-      }).then((res) => { //
-        db.collection('users').doc(res._id).get().then((res) => {
-          app.userInfo = Object.assign(app.userInfo, res.data);
-          this.setData({
-            userPhoto: app.userInfo.userPhoto,
-            nickName: app.userInfo.nickName,
-            logged: true
-          });
-        });
-        console.log(res);
-      });
-    }
-    wx.showToast({
-      title: '授权成功',
-      icon: 'success',
-    });
-  }
-  
-
+  },
 })

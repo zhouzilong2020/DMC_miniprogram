@@ -14,11 +14,10 @@ import {
  * @param {*} payload 
  */
 export function getReleventPublishedProject(context, payload) {
-  const project = tableKey.project
   return new Promise((resolve, reject) => {
     try {
       var _project_ids = payload.relevent_project_id.concat(payload.published_project_id)
-      db.collection(project._name).orderBy(project.update_time, 'asc').where({
+      db.collection('project').orderBy('update_time', 'asc').where({
         _id: _.in(_project_ids)
       }).get({
         success: (res) => {
@@ -40,25 +39,16 @@ export function getReleventPublishedProject(context, payload) {
  * @param {*} payload 由需要上传的project所有的属性，这里的img中的url应该是已经上传完毕的云数据库中的url
  */
 export function publishProject(context, payload) {
-  const project = tableKey.project
-  const user = tableKey.user
-
   return new Promise((resolve, reject) => {
     try {
-      var _user_id = payload.user_id
-      if (!_user_id) {
-        reject('no user_id')
-      }
-      var _new_project = getAttrMapping(project, {
+      var _new_project = {
         ...payload,
-        // 改写user_id
-        [project.publish_user_id]: _user_id
-      })
+      }
       // 更新project 特殊字段
       _new_project[project.status_time] = _new_project[project.create_time]
       _new_project[project.status] = 0
 
-      db.collection(project._name)
+      db.collection('project')
         .add({
           data: {
             ..._new_project
@@ -66,10 +56,10 @@ export function publishProject(context, payload) {
           success: (res) => {
             var _new_project_id = _res.data._id
             // 向user表中添加该项目
-            db.collection(user._name).doc(_user_id).update({
+            db.collection('user').doc(_user_id).update({
               data: {
-                [user.my_project_id]: _.push(_new_project_id),
-                [user.update_time]: new Date()
+                my_project_id_list: _.push(_new_project_id),
+                update_time: new Date()
               },
               success: (res) => {
                 resolve(res)
