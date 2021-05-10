@@ -1,4 +1,7 @@
 import {
+  db
+} from '../../utils/config'
+import {
   whoAmI,
   login
 } from '../../utils/userInfo'
@@ -13,9 +16,17 @@ Page({
     console.log(a)
     console.log(typeof (a))
   },
-  onLoad() {
-    var a = ['a', 2]
-    console.log(a.includes(2))
+  async onLoad() {
+    var _res = null
+    db.collection('0001test')
+      .get({
+        success: res => {
+          _res = res
+          console.log(_res)
+        }
+      })
+
+
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认

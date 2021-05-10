@@ -4,6 +4,7 @@ const create_time = 'create_time'
 const view_cnt = 'view_cnt'
 
 export const tableKey = {
+  // cms发布
   carousel: {
     image: 'image',
     location: 'location',
@@ -14,34 +15,67 @@ export const tableKey = {
     create_time,
     update_time,
   },
-
+  // cms发布
   example_project: {
     _name: 'example_project',
 
     id,
-    content: {
-      title: 'title',
-      subtitle: 'subtitle',
-      image: 'image',
-      detail: 'detail',
-    },
+    content: 'content',
+    title: 'title',
+    subtitle: 'subtitle',
+    image: 'image',
+
 
     view_cnt,
     create_time,
     update_time,
   },
-
+  // cms发布
   designer: {
     _name: 'designer',
     id,
     name: 'name',
-    label: 'label',
+    label_list: 'label',
     style: 'style',
     experience: 'experience',
 
     update_time,
     create_time,
   },
+  // cms发布
+  questionnaire: {
+    _name: 'questionnaire',
+    id,
+
+    link: 'link',
+
+    // project key
+    relevent_project_id: 'relevent_project_id',
+
+    view_cnt,
+    create_time,
+    update_time,
+  },
+  // cms发布
+  news: {
+    _name: 'news',
+    id,
+
+
+    title: 'title',
+    subtitle: 'subtitle',
+    image_list: 'image_list',
+    content: 'content',
+
+
+    // comment key
+    relevent_comment_id_list: 'relevent_comment_id_list',
+
+    view_cnt,
+    create_time,
+    update_time,
+  },
+
 
   user: {
     _name: 'user',
@@ -63,17 +97,6 @@ export const tableKey = {
     read_message_id_list: 'read_message_id_list',
     // comment key
     punlished_comment_id_list: 'punlished_comment_id_list',
-    create_time,
-    update_time,
-  },
-
-  questionnaire: {
-    _name: 'questionnaire',
-    id,
-
-    link: 'link',
-
-    view_cnt,
     create_time,
     update_time,
   },
@@ -104,25 +127,6 @@ export const tableKey = {
 
     // user key
     publish_user_id: 'publish_user_id',
-
-    view_cnt,
-    create_time,
-    update_time,
-  },
-
-  news: {
-    _name: 'news',
-    id,
-
-    content: {
-      title: 'title',
-      subtitle: 'subtitle',
-      image: 'image',
-      detail: 'detail',
-    },
-
-    // comment key
-    relevent_comment_id_list: 'relevent_comment_id_list',
 
     view_cnt,
     create_time,
