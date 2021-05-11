@@ -1,28 +1,28 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="index">
   <!-- 页顶轮播 -->
-  <swiper class="index-swiper" indicator-dots="{{true}}" autoplay="{{autoplay}}" interval="{{interval}}"
-    duration="{{duration}}" circular="{{true}}">
-    <block wx:for="{{slideImages}}" wx:key="*this">
-      <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="150" mode="widthFix"></image>
-      </swiper-item>
-    </block>
-  </swiper>
-
-  <view class="index-tab">
-    <view bindtap="changeStatus" class="{{activeness.reference?'active':''}}" id="0">参考案例</view>
-    <view bindtap="changeStatus" class="{{activeness.actual?'active':''}}" id="1">实际案例</view>
+  <carousel></carousel>
+  <view class="main">
+    <tab-group box-class="tabs"></tab-group>
+    <view class="container projects" >
+      <project-item wx:for="{{[1,2,3,4]}}"></project-item>
+    </view>
+    <view class="container designers">
+      <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
+    </view>
   </view>
-  
-  <!-- 参考项目展示 -->
+
+
+
+
+  <!-- 参考项目展示 
   <view wx:if="{{activeness.reference}}">
     <project-list canDelete="{{false}}" imageData="{{referenceImageData}}" isCase="{{true}}" />
   </view>
-  <!-- 实际案例 -->
+  <!-- 实际案例
   <view wx:else>
     <project-list canDelete="{{false}}" imageData="{{imageData}}" isCase="{{true}}" />
-  </view>
+  </view>-->
 
   <!-- footer -->
   <view class="footer weui-footer weui-footer_fixed-bottom">

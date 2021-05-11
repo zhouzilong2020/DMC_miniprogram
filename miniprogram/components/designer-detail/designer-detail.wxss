@@ -1,0 +1,53 @@
+/* components/designer-detail/designer-detail.wxss */
+.designer-detail {
+   background: white;
+   border-radius: 0 0 47rpx 47rpx;
+}
+
+.designer-detail::before {
+  content: "";
+  background: rgb(255, 141, 141);
+  display: block;
+  height: 82rpx;
+}
+
+.detail-header {
+  position: relative;
+  padding-left: 176rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  background: rgb(255, 141, 141);
+  border-radius: 50%;
+  border: 9rpx solid white;
+  width: 127rpx;
+  height: 127rpx;
+  position: absolute;
+  left: 18rpx;
+  bottom: 0;
+}
+
+.label {
+  border-radius: 127rpx;
+  background: rgb(238, 238, 238);
+  padding: 0 16rpx;
+}
+
+.detail-main{
+  padding: 43rpx;
+  padding-bottom: 22rpx;
+}
+
+.detail-block+.detail-block{
+  margin-top: 27rpx;
+}
+
+.detail-block text{
+   display: block;
+}
+
+.detail-block text:first-child{
+  margin-bottom: 11rpx;
+}

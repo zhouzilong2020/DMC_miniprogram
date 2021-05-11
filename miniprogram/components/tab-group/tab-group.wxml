@@ -1,0 +1,10 @@
+<!--components/tab-group/tab-group.wxml-->
+<view class="tab-group box-class">
+  <block wx:for="{{tabs}}" wx:for-item="tab" wx:for-index="i" wx:key="label">
+    <view class="tab {{curTabIdx==i?'is-focus':''}}" id="{{i}}" bindtap="changeTab">
+      <text class="fs16" id="label-{{i}}">{{tab.label}}</text>
+      <text class="{{tab.icon}} fs19"></text>
+    </view>
+  </block>
+  <view class="active-bar" id="activeBar" style="width: {{barWidth}};left:{{barLeft}}"></view>
+</view>

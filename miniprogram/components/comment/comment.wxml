@@ -1,0 +1,15 @@
+<!--components/comment/comment.wxml-->
+<view class="comment">
+  <image class="avatar"></image>
+  <view class="comment-main" style="margin-left:18rpx;margin-top:16rpx">
+    <text class="fs16 bold">我是一个昵称</text>
+    <text class="fs14" style="margin-top:16rpx">真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！真好！</text>
+    <view class="flex justify-space-between align-middle fs12 gray-weak" style="margin-top:20rpx">
+      <text>2020-06-21</text>
+      <view class="flex align-middle">
+        <text class="fs19 far fa-heart"></text>
+        <text style="margin-left:16rpx">206</text>
+      </view>
+    </view>
+  </view>
+</view>

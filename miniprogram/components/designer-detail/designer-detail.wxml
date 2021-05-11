@@ -1,0 +1,24 @@
+<!--components/designer-detail/designer-detail.wxml-->
+<view class="designer-detail gray">
+  <view class="detail-header">
+    <image class="avatar"></image>
+    <text class="fs18 black bold">张丽</text>
+    <view>
+      <text class="label fs12">同济大学城市规划与建筑学院</text>
+      <text class="label fs12">大三本科生</text>
+    </view>
+  </view>
+  <view class="detail-main fs14">
+    <view class="detail-block">
+      <text class="black bold">设计风格</text>
+      <text>对自己的热情诚实，做一个有着持续高产热情的创作者。</text>
+    </view>
+    <view class="detail-block">
+      <text class="black bold">设计经历</text>
+      <text>2018.04-至今 同济大学城市规划与建筑学院</text>
+      <text>一个设计的什么奖 2019.8</text>
+      <text>另外的一个设计的什么奖 2020.8</text>
+      <text>另外的另外的一个设计的什么奖 2021.1</text>
+    </view>
+  </view>
+</view>

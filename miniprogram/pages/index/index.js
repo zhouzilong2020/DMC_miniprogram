@@ -7,11 +7,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    activeness: {
-      reference: 1,
-      actual: 0
-    },
-    slideImages: [],
+    tabs: [{
+      label: '示范项目',
+      icon: 'fas fa-info'
+    }, {
+      label: '近期动态',
+      icon: 'fas fa-building'
+    }, {
+      label: '设计师',
+      icon: 'fas fa-pen'
+    }
+    ],
+    curTabIdx: 0,
     referenceImageData: [],
     imageData: null,
     indicatorDots: true,
@@ -29,26 +36,6 @@ Page({
   },
   requestData: function () {
     const that = this
-    db.collection('index_image').orderBy('_createTime', 'asc').get().then((res) => {
-      var fileList = []
-      var data = res.data
-      for (var i = 0, len = data.length; i < len; i++) {
-        fileList.push(data[i].src)
-      }
-      wx.cloud.getTempFileURL({
-        fileList: fileList,
-        success: res => {
-          var data = res.fileList
-          var result = []
-          for (var i = 0, len = data.length; i < len; i++) {
-            result.push(data[i].tempFileURL)
-          }
-          that.setData({
-            slideImages: result
-          })
-        }
-      })
-    })
     db.collection('cases').orderBy('_createTime', 'asc').get().then((res) => {
       var fileList = []
       var data = res.data
@@ -83,22 +70,9 @@ Page({
 
   },
 
-  changeStatus(e) {
-    let id = e.currentTarget.id
-    if (id == '0') {
-      this.setData({
-        activeness: {
-          reference: true,
-          actual: false,
-        }
-      })
-    } else {
-      this.setData({
-        activeness: {
-          actual: true,
-          reference: false,
-        },
-      })
-    }
+  changeTab(e) {
+    this.setData({
+      curTabIdx:e.currentTarget.id
+    })
   },
 })
