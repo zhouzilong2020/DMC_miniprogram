@@ -41,7 +41,7 @@ export async function login() {
         // 数据库中有该用户
         if (res.data.length) {
           var _user_info = res.data[0]
-          console.log('in getting userIndo res', _user_info)
+          // console.log('in getting userIndo res', _user_info)
           wx.setStorageSync('userInfo', _user_info)
           resolve(_user_info)
         } else { // 数据库中没有该用户，插入一条新的，这里需要getUserProfile，需要获取用户权限

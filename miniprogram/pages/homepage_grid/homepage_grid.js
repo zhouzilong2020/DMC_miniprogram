@@ -31,20 +31,20 @@ Page({
     whoAmI().then(res => {
       // 存储了登录信息, 直接获取
       this.setData({
-        userPhoto: res.userPhoto,
-        nickName: res.nickName,
+        userPhoto: res.avatar,
+        nickName: res.nickname,
         logged: true,
-        userType: res.userType,
+        userType: res.type,
       })
     }).catch(e => {
       // 没有存储登录信息,重新登录
       login().then(res => {
         console.log(res)
         this.setData({
-          userPhoto: res.userPhoto,
-          nickName: res.nickName,
+          userPhoto: res.avatar,
+          nickName: res.nickname,
           logged: true,
-          userType: res.userType,
+          userType: res.type,
         })
       }).catch(err => {
         this.setData({
@@ -111,9 +111,15 @@ Page({
         const userInfo = res.userInfo
         addUser(null, userInfo)
           .then(res => {
-            console.log(res)
-          }).catch(err => {
-            console.log(err)
+            login().then(res => {
+              console.log(res)
+              this.setData({
+                userPhoto: res.avatar,
+                nickName: res.nickname,
+                logged: true,
+                userType: res.type,
+              })
+            })
           })
       }
     })
