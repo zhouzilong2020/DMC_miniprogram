@@ -8,17 +8,19 @@ import {
 
 export function addUser(context, payload) {
   const _cur_date = new Date()
+  console.log(payload)
   return new Promise((resolve, reject) => {
     try {
       db.collection('user').add({
         data: {
-          name: payload.nickName,
+          nickname: payload.nickName,
           avatar: payload.avatarUrl,
           mobile: null,
           location: null,
-          type: 'citizen',
+          // 1 for citizen
+          type: 1,
           // project key
-          relevent_project_id_list: [],
+          relevant_project_id_list: [],
           my_project_id_list: [],
           // questionnaire key
           todo_questionnarie_id_list: [],
@@ -28,6 +30,9 @@ export function addUser(context, payload) {
           read_message_id_list: [],
           // comment key
           punlished_comment_id_list: [],
+
+          // time
+          last_login_time: _cur_date,
           create_time: _cur_date,
           update_time: _cur_date,
         },

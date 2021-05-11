@@ -13,10 +13,10 @@ import {
  * @param {*} context 
  * @param {*} payload 
  */
-export function getReleventPublishedProject(context, payload) {
+export function getrelevantPublishedProject(context, payload) {
   return new Promise((resolve, reject) => {
     try {
-      var _project_ids = payload.relevent_project_id.concat(payload.published_project_id)
+      var _project_ids = payload.relevant_project_id.concat(payload.published_project_id)
       db.collection('project').orderBy('update_time', 'asc').where({
         _id: _.in(_project_ids)
       }).get({

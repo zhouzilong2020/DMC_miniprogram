@@ -16,7 +16,7 @@ import {
 export function getNewsComment(context, payload) {
   return new Promise((resolve, reject) => {
     try {
-      const _comment_ids = payload.relevent_comment_id
+      const _comment_ids = payload.relevant_comment_id
       db.collection('comment').orderBy('create_time', 'desc').where({
         _id: _.in(_comment_ids)
       }).get({
@@ -52,7 +52,7 @@ export function makeComment(context, payload) {
           // 向news中关联新数据
           db.collection('news').doc(_news_id).update({
             data: {
-              relevent_comment_id_list: _.push(_new_comment_id)
+              relevant_comment_id_list: _.push(_new_comment_id)
             },
             success: (res) => {
               resolve(res)

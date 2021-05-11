@@ -50,7 +50,10 @@ export const tableKey = {
     link: 'link',
 
     // project key
-    relevent_project_id: 'relevent_project_id',
+    relevant_project_id: 'relevant_project_id',
+
+    // 是否推送过消息？
+    is_pushed_message: "is_pushed_message",
 
     view_cnt,
     create_time,
@@ -69,7 +72,7 @@ export const tableKey = {
 
 
     // comment key
-    relevent_comment_id_list: 'relevent_comment_id_list',
+    relevant_comment_id_list: 'relevant_comment_id_list',
 
     view_cnt,
     create_time,
@@ -80,14 +83,14 @@ export const tableKey = {
   user: {
     _name: 'user',
     id,
-    open_id: 'open_id',
-    name: 'name',
+    open_id: '_openid',
+    nickname: 'nickname',
     mobile: 'mobile',
     location: 'location',
     type: 'type',
     avatar: 'avatar',
     // project key
-    relevent_project_id_list: 'relevent_project_list',
+    relevant_project_id_list: 'relevant_project_list',
     my_project_id_list: 'my_project_id_list',
     // questionnaire key
     todo_questionnarie_id_list: 'todo_questionnarie_id_list',
@@ -97,6 +100,9 @@ export const tableKey = {
     read_message_id_list: 'read_message_id_list',
     // comment key
     punlished_comment_id_list: 'punlished_comment_id_list',
+
+
+    last_login_time:'last_login_time',
     create_time,
     update_time,
   },
@@ -116,17 +122,18 @@ export const tableKey = {
     _name: 'project',
     id,
 
-    name: 'name',
+    title: 'title',
     status: 'status',
-    status_time: 'status_time',
+    status_time_list: 'status_time_list',
     image: 'image',
     location: 'location',
 
     // questionnaire key
-    questionnaire_id_list: 'questionnaire_id_list',
+    relevant_questionnaire_id_list: 'relevant_questionnaire_id_list',
 
     // user key
     publish_user_id: 'publish_user_id',
+    relevant_user_id: 'relevant_user_id',
 
     view_cnt,
     create_time,
