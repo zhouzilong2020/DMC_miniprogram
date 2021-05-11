@@ -123,5 +123,34 @@ Page({
           })
       }
     })
-  },
+    console.log(e);
+    let userInfo = e.detail.userInfo;
+    if (!this.data.logged && userInfo) { //创建一个用户的表
+      db.collection("users").add({
+        data: {
+          userPhoto: userInfo.avatarUrl,
+          nickName: userInfo.nickName,
+          signature: " ",
+          phoneNumber: ' ',
+          wechatNumber: " ",
+          address: " ",
+          time: new Date()
+        }
+      }).then((res) => { //
+        db.collection('users').doc(res._id).get().then((res) => {
+          app.userInfo = Object.assign(app.userInfo, res.data);
+          this.setData({
+            userPhoto: app.userInfo.userPhoto,
+            nickName: app.userInfo.nickName,
+            logged: true
+          });
+        });
+        console.log(res);
+      });
+    }
+    wx.showToast({
+      title: '授权成功',
+      icon: 'success',
+    });
+  }
 })

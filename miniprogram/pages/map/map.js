@@ -161,6 +161,7 @@ Page({
   },
   markertap(e) {
     const that = this
+    console.log(e)
     var _id = Number(e.detail.markerId)
     var url = `../detail/detail?_id=${that.data._ids[_id]}&showTel=false&isCase=false`
     wx.navigateTo({

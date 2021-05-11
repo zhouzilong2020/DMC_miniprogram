@@ -1,0 +1,31 @@
+<!--components/carousel/carousel.wxml-->
+<view class="carousel">
+  <swiper class="swiper" indicator-dots="{{false}}" autoplay="{{true}}" circular="{{true}}"
+    bindanimationfinish="changeFinish" bindtransition="change">
+    <block wx:for="{{slideImages}}" wx:for-index="i" wx:key="*this">
+      <swiper-item class="swiper-item">
+        <view class="carousel-item regular white {{currentIdx==i?'':'is-out'}}">
+          <text class="fs12 white-weak">实际改造项目</text>
+          <text class="fs28 bold" style="top: 74rpx;">这是一个示例项目名称第一行实际改造项目</text>
+          <text class="fs20" style="bottom: 172rpx;">示例地点</text>
+          <text class="fs14" style="bottom: 141rpx;">2021-05-05</text>
+          <image src="{{item}}" mode="widthFix"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="indicator-dots" style="bottom:172rpx">
+    <block wx:for="{{slideImages}}" wx:for-index="i" wx:key="*this">
+      <view class="indicator-dot  {{currentIdx==i?'is-focus':''}}"></view>
+    </block>
+  </view>
+  <view class="search" style="bottom:85rpx">
+    <input class="fs18" placeholder="搜索改造项目/设计师"></input>
+    <text class="fas fa-search gray fs18" style="left:29rpx"></text>
+    <text class="vertical-line" style="right:80rpx;"></text>
+    <view class="fa-stack-fs18 gray" style="right:22rpx">
+      <text class="fas fa-expand fa-stack-1x fs18"></text>
+      <text class="fas fa-minus fa-stack-1x fs14"></text>
+    </view>
+  </view>
+</view>

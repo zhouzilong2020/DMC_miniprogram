@@ -1,5 +1,9 @@
 {
   "usingComponents": {
-    "project-list": "../../components/project/project"
+    "project-list": "../../components/project/project",
+    "tab-group":"../../components/tab-group/tab-group",
+    "project-item":"../../components/project-item/project-item",
+    "carousel":"../../components/carousel/carousel",
+    "designer-item":"../../components/designer-item/designer-item"
   }
 }

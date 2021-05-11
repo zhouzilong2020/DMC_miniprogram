@@ -1,0 +1,26 @@
+/* components/designer-item/designer-item.wxss */
+.image{
+  border-radius: 18rpx;
+  height: 250rpx;
+  width: 100%;
+  background: #FF8D8D;
+  position: relative;
+  display: block;
+}
+
+.image::before{
+  content: attr(data-name);
+  font-size: 33rpx;
+  position: absolute;
+  top: 65rpx;
+  left: 25rpx;
+}
+
+.image::after{
+  content: attr(data-title);
+  white-space: pre;
+  font-size: 22rpx;
+  position: absolute;
+  top: 121rpx;
+  left: 25rpx;
+}

@@ -1,2 +1,110 @@
 @import "style/iconfont/iconfont.wxss";
 @import "style/weui.wxss";
+@import "style/fontawesome/font-awesome.wxss";
+@import "style/materialdesign/materialdesign.wxss";
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+.align-self-end{
+  align-self:flex-end;
+}
+
+text,.regular {
+  font-family: PingFangSC-regular;
+  font-weight: normal;
+}
+
+.bold {
+  font-family: PingFangSC-bold;
+  font-weight: bold;
+}
+
+.fs10 {
+  font-size: 18rpx;
+}
+
+.fs11 {
+  font-size: 20rpx;
+}
+
+.fs12 {
+  font-size: 22rpx;
+}
+
+.fs14 {
+  font-size: 25rpx;
+}
+
+.fs16 {
+  font-size: 29rpx;
+}
+
+.fs18 {
+  font-size: 33rpx;
+}
+
+.fs19 {
+  font-size: 34rpx;
+}
+
+.fs20 {
+  font-size: 36rpx;
+}
+
+.fs28 {
+  font-size: 51rpx;
+}
+
+.black{
+  color: black;
+}
+
+.black-weak {
+  color: rgba(167, 168, 167, 100);
+}
+
+.white {
+  color: white;
+}
+
+.white-weak {
+  color: rgba(255, 255, 255, 0.49);
+}
+
+.gray {
+  color: #6A6A6A;
+}
+
+.gray-weak {
+  color: rgba(198, 199, 198, 100);
+}
+
+.blue {
+  color: rgba(84, 159, 223, 100);
+}
+
+.blue-weak {
+  color: rgba(84, 159, 223, 0.3);
+}
+
+.red{
+  color:rgb(226, 113, 113);
+}

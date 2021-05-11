@@ -1,56 +1,42 @@
 /* miniprogram/pages/index/index.wxss */
-.index-swiper {
-  height: 400rpx;
-  margin: 20rpx;
-  border-radius: 10rpx;
-  overflow: hidden;
+.index {
+  background: #EEEEEE;
 }
 
-.index-swiper image {
-  width: 100%;
-  border-radius: 10rpx;
-  overflow: hidden;
+
+.main {
+  background: #FDFDFD;
+  border-radius: 47rpx;
+  background: rgba(253, 253, 253, 100);
+  box-shadow: 0 4rpx 11rpx 0 rgba(230, 230, 230, 40);
+  position: relative;
+  bottom: 47rpx;
 }
 
-.index-tab {
-  display: flex;
+.tabs {
+  border-radius: 47rpx 47rpx 0 0;
+  padding: 22rpx 54rpx 0;
+  box-sizing: border-box;
 }
 
-.index-tab view {
-  flex: 1;
-  text-align: center;
-  padding: 10rpx;
-  margin: 10rpx
+.container {
+  border-radius: 0 0 47rpx 47rpx;
+  display: grid;
+
 }
 
-.index-tab view.active {
-  border-bottom: 1px red solid;
+.container.projects {
+  padding: 29rpx 25rpx 51rpx;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 13rpx;
+  row-gap: 18rpx;
 }
 
-.index-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.index-list-item {
-  width: 50%;
-  margin: 10rpx 0;
-}
-
-.index-list-item image {
-  width: 90%;
-  height: 300rpx;
-  margin: 0 auto;
-  display: block;
-  border-radius: 10rpx;
-  overflow: hidden;
-}
-
-.index-list-text {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+.container.designers{
+  padding: 22rpx 40rpx 51rpx;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 18rpx;
+  row-gap: 25rpx;
 }
 
 .footer {

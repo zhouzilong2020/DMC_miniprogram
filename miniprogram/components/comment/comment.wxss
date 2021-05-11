@@ -1,0 +1,19 @@
+/* components/comment/comment.wxss */
+.comment{
+  padding: 36rpx;
+  background: white;
+  display: flex;
+}
+
+.avatar{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  background: rgb(255, 141, 141);
+  flex-shrink: 0;
+}
+
+.comment-main{
+  display: flex;
+  flex-direction: column;
+}

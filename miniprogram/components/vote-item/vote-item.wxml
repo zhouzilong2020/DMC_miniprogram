@@ -1,0 +1,10 @@
+<!--components/vote-item/vote-item.wxml-->
+<view class="vote-item regular">
+  <text class="fs12 gray-weak">投票号：5017650443265541</text>
+  <text class="fs16 bold" style="margin-top:40rpx">上海市延吉街道改造成果\n民众满意程度调查</text>
+  <view class="flex align-middle align-self-end">
+    <text class="fs10">累计参与人数</text>
+    <text class="fs16 red" style="margin-left:18rpx">15123</text>
+  </view>
+  <text class="fs10 gray-weak align-self-end">发布时间：2019-04-16 17：41：57</text>
+</view>

@@ -1,0 +1,133 @@
+/* components/carousel/carousel.wxss */
+.carousel {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.swiper {
+  height: calc(503rpx + 47rpx);
+  width: 100%;
+}
+
+.swiper-item {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.indicator-dots {
+  position: absolute;
+  display: flex;
+}
+
+.indicator-dot {
+  width: 20px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.43);
+  transition: all 0.3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.indicator-dot+.indicator-dot {
+  margin-left: 9rpx;
+}
+
+.indicator-dot.is-focus {
+  background: white;
+}
+
+.carousel-item {
+  background: #D8AA9B;
+  padding: 31rpx 45rpx 40rpx;
+  border-radius: 0rpx 0rpx 47rpx 47rpx;
+  background-color: rgba(216, 170, 155, 100);
+  position: relative;
+  height: 503rpx;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.carousel-item::before {
+  content: "";
+  right: 0;
+  bottom: -47rpx;
+  width: 47rpx;
+  height: 94rpx;
+  display: block;
+  position: absolute;
+  background-color: rgba(216, 170, 155, 100);
+  z-index: -1;
+}
+
+.carousel-item::after {
+  content: "";
+  right: 0rpx;
+  bottom: -47rpx;
+  width: 47rpx;
+  height: 47rpx;
+  display: block;
+  position: absolute;
+  background-color: #EEEEEE;
+  border-radius: 0 47rpx 0 0;
+  z-index: -1;
+  transition: all 0.3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.is-out.carousel-item {
+  transition: 0s;
+  border-radius: 0 0 47rpx 0;
+}
+
+.is-out.carousel-item::after {
+  transition: 0s;
+  border-radius: 0;
+}
+
+
+.carousel-item text {
+  position: absolute;
+  display: block;
+}
+
+.carousel-item image {
+  position: absolute;
+  right: 45rpx;
+  top: 176rpx;
+  width: 300rpx;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: calc(100% - 45rpx * 2);
+}
+
+.search input {
+  height: 65rpx;
+  width: 100%;
+  background: white;
+  border-radius: 18rpx;
+  color: rgba(119, 119, 119, 100);
+  border: none;
+  padding: 18rpx 72rpx;
+  box-sizing: border-box;
+}
+
+.search text {
+  position: absolute !important;
+}
+
+.vertical-line {
+  border: 1px solid rgba(238, 238, 238, 100);
+  position: absolute;
+  height: 33rpx;
+}
+
+.fa-stack-fs18 {
+  display: inline-block;
+  height: 33rpx;
+  width: 33rpx;
+  line-height: 33rpx;
+  position: absolute;
+  vertical-align: middle;
+}

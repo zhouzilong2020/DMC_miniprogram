@@ -1,0 +1,5 @@
+<!--components/designer-item/designer-item.wxml-->
+<view>
+  <image class="image white regular" data-name="张丽" data-title="城市微新团队\n设计师"></image>
+  <text class="fs14 bold">做一个有着持续高产热情的创作者</text>
+</view>
