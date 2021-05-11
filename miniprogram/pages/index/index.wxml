@@ -12,9 +12,6 @@
     </view>
   </view>
 
-
-
-
   <!-- 参考项目展示 
   <view wx:if="{{activeness.reference}}">
     <project-list canDelete="{{false}}" imageData="{{referenceImageData}}" isCase="{{true}}" />

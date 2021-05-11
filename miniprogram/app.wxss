@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.block{
+  display: block;
+}
+
 .flex {
   display: flex;
 }
