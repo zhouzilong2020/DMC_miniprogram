@@ -10,7 +10,6 @@ export async function whoAmI() {
   return new Promise((resolve, reject) => {
     try {
       var res = wx.getStorageSync('userInfo')
-
       // 获取数据成功
       if (res._id) {
         resolve(res)
@@ -21,7 +20,6 @@ export async function whoAmI() {
         reject()
       }
     } catch (error) {
-      // 不知道是什么的错误?
       reject(error)
     }
   })
@@ -36,20 +34,27 @@ export async function login() {
       name: 'login',
       data: {}
     }).then((res) => {
-      console.log('after login', res);
-      db.collection('users').where({
+      const _user_open_id = res.result.openid
+      db.collection('user').where({
         _openid: res.result.openid
       }).get().then((res) => {
+        // 数据库中有该用户
         if (res.data.length) {
-          console.log('in getting userIndo res', res)
-          wx.setStorageSync('userInfo', res.data[0])
-          resolve(res.data[0])
+          var _user_info = res.data[0]
+          console.log('in getting userIndo res', _user_info)
+          wx.setStorageSync('userInfo', _user_info)
+          resolve(_user_info)
+        } else { // 数据库中没有该用户，插入一条新的，这里需要getUserProfile，需要获取用户权限
+          reject({
+            code: 404
+          })
         }
-      }).catch((error) => {
+      }).catch((err) => {
+
         reject(error);
       })
-    }).catch((error) => {
-      reject(error);
+    }).catch((err) => {
+      reject(err);
     })
   })
 }

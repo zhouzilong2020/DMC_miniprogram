@@ -135,7 +135,6 @@ Page({
                 for (let i = 0, len = tempFilePaths.length; i < len; i++) {
                     var filePath = tempFilePaths[i];
                     var cloudPath = './' + that.data.openid + '/' + timestamp + '_' + i + filePath.match(/\.[^.]+?$/)[0];
-                    // console.log("in upload", cloudPath)
                     wx.cloud.uploadFile({
                         cloudPath: cloudPath, //云
                         filePath: filePath, //本地

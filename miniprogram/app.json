@@ -16,7 +16,8 @@
     "pages/detail/detail",
     "pages/allProject/allProject",
     "pages/rollPicture/rollPicture",
-    "pages/questionnaire/questionnaire"
+    "pages/questionnaire/questionnaire",
+    "pages/test-page/test-page"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -33,7 +34,8 @@
     }
   },
   "tabBar": {
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/tabbar/index.png",
