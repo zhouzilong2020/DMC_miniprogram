@@ -4,23 +4,23 @@
   <carousel></carousel>
   <view class="main">
     <tab-group box-class="tabs"></tab-group>
-    <view class="container news">
-      <my-project wx:for="{{[1,2]}}"></my-project>
-    </view>
     <view class="container projects" >
       <project-item wx:for="{{[1,2,3,4]}}"></project-item>
     </view>
     <view class="container designers">
       <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
     </view>
-    <view class="container news">
+    <view class="container row-item">
       <news wx:for="{{[1,2]}}"></news>
     </view>
-    <view class="container news">
+    <view class="container row-item">
       <article></article>
     </view>
-    <view class="container news">
+    <view class="container row-item">
       <message wx:for="{{[1,2]}}"></message>
+    </view>
+    <view class="container row-item">
+      <my-project wx:for="{{[1,2]}}"></my-project>
     </view>
   </view>
 
