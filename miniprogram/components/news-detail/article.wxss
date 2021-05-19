@@ -1,0 +1,35 @@
+/* components/article.wxss */
+.article {
+  padding: 30rpx 40rpx;
+  border-radius: 27rpx;
+  background: white;
+  box-shadow:0 0 10rpx rgba(184, 184, 184, 0.3);
+}
+
+.author-bar {
+  padding: 35rpx 0;
+  height: 100rpx; 
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right:50rpx;
+  float: left;  
+  box-sizing: border-box; 
+  border-radius: 50%;
+}
+
+.info {
+  float: left; 
+  box-sizing: border-box; 
+}
+
+.content {
+  display: block;
+  padding-bottom: 40rpx;
+}
+
+.image {
+  width:100%;
+}

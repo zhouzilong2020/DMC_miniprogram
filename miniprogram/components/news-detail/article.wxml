@@ -1,1 +1,21 @@
 <!--components/article.wxml-->
+<view class="article">
+  <text class="fs20 bold">“活力四射”-发起睦邻活动</text>
+  <view style="text-align:center">
+    <text class="fs16">——上海市杨浦区延吉新村街道第二睦邻中心</text>
+  </view>
+  <view class="author-bar">
+    <image class="avatar" src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg'></image>
+    <view class="info">
+      <text class="fs16 bold" style="display:block">一个发稿人</text>
+      <text class="fs15 gray-weak bold">2020-03-08</text> 
+    </view>
+  </view>
+  <view class="content">
+    <text class="fs16">上海市杨浦区延吉新村街道作为“睦邻”的发展源地有着其特殊的记忆，不少身处一线的社区工作者用各种各样新颖的方式只为了让居民在社区中感受到家的温度，我们团队也深受他们的影响，希望为居民做点什么。受到街道邀请的我们针对延吉敦化居委会周边的一块畸零空间开展了微更新改造，并且与第二睦邻中心产生联动，希望给予居民一个社区活动的开放性空间，共建美好家园。
+    </text>
+    <text class="fs16">本次实践活动在前期多次实地考察和座谈沟通的基础上进行。我们于7、8月份通过每周一次或每两周一次的线上沟通，与睦邻中心负责人反复讨论修改初步设计方案，并最终敲定了空间改造方案及后续的社区活动方案。
+    </text>
+  </view>
+  <image class="image" src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg'></image>
+</view>
