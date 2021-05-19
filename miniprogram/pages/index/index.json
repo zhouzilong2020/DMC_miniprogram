@@ -5,6 +5,7 @@
     "project-item":"../../components/project-item/project-item",
     "carousel":"../../components/carousel/carousel",
     "designer-item":"../../components/designer-item/designer-item",
-    "news":"../../components/news/news"
+    "news":"../../components/news-brief/news",
+    "article":"../../components/news-detail/article"
   }
 }
