@@ -10,10 +10,19 @@
     <view class="container designers">
       <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
     </view>
+    <view class="container row-item">
+      <news wx:for="{{[1,2]}}"></news>
+    </view>
+    <view class="container row-item">
+      <article></article>
+    </view>
+    <view class="container row-item">
+      <message wx:for="{{[1,2]}}"></message>
+    </view>
+    <view class="container row-item">
+      <my-project wx:for="{{[1,2]}}"></my-project>
+    </view>
   </view>
-
-
-
 
   <!-- 参考项目展示 
   <view wx:if="{{activeness.reference}}">

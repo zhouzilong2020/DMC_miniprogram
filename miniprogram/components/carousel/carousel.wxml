@@ -6,9 +6,9 @@
       <swiper-item class="swiper-item">
         <view class="carousel-item regular white {{currentIdx==i?'':'is-out'}}">
           <text class="fs12 white-weak">实际改造项目</text>
-          <text class="fs28 bold" style="top: 74rpx;">这是一个示例项目名称第一行实际改造项目</text>
-          <text class="fs20" style="bottom: 172rpx;">示例地点</text>
-          <text class="fs14" style="bottom: 141rpx;">2021-05-05</text>
+          <text class="fs28 bold " style="margin-top: 7rpx;">这是一个示例项目名称第一行实际改造项目</text>
+          <text class="fs20 absolute" style="bottom: 172rpx;">示例地点</text>
+          <text class="fs14 absolute" style="bottom: 141rpx;">2021-05-05</text>
           <image src="{{item}}" mode="widthFix"></image>
         </view>
       </swiper-item>

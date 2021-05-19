@@ -44,6 +44,8 @@
   height: 503rpx;
   box-sizing: border-box;
   transition: all 0.3s cubic-bezier(.645, .045, .355, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 .carousel-item::before {
@@ -80,12 +82,6 @@
 .is-out.carousel-item::after {
   transition: 0s;
   border-radius: 0;
-}
-
-
-.carousel-item text {
-  position: absolute;
-  display: block;
 }
 
 .carousel-item image {

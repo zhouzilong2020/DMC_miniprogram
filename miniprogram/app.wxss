@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.block{
+  display: block;
+}
+
 .flex {
   display: flex;
 }
@@ -53,6 +57,10 @@ text,.regular {
   font-size: 25rpx;
 }
 
+.fs15 {
+  font-size: 27rpx;
+}
+
 .fs16 {
   font-size: 29rpx;
 }
@@ -71,6 +79,10 @@ text,.regular {
 
 .fs28 {
   font-size: 51rpx;
+}
+
+.fs45 {
+  font-size: 78rpx;
 }
 
 .black{
