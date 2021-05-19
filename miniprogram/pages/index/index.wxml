@@ -4,9 +4,6 @@
   <carousel></carousel>
   <view class="main">
     <tab-group box-class="tabs"></tab-group>
-    <view class="container article">
-      <article></article>
-  </view>
     <view class="container projects" >
       <project-item wx:for="{{[1,2,3,4]}}"></project-item>
     </view>
@@ -15,7 +12,10 @@
     </view>
     <view class="container news">
       <news wx:for="{{[1,2]}}"></news>
-    </view>  
+    </view>
+    <view class="container article">
+      <article></article>
+    </view>
   </view>
 
   <!-- 参考项目展示 

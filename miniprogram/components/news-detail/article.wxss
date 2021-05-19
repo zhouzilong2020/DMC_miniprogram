@@ -28,6 +28,7 @@
 .content {
   display: block;
   padding-bottom: 40rpx;
+  line-height: 40rpx;
 }
 
 .image {
