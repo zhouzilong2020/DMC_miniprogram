@@ -39,6 +39,13 @@
   row-gap: 25rpx;
 }
 
+.container.news{
+  padding: 22rpx 40rpx 51rpx;
+  grid-template-columns: repeat(1fr);
+  column-gap: 18rpx;
+  row-gap: 25rpx;
+}
+
 .footer {
   position: relative;
 }

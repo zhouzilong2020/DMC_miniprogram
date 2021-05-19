@@ -57,6 +57,10 @@ text,.regular {
   font-size: 25rpx;
 }
 
+.fs15 {
+  font-size: 27rpx;
+}
+
 .fs16 {
   font-size: 29rpx;
 }

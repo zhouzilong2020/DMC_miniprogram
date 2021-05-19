@@ -1,0 +1,26 @@
+<!--components/news.wxml-->
+<view class="news">
+  <view class="info">
+    <text class="fs16 bold title">“活力四射”-发起睦邻活动</text>
+    <text class="fs15 content">2020年，城市微新团队进行了一个改造。城市微新团队进行了一个改造。城市微新团队进行了一个改造。2020年，城市微新团队进行了一个改造。城市微新团队进行了一个改造。城市微新团队进行了一个改造。</text>
+    <text class="fs12 gray-weak bold">2020-03-08</text>
+  </view>
+  <image class="image" src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg'></image>
+</view>
+<!-- <view class="news">
+  <image class="image regular" data-type="景观">
+    <view class="heat">
+      <text class="md fs14">whatshot</text>
+      <text class="fs12">2888</text>
+    </view>
+
+  </image>
+  <text class="fs14 bold" style="margin:14rpx 0">示例项目名称这是一个示例</text>
+  <view class="fs10 gray-weak flex justify-space-between">
+    <text>2021-05-06</text>
+    <view>
+      <text class="fa fa-map-marker"></text>
+      <text class="regular">示例地点</text>
+    </view>
+  </view>
+</view> -->

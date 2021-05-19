@@ -10,6 +10,9 @@
     <view class="container designers">
       <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
     </view>
+    <view class="container news">
+      <news wx:for="{{[1,2]}}"></news>
+    </view>  
   </view>
 
   <!-- 参考项目展示 

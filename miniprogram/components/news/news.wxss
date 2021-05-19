@@ -1,0 +1,41 @@
+/* components/news.wxss */
+.news {
+  padding: 20rpx 20rpx;
+  border-radius: 27rpx;
+  background: white;
+  box-shadow:0 0 10rpx rgba(184, 184, 184, 0.3);
+  height: 250rpx;
+}
+
+.info {
+  width: 60%;
+  height: 100%;
+  padding: 0% 3%;
+  float: left;  
+  box-sizing: border-box;  
+}
+
+.title {
+  display: block;   
+  line-height: 70rpx;            
+  width: 100%;
+  overflow: hidden;   
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content {
+  display: -webkit-box;
+  line-height: 40rpx;
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.image {
+  width: 40%;
+  height: 100%;
+  padding: 5% 2%;
+  float: left;  
+  box-sizing: border-box; 
+}
