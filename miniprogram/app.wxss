@@ -81,6 +81,10 @@ text,.regular {
   font-size: 51rpx;
 }
 
+.fs45 {
+  font-size: 78rpx;
+}
+
 .black{
   color: black;
 }
