@@ -1,0 +1,12 @@
+<!--components/my-project.wxml-->
+<view class="my-project">
+  <image class="image" data-type="改造中"></image>
+  <view class="info">
+    <view style="padding:30rpx">
+      <text class="fs16 bold title">上海市延吉路社区什么时候改造呢上海市延吉路社区什么时候改造呢</text>
+      <text class="fs14 content">废弃形畸形空</text>
+      <text class="fs14 bold gray-weak content">2020-05-21</text>
+      <text class="fs14 gray-weak time">最后更新于2020-05-21</text>
+    </view>
+  </view>
+</view>

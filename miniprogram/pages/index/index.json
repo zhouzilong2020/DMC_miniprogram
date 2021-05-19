@@ -7,6 +7,7 @@
     "designer-item":"../../components/designer-item/designer-item",
     "news":"../../components/news-brief/news",
     "article":"../../components/news-detail/article",
-    "message":"../../components/message/message"
+    "message":"../../components/message/message",
+    "my-project":"../../components/my-project/my-project"
   }
 }
