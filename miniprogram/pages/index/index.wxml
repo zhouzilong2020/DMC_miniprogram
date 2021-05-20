@@ -17,7 +17,6 @@
       <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
     </view>
 
-
     <!-- 文章详情 -->
     <view class="container row-item">
       <article></article>
@@ -29,6 +28,10 @@
     <!-- 我的项目 -->
     <view class="container row-item">
       <my-project wx:for="{{[1,2]}}"></my-project>
+    </view>
+
+    <view class="container row-item">
+      <news-recent wx:for="{{[1,2]}}"></news-recent>
     </view>
   </view>
 
