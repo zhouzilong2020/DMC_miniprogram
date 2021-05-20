@@ -1,0 +1,29 @@
+<view class="project-item">
+  <image class="image regular" data-type="项目已完成">
+  </image>
+  <view class="info">
+  <view class="fs14 bold title gray-weak">名称：</view>
+  <view class="fs14 bold ">改造项目的名字</view>
+  </view>
+  <view class="info">
+  <view class="fs14 bold title gray-weak">类型：</view>
+  <view class="fs14 bold ">畸形空间</view>
+  </view>
+  <view class="info">
+  <view class="fs14 bold title gray-weak">编号：</view>
+  <view class="fs14 bold ">00001111222233334444</view>
+  </view>
+  <view class="info">
+  <view class="fs14 bold title gray-weak">状态：</view>
+  <view class="fs14 bold ">改造完成</view>
+  </view>
+  <view class="info">
+  <view class="fs14 bold title gray-weak">完成时间：</view>
+  <view class="fs14 bold ">2020-02-14 15:12:00</view>
+  </view>
+</view>
+
+  
+
+    
+ 

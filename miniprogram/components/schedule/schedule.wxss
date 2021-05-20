@@ -1,0 +1,32 @@
+/* components/message.wxss */
+.recenty {
+  padding: 27rpx;
+  border-radius: 36rpx;
+  background: white;
+  box-shadow: 0px 4rpx 2rpx 0px rgba(184, 184, 184, 0.3);
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  padding: 20rpx;
+  border-radius: 50%;
+  background-color: #CCCCCC;
+  flex-shrink: 0;
+}
+
+.info {
+  margin-left: 27rpx;
+  flex: 1;
+}
+
+.content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 14rpx;
+}
+.clock {
+  display: flex;
+}

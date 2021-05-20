@@ -1,0 +1,25 @@
+/* components/manage/manage.wxss */
+
+
+.title{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.container1{
+  display:flex;
+  background-color: #f7f7f7;
+  border-radius: 27rpx;
+}
+.div{
+  padding:30rpx;
+  border-radius: 27rpx;
+  flex:1
+}
+.btn{
+  margin:0;
+  width: 300rpx !important;
+  padding:10rpx;
+}

@@ -1,0 +1,44 @@
+/* components/project-item.wxss */
+.project-item {
+  padding: 9rpx 13rpx 22rpx;
+  border-radius: 27rpx;
+  background: white;
+  box-shadow: 0px 2px 1px 0px rgba(184, 184, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  height: 219rpx;
+  width: 100%;
+  border-radius: 27rpx;
+  position: relative;
+  color: white;
+  background: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg');
+}
+.info{
+  padding: 24rpx 15rpx;
+}
+
+.image::before {
+  content: attr(data-type);
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10rpx 0;
+  text-align:center;
+  width:100%;
+  border-radius: 18rpx 18rpx 0 0;
+  background: rgb(16, 145, 5);
+  font-size: 22rpx;
+}
+
+
+.title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
+  float:left;
+  width:25%;
+}
