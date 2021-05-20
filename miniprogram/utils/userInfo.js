@@ -28,6 +28,7 @@ export async function whoAmI() {
 /**
  * 登录用户,如果登录失败则reject
  */
+
 export async function login() {
   return new Promise((resolve, reject) => {
     wx.cloud.callFunction({
@@ -38,7 +39,7 @@ export async function login() {
       db.collection('user').where({
         _openid: res.result.openid
       }).get().then((res) => {
-        // 数据库中有该用户
+        数据库中有该用户
         if (res.data.length) {
           var _user_info = res.data[0]
           // console.log('in getting userIndo res', _user_info)
@@ -50,8 +51,7 @@ export async function login() {
           })
         }
       }).catch((err) => {
-
-        reject(error);
+        reject(err);
       })
     }).catch((err) => {
       reject(err);
@@ -62,17 +62,16 @@ export async function login() {
 /**
  * 返回用户信息,先检查localstorage,如果没有则登录, 如果二者均失败则reject
  */
-export async function getUserInfo() {
-  return new Promise((resolve, reject) => {
-    whoAmI().then(res => {
-      resolve(res);
-    }).catch(e => {
-      login().then(res => {
-        resolve(res);
-      }).catch(e => {
-        reject(e);
-      })
-    })
-  })
-
-}
+// export async function getUserInfo() {
+//   return new Promise((resolve, reject) => {
+//     whoAmI().then(res => {
+//       resolve(res);
+//     }).catch(e => {
+//       login().then(res => {
+//         resolve(res);
+//       }).catch(e => {
+//         reject(e);
+//       })
+//     })
+//   })
+// }

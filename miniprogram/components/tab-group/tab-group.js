@@ -9,7 +9,7 @@ Component({
   properties: {
 
   },
-  externalClasses:['box-class'],
+  externalClasses: ['box-class'],
   /**
    * 组件的初始数据
    */
@@ -23,30 +23,42 @@ Component({
     }, {
       label: '设计师',
       icon: 'fas fa-pen'
-    }
-    ],
+    }],
     curTabIdx: 0,
     barWidth: 0,
-    barLeft:0
+    barLeft: 0
   },
   lifetimes: {
     ready: function () {
-      this.changeTab({currentTarget:{id:0}});
+      this.changeTab({
+        currentTarget: {
+          id: 0
+        }
+      });
     }
   },
   /**
    * 组件的方法列表
    */
   methods: {
-    changeTab:function(e) {
+    changeTab: function (e) {
       const query = wx.createSelectorQuery().in(this);
-      query.select(`#label-${e.currentTarget.id}`).boundingClientRect((res) => {
-        this.setData({
-          curTabIdx: e.currentTarget.id,
-          barWidth: `${res.width}px`,
-          barLeft:`${res.left}px`,
+      query
+        .select(`#label-${e.currentTarget.id}`)
+        .boundingClientRect((res) => {
+          this.setData({
+            curTabIdx: e.currentTarget.id,
+            barWidth: `${res.width}px`,
+            barLeft: `${res.left}px`,
+          })
         })
-      }).exec();
+        .exec();
+
+      this.triggerEvent('onTabChange', {
+        id: e.currentTarget.id
+      }, {
+        bubbles: true
+      })
     },
   }
 })
