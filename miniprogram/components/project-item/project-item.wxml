@@ -11,7 +11,7 @@
   <view class="fs10 gray-weak flex justify-space-between">
     <text>2021-05-06</text>
     <view>
-      <text class="fa fa-map-marker"></text>
+      <text class="fas fa-map-marker"></text>
       <text class="regular">示例地点</text>
     </view>
   </view>
