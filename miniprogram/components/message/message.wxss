@@ -1,43 +1,29 @@
 /* components/message.wxss */
 .message {
-  /* padding: 20rpx 20rpx; */
-  border-radius: 40rpx;
+  padding: 27rpx;
+  border-radius: 36rpx;
   background: white;
-  box-shadow:0 0 10rpx rgba(184, 184, 184, 0.3);
-  height: 180rpx;
+  box-shadow: 0px 4rpx 2rpx 0px rgba(184, 184, 184, 0.3);
+  display: flex;
+  align-items: center;
 }
 
 .icon {
-  float: left;
-  width: 22%;
-  /* padding: 32rpx 25rpx; */
-  text-align: center;
-  box-sizing: border-box;  
+  padding: 20rpx;
+  border-radius: 50%;
+  background-color: #CCCCCC;
+  flex-shrink: 0;
 }
 
 .info {
-  float: left;
-  width: 78%;
-  box-sizing: border-box;  
-}
-
-.title {
-  display: inline-block;
-  width: 70%;
-  padding-top: 5rpx 0rpx;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.time {
-  float: right;
-  padding: 10rpx;
+  margin-left: 27rpx;
+  flex: 1;
 }
 
 .content {
   display: -webkit-box;
-  line-height: 40rpx;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+  margin-top: 14rpx;
 }

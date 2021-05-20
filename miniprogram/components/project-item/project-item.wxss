@@ -1,5 +1,5 @@
 /* components/project-item.wxss */
-.project-item{
+.project-item {
   padding: 9rpx 13rpx 22rpx;
   border-radius: 27rpx;
   background: white;
@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.image{
+.image {
   height: 219rpx;
   width: 100%;
   border-radius: 27rpx;
@@ -28,10 +28,17 @@
   font-size: 22rpx;
 }
 
-.image .heat{
+.image .heat {
   position: absolute;
   left: 14rpx;
   top: 14rpx;
   display: flex;
   align-items: center;
+}
+
+.title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 14rpx 0;
 }

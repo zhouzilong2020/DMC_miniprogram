@@ -1,9 +1,11 @@
 <!--components/news.wxml-->
 <view class="news" bindtap="onTap">
   <view class="info">
-    <text class="fs16 bold title">{{title}}</text>
-    <text class="fs15 content">{{content}}</text>
-    <text class="fs12 gray-weak bold">{{publishDate}}</text>
+    <view>
+      <view class="fs16 bold title">{{title}}</view>
+      <view class="fs15 content">{{content}}</view>
+    </view>
+    <text class="fs12 gray-weak date">{{publishDate}}</text>
   </view>
   <image class="image"
     src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg'></image>

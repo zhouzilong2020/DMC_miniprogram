@@ -9,7 +9,7 @@ Component({
   properties: {
     title: {
       type: String,
-      value: "“活力四射”-发起睦邻活动",
+      value: "“活力四射”-发起睦邻活动啊啊啊啊",
     },
     content: {
       type: String,

@@ -1,13 +1,11 @@
 <!--components/message.wxml-->
 <view class="message">
-  <view class="icon">
-    <text class="md fs45 gray-weak" style="line-height:180rpx">message</text>
-  </view>
+  <view class="icon md fs32 white">message</view>
   <view class="info">
-    <view style="padding:20rpx 20rpx 20rpx 0rpx">
-      <text class="fs18 bold title">投票通知</text>
-      <text class="gray-weak fs14 time">2小时前</text>
-      <text class="fs16 gray-weak content">延吉街道社区已经改造完毕啦，快去投出你的满意度!</text>
+    <view class="flex justify-space-between align-middle">
+      <text class="fs16 bold">投票通知</text>
+      <text class="fs10 gray-weak">2小时前</text>
     </view>
+    <text class="fs16 gray-weak content">延吉街道社区已经改造完毕啦，快去投出你的满意度!</text>
   </view>
 </view>

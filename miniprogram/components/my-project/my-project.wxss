@@ -1,52 +1,48 @@
 .my-project {
-  border-radius: 40rpx;
+  border-radius: 36rpx;
   background: white;
-  box-shadow:0 0 10rpx rgba(184, 184, 184, 0.3);
-  height: 250rpx;
+  box-shadow: 0 4rpx 11rpx 0 rgba(0, 0, 0, 0.4);
+  display: flex;
 }
 
 .image {
-  float: left;
-  width: 40%;
-  height: 100%;
-  border-radius: 40rpx;
+  width: 239rpx;
+  height: 225rpx;
+  flex-shrink: 0;
+  border-radius: 36rpx;
   background: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg');
-  box-sizing: border-box; 
+  position: relative;
 }
 
 .image::before {
   content: attr(data-type);
-  position: relative;
+  position: absolute;
   left: 0;
   top: 0;
-  padding: 20rpx 18rpx;
-  border-radius: 42rpx 0;
-  background-color:rgba(238, 238, 238, 0.5);
-  font-size: 26rpx;
+  padding: 9rpx 16rpx;
+  border-radius: 36rpx 0 27rpx 0;
+  background-color: rgba(198, 199, 198, 0.6);
+  font-size: 25rpx;
   color: white;
 }
 
 .info {
-  float: left;
-  width: 60%;
-  box-sizing: border-box;  
+  flex: 1;
+  padding: 27rpx 42rpx 11rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {
   display: -webkit-box;
-  overflow : hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  line-height: 40rpx;
 }
 
 .content {
-  display: block; 
-  padding-top:8rpx;
-}
-
-.time {
-  display: block; 
-  text-align:right;
+  display: block;
+  margin-top: 9rpx;
 }

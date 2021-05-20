@@ -20,29 +20,25 @@
 }
 
 .container {
+  padding: 22rpx 40rpx 51rpx;
   border-radius: 0 0 47rpx 47rpx;
   display: grid;
-
 }
 
 .container.projects {
-  padding: 29rpx 25rpx 51rpx;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, calc(50% - 13rpx / 2));
   column-gap: 13rpx;
   row-gap: 18rpx;
 }
 
 .container.designers{
-  padding: 22rpx 40rpx 51rpx;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, calc(50% - 18rpx / 2));
   column-gap: 18rpx;
   row-gap: 25rpx;
 }
 
-.container.row-item{
-  padding: 22rpx 40rpx 51rpx;
-  grid-template-columns: repeat(1fr);
-  column-gap: 18rpx;
+.container.news{
+  grid-template-columns: repeat(1,100%);
   row-gap: 25rpx;
 }
 
