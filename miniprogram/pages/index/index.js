@@ -16,8 +16,7 @@ Page({
     }, {
       label: '设计师',
       icon: 'fas fa-pen'
-    }
-    ],
+    }],
     curTabIdx: 0,
     referenceImageData: [],
     imageData: null,
@@ -29,7 +28,6 @@ Page({
   },
 
   onLoad: function () {
-
     const that = this
     that.requestData()
     that.pushData()
@@ -64,15 +62,14 @@ Page({
         }
       })
     })
-
   },
   pushData: function () {
 
   },
 
-  changeTab(e) {
+  onTabChange: function (e) {
     this.setData({
-      curTabIdx:e.currentTarget.id
+      curTabIdx: e.detail.id
     })
   },
 })
