@@ -3,23 +3,34 @@
   <!-- 页顶轮播 -->
   <carousel></carousel>
   <view class="main">
-    <tab-group box-class="tabs"></tab-group>
-    <view class="container projects" >
+    <tab-group bindonTabChange="onTabChange" id="tab-group" box-class="tabs"></tab-group>
+    <!-- 示范项目 -->
+    <view wx-if="{{curTabIdx == 0}}" class="container projects">
       <project-item wx:for="{{[1,2,3,4]}}"></project-item>
     </view>
-    <view class="container designers">
+    <!-- 新闻 -->
+    <view wx-if="{{curTabIdx == 1}}" class="container row-item">
+      <news wx:for="{{[1,2]}}"></news>
+    </view>
+    <!-- 设计师 -->
+    <view wx-if="{{curTabIdx == 2}}" class="container designers">
       <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
     </view>
-  </view>
 
-  <!-- 参考项目展示 
-  <view wx:if="{{activeness.reference}}">
-    <project-list canDelete="{{false}}" imageData="{{referenceImageData}}" isCase="{{true}}" />
+
+    <!-- 文章详情 -->
+    <view class="container row-item">
+      <article></article>
+    </view>
+    <!-- 投票消息 -->
+    <view class="container row-item">
+      <message wx:for="{{[1,2]}}"></message>
+    </view>
+    <!-- 我的项目 -->
+    <view class="container row-item">
+      <my-project wx:for="{{[1,2]}}"></my-project>
+    </view>
   </view>
-  <!-- 实际案例
-  <view wx:else>
-    <project-list canDelete="{{false}}" imageData="{{imageData}}" isCase="{{true}}" />
-  </view>-->
 
   <!-- footer -->
   <view class="footer weui-footer weui-footer_fixed-bottom">

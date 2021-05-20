@@ -1,0 +1,43 @@
+/* components/message.wxss */
+.message {
+  /* padding: 20rpx 20rpx; */
+  border-radius: 40rpx;
+  background: white;
+  box-shadow:0 0 10rpx rgba(184, 184, 184, 0.3);
+  height: 180rpx;
+}
+
+.icon {
+  float: left;
+  width: 22%;
+  /* padding: 32rpx 25rpx; */
+  text-align: center;
+  box-sizing: border-box;  
+}
+
+.info {
+  float: left;
+  width: 78%;
+  box-sizing: border-box;  
+}
+
+.title {
+  display: inline-block;
+  width: 70%;
+  padding-top: 5rpx 0rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.time {
+  float: right;
+  padding: 10rpx;
+}
+
+.content {
+  display: -webkit-box;
+  line-height: 40rpx;
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
