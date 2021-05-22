@@ -1,7 +1,9 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="index">
   <!-- 页顶轮播 -->
-  <carousel></carousel>
+  <carousel>
+    <view style="width: 100%; background: #d1d1d1; min-height: 100px"></view>
+  </carousel>
   <view class="main">
     <tab-group bindonTabChange="onTabChange" id="tab-group" box-class="tabs"></tab-group>
     <!-- 示范项目 -->
