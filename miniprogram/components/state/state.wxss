@@ -16,29 +16,29 @@
   color: white;
   background: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg');
 }
+.info{
+  padding: 24rpx 15rpx;
+}
 
 .image::before {
   content: attr(data-type);
   position: absolute;
   right: 0;
   top: 0;
-  padding: 9rpx 14rpx;
-  border-radius: 0 18rpx;
-  background: rgb(12, 177, 255);
+  padding: 10rpx 0;
+  text-align:center;
+  width:100%;
+  border-radius: 18rpx 18rpx 0 0;
+  background: rgb(16, 145, 5);
   font-size: 22rpx;
 }
 
-.image .heat {
-  position: absolute;
-  left: 14rpx;
-  top: 14rpx;
-  display: flex;
-  align-items: center;
-}
 
 .title {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin: 14rpx 0;
+  
+  float:left;
+  width:25%;
 }

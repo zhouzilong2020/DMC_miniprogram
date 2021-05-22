@@ -1,5 +1,5 @@
 /* components/message.wxss */
-.message {
+.recenty {
   padding: 27rpx;
   border-radius: 36rpx;
   background: white;
@@ -26,4 +26,7 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin-top: 14rpx;
+}
+.clock {
+  display: flex;
 }

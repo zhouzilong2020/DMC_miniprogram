@@ -8,6 +8,10 @@
     "news":"../../components/news-brief/news",
     "article":"../../components/news-detail/article",
     "message":"../../components/message/message",
-    "my-project":"../../components/my-project/my-project"
+    "my-project":"../../components/my-project/my-project",
+    "manage":"../../components/manage/manage",
+    "news-recent":"../../components/news-recent/news-recent",
+    "state":"../../components/state/state",
+    "schedule":"../../components/schedule/schedule"
   }
 }

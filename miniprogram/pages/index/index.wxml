@@ -11,14 +11,13 @@
       <project-item wx:for="{{[1,2,3,4]}}"></project-item>
     </view>
     <!-- 新闻 -->
-    <view wx-if="{{curTabIdx == 1}}" class="container row-item">
+    <view wx-if="{{curTabIdx == 1}}" class="container news">
       <news wx:for="{{[1,2]}}"></news>
     </view>
     <!-- 设计师 -->
     <view wx-if="{{curTabIdx == 2}}" class="container designers">
       <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
     </view>
-
 
     <!-- 文章详情 -->
     <view class="container row-item">
@@ -31,6 +30,10 @@
     <!-- 我的项目 -->
     <view class="container row-item">
       <my-project wx:for="{{[1,2]}}"></my-project>
+    </view>
+
+    <view class="container row-item">
+      <news-recent wx:for="{{[1,2]}}"></news-recent>
     </view>
   </view>
 

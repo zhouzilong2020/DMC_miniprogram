@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.block{
+.block {
   display: block;
 }
 
@@ -27,11 +27,12 @@
   align-items: center;
 }
 
-.align-self-end{
-  align-self:flex-end;
+.align-self-end {
+  align-self: flex-end;
 }
 
-text,.regular {
+text,
+.regular {
   font-family: PingFangSC-regular;
   font-weight: normal;
 }
@@ -81,12 +82,16 @@ text,.regular {
   font-size: 51rpx;
 }
 
-.fs45 {
-  font-size: 78rpx;
+.fs32 {
+  font-size: 58rpx;
 }
 
-.black{
+.black {
   color: black;
+}
+
+.blue{
+  color:#4eb0f9;
 }
 
 .black-weak {
@@ -117,6 +122,6 @@ text,.regular {
   color: rgba(84, 159, 223, 0.3);
 }
 
-.red{
-  color:rgb(226, 113, 113);
+.red {
+  color: rgb(226, 113, 113);
 }

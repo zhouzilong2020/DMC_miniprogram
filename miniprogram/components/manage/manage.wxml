@@ -1,0 +1,22 @@
+<!--components/manage/manage.wxml-->
+<view>
+  <view class="flex justify-space-between align-middle">
+      <text class="fs16 bold">我的畸形空间改造</text>
+      <text class="fs14 blue">管理我的项目</text>
+    </view>
+    <view class="container1">
+    <view class="div" style="background-color:#4eb0f9">
+      <text class="fs15 bold white" style="display:block;text-align:center">正在进行中</text>
+      <text class="fs14 bold white" style="display:block;text-align:center">1项</text>
+    </view>
+    <view class="div">
+      <text class="fs15 bold gray-weak" style="display:block;text-align:center">累计参与</text>
+      <text class="fs14 bold" style="display:block;text-align:center">1项</text>
+    </view>
+    <view class="div">
+      <text class="fs15 bold gray-weak" style="display:block;text-align:center" >已经完成</text>
+      <text class="fs14 bold" style="display:block;text-align:center">1项</text>
+    </view>
+    </view>
+  <button class="btn" type="primary">发布一个畸形空间</button>
+</view>
