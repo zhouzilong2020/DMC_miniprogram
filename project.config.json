@@ -21,7 +21,7 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -90,8 +90,8 @@
         },
         {
           "id": -1,
-          "name": "pages/homepage_grid/homepage_grid",
-          "pathName": "pages/homepage_grid/homepage_grid",
+          "name": "pages/homepage/homepage",
+          "pathName": "pages/homepage/homepage",
           "query": "",
           "scene": null
         },
@@ -118,7 +118,7 @@
         },
         {
           "id": -1,
-          "name": "pages/homepage_grid/homepage_grid",
+          "name": "pages/homepage/homepage",
           "pathName": "components/dialog/dialog",
           "query": "",
           "scene": null

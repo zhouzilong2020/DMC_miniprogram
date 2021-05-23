@@ -1,0 +1,23 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="custom-tabs fs27 gray">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="custom-tab {{selected==index?'is-active':''}}" data-path="{{item.pagePath}}" data-index="{{index}}"
+      bindtap="switchTab">
+      <view class="{{item.iconClass}}"></view>
+      <view class="fs12">{{item.text}}</view>
+    </view>
+  </block>
+
+  <!-- <view class="custom-tab">
+    <view class="fas fa-location-arrow"></view>
+    <view class="fs12">地图</view>
+  </view>
+  <view class="custom-tab">
+    <view class="fas fa-bars"></view>
+    <view class="fs12">项目</view>
+  </view>
+  <view class="custom-tab">
+    <view class="fas fa-user"></view>
+    <view class="fs12">个人</view>
+  </view> -->
+</view>

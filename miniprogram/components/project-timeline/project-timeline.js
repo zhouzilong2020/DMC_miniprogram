@@ -1,4 +1,4 @@
-// components/message.js
+// components/project-timeline.js
 Component({
   options: {
     addGlobalClass: true

@@ -1,9 +1,0 @@
-/* miniprogram/pages/homepage_grid/homepage_frid.wxss */
-
-
-.user-info{height :250rpx; border-left: none; border-right: none; justify-items: center;}
-
-.user-info image{ margin: 30rpx auto;  width: 100rpx; height:100rpx; border-radius:50%; overflow: hidden; display: block;}
-.user-info button{ display:block; margin: 0 auto;}
-.user-info text{ color:#707070; display:block; margin: 0 auto; text-align: center; border-bottom: 60rpx;}
-.weui-grid__label{ color:#707070;}

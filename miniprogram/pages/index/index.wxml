@@ -35,6 +35,11 @@
     </view>
   </view>
 
+
+<project-state-panel></project-state-panel>
+<project-management></project-management>
+
+
   <!-- footer -->
   <view class="footer weui-footer weui-footer_fixed-bottom">
     <view class="weui-footer__links">

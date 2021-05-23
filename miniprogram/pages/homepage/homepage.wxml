@@ -1,0 +1,65 @@
+<!--miniprogram/pages/homepage/homepage.wxml-->
+<view>
+	<view class="user-info">
+		<image class="avatar">
+			<view class="sub-icon fas fa-users fs15"></view>
+		</image>
+		<view class="content">
+			<view class="fs18 bold">一个人</view>
+			<view>
+				<view class="identity gray-weak">
+					<text class="fas fa-address-card fs14"></text>
+					<text class="fs10" style="margin-left:9rpx">居民</text>
+				</view>
+			</view>
+			<view class=" gray-weak">
+				<text class="fas fa-map-marker fs16"></text>
+				<text class="fs14" style="margin-left:4rpx">上海市延吉街道社区</text>
+			</view>
+		</view>
+		<text class="fas fa-chevron-right gray-weak"></text>
+	</view>
+	<view class="functions-container">
+		<view class="function-item">
+			<text class="fas fa-envelope fs26" style="color:#FE506A"></text>
+			<text class="fs14">消息中心</text>
+		</view>
+
+		<view class="function-item">
+			<text class="md fs26" style="color:#4C85ED">library_books</text>
+			<text class="fs14">我的项目</text>
+		</view>
+
+		<view class="function-item">
+			<text class="fas fa-star fs26" style="color:#FF9663"></text>
+			<text class="fs14">我的投票</text>
+		</view>
+
+		<view class="function-item">
+			<text class="md fs26" style="color:#6DC562">assessment</text>
+			<text class="fs14">偏好调查</text>
+		</view>
+	</view>
+
+	<view class="tools">
+		<view class="fs16 bold" style="margin-left:45rpx">常用工具</view>
+		<view class="tools-container">
+			<view class="tool-item">
+				<text class="far fa-question-circle fs26"></text>
+				<text class="fs14">反馈建议</text>
+			</view>
+
+			<view class="tool-item">
+				<text class="md fs26">home</text>
+				<text class="fs14">关于我们</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="weui-footer weui-footer_fixed-bottom footer">
+		<view class="weui-footer__links">
+			<a href="javascript:home();" class="weui-footer__link">微新</a>
+		</view>
+		<view class="weui-footer__text">Copyright &copy; 2019-2021 城市“微新”团队</view>
+	</view>
+</view>

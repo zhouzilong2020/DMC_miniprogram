@@ -1,0 +1,85 @@
+/* miniprogram/pages/homepage/homepage_frid.wxss */
+.user-info {
+  padding: 38rpx 45rpx;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.avatar {
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 50%;
+  border: 2px solid rgb(153, 153, 153);
+  position: relative;
+  overflow: unset;
+  flex-shrink: 0;
+}
+
+.avatar .sub-icon {
+  color: rgb(16, 176, 255);
+  width: 43rpx;
+  height: 43rpx;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  right: 13rpx;
+  bottom: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 14rpx;
+  margin-left: 29rpx;
+}
+
+.identity {
+  padding: 0 14rpx;
+  border-radius: 36rpx;
+  border: 1px solid rgb(198, 199, 198);
+  display: inline-block;
+  font-size: 0;
+}
+
+.functions-container,
+.tools-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 0 0 47rpx 47rpx;
+  background: white;
+}
+
+.functions-container {
+  padding: 27rpx 0 49rpx;
+}
+
+.tools-container {
+  margin-top: 42rpx;
+}
+
+.function-item,
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.function-item>text+text {
+  margin-top: 18rpx;
+}
+
+.tools {
+  margin-top: 36rpx;
+  padding: 47rpx 0 82rpx;
+  border-radius: 47rpx;
+  background: white;
+}
+
+.tool-item>text+text {
+  margin-top: 29rpx;
+}

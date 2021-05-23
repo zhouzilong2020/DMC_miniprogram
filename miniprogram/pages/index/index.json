@@ -9,9 +9,9 @@
     "article":"../../components/news-detail/article",
     "message":"../../components/message/message",
     "my-project":"../../components/my-project/my-project",
-    "manage":"../../components/manage/manage",
+    "project-management":"../../components/project-management/project-management",
     "news-recent":"../../components/news-recent/news-recent",
-    "state":"../../components/state/state",
-    "schedule":"../../components/schedule/schedule"
+    "project-state-panel":"../../components/project-state-panel/project-state-panel",
+    "project-timeline":"../../components/project-timeline/project-timeline"
   }
 }

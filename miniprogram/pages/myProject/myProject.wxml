@@ -1,3 +1,0 @@
-<!--miniprogram/pages/myProject/myProject.wxml-->
-<!-- <text style="text-align:center" > 这里需要一些排版和UI设计 </text> -->
-<project-list wx:if="{{imageData.length}}" imageData="{{imageData}}" canDelete="{{true}}" isCase="{{false}}" />

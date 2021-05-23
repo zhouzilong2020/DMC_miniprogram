@@ -8,16 +8,16 @@
     "pages/cases/cases1/cases1",
     "pages/editUserInfo/editUserInfo",
     "pages/uploadProject/uploadProject",
-    "pages/homepage_grid/homepage_grid",
+    "pages/homepage/homepage",
     "pages/mes_fail/mes_fail",
     "pages/mes_success/mes_success",
-    "pages/myProject/myProject",
     "pages/map/map",
     "pages/detail/detail",
     "pages/allProject/allProject",
     "pages/rollPicture/rollPicture",
     "pages/questionnaire/questionnaire",
-    "pages/test-page/test-page"
+    "pages/test-page/test-page",
+    "pages/my-project/my-project"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -34,30 +34,19 @@
     }
   },
   "tabBar": {
+    "custom": true,
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/tabbar/index.png",
-        "selectedIconPath": "images/tabbar/index-selected.png"
+        "pagePath": "pages/index/index"
       },
       {
-        "pagePath": "pages/uploadProject/uploadProject",
-        "text": "上传畸形地块",
-        "iconPath": "images/tabbar/upload.png",
-        "selectedIconPath": "images/tabbar/upload-selected.png"
+        "pagePath": "pages/map/map"
       },
       {
-        "pagePath": "pages/map/map",
-        "text": "畸形地图",
-        "iconPath": "images/tabbar/map.png",
-        "selectedIconPath": "images/tabbar/map-selected.png"
+        "pagePath": "pages/my-project/my-project"
       },
       {
-        "pagePath": "pages/homepage_grid/homepage_grid",
-        "text": "我的",
-        "iconPath": "images/tabbar/homepage1.png",
-        "selectedIconPath": "images/tabbar/homepage1-selected.png"
+        "pagePath": "pages/homepage/homepage"
       }
     ]
   }

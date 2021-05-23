@@ -1,0 +1,33 @@
+/* components/project-timeline.wxss */
+.event{
+  border-radius: 18rpx;
+  background: white;
+  box-shadow: 0 4rpx 11rpx 0 rgb(204, 204, 204);
+  margin-left: 36rpx;
+  padding: 18rpx 29rpx;
+  box-sizing: border-box;
+}
+
+.content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 14rpx;
+}
+
+.horizon-line{
+  width: 100%;
+  border: 1px solid rgb(236, 236, 236);
+  margin: 14rpx 0;
+}
+
+.vote-result-button{
+  background: #0CB1FF;
+  color: white;
+  border-radius: 7rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
