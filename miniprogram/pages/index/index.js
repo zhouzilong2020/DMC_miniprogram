@@ -1,7 +1,9 @@
 // miniprogram/pages/index/index.js
 const db = wx.cloud.database();
 const app = getApp();
-
+import {
+  getTempFileURL
+} from "../../utils/download"
 Page({
   /**
    * 页面的初始数据
@@ -18,11 +20,9 @@ Page({
       icon: 'fas fa-pen'
     }],
     curTabIdx: 0,
-    data: {
-      exemplaryProject: [],
-      news: [],
-      designer: [],
-    },
+    exemplaryProject: [],
+    newsList: [],
+    designerList: [],
   },
 
   onLoad: function () {
@@ -31,37 +31,38 @@ Page({
     that.pushData()
   },
 
-  requestData: function () {
+  requestData: async function () {
     const that = this
-    that.data.test.a = [1,1,]
-    
-    that.setData({
-      test:that.data.test
-    })
-    console
-
-    // let exemplaryProjectResult = []
-    // db.collection('news')
-    //   .orderBy('create_time', 'desc')
-    //   .get()
-    //   .then(res => {
-    //     const fileList = []
-    //     exemplaryProjectResult = res.data
-    //     console.log(exemplaryProjectResult)
-    //     for (let i = 0, len = exemplaryProjectResult.length; i < len; i++) {
-    //       fileList.push(exemplaryProjectResult[i].image_list[0])
-    //     }
-    //     wx.cloud.getTempFileURL({
-    //       fileList: fileList,
-    //       success: res => {
-    //         const tempFileUrlList = res.fileList
-    //         for (let i = 0, len = tempFileUrlList.length; i < len; i++) {
-    //           exemplaryProjectResult[i].image = tempFileUrlList[i]
-    //         }
-    //       }
-    //     })
-    //   })
+    db.collection('news')
+      .orderBy('create_time', 'desc')
+      .get()
+      .then(async (res) => {
+        const fileList = []
+        let exemplaryProjectResult = res.data
+        // 首页数据只取第一张！
+        for (let i = 0, len = exemplaryProjectResult.length; i < len; i++) {
+          fileList.push(exemplaryProjectResult[i].image_list[0])
+        }
+        var tempFileURLList = await getTempFileURL(fileList)
+        // 更新filURL
+        for (let i = 0, len = exemplaryProjectResult.length; i < len; i++) {
+          exemplaryProjectResult[i].image = tempFileURLList[i]
+        }
+        that.setData({
+          newsList: exemplaryProjectResult
+        })
+      })
+    db.collection('designer')
+      .orderBy('create_time', 'desc')
+      .get()
+      .then(async (res) => {
+        that.setData({
+          designerList:res.data
+        })
+        console.log(res)
+      })
   },
+
   pushData: function () {
 
   },

@@ -12,34 +12,35 @@
     </view>
     <!-- 新闻 -->
     <view wx-if="{{curTabIdx == 1}}" class="container news">
-      <news wx:for="{{[1,2]}}"></news>
+      <news wx:for="{{newsList}}" news="{{news}}" wx:for-item="news" wx:key="_id"></news>
     </view>
     <!-- 设计师 -->
     <view wx-if="{{curTabIdx == 2}}" class="container designers">
-      <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
+      <designer-item wx:for="{{designerList}}" wx:key="_id" wx:for-item="designer" designer="{{designer}}">
+      </designer-item>
     </view>
 
     <!-- 文章详情 -->
-    <view class="container row-item">
+    <!-- <view class="container row-item">
       <article></article>
-    </view>
+    </view> -->
     <!-- 投票消息 -->
-    <view class="container row-item">
+    <!-- <view class="container row-item">
       <message wx:for="{{[1,2]}}"></message>
-    </view>
+    </view> -->
     <!-- 我的项目 -->
-    <view class="container row-item">
+    <!-- <view class="container row-item">
       <my-project wx:for="{{[1,2]}}"></my-project>
-    </view>
+    </view> -->
 
-    <view class="container row-item">
+    <!-- <view class="container row-item">
       <news-recent wx:for="{{[1,2]}}"></news-recent>
-    </view>
+    </view> -->
   </view>
 
-
+  <!-- 
 <project-state-panel></project-state-panel>
-<project-management></project-management>
+<project-management></project-management> -->
 
 
   <!-- footer -->

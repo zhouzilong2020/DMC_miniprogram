@@ -1,9 +1,11 @@
 <!--miniprogram/pages/my-project/my-project.wxml-->
 <view>
+  <!-- 顶部panel -->
   <project-management></project-management>
   <view class="recent-projects">
     <view class="fs16 bold">最近参与的改造计划</view>
     <scroll-view scroll-x>
+      <!-- 最近计划 -->
       <block wx:for="{{[1,2,3,4,5]}}">
         <view class="recent-project-item">
           <image class="white fs14"
@@ -12,12 +14,13 @@
           <view class="title fs14 bold">上海市延吉街道社区什么改造</view>
         </view>
       </block>
-
       <!--
       <view class="fs12 gray-weak empty">暂时还没有参与</view>-->
     </scroll-view>
   </view>
+
   <view class="relevant-projects">
+    <!-- 与我相关的项目 -->
     <my-project wx:for="{{[1,2,3,4,5]}}"></my-project>
     <view class="fs12 gray-weak" style="margin-top:120rpx;text-align:center">没有更多了</view>
   </view>

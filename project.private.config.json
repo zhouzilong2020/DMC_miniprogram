@@ -19,12 +19,6 @@
           "scene": null
         },
         {
-          "name": "pages/questionnaire/questionnaire",
-          "pathName": "pages/questionnaire/questionnaire",
-          "query": "",
-          "scene": null
-        },
-        {
           "id": -1,
           "name": "pages/editUserInfo/editUserInfo",
           "pathName": "pages/editUserInfo/editUserInfo",
@@ -32,9 +26,8 @@
           "scene": null
         },
         {
-          "id": 6,
-          "name": "上传畸形地块表格",
-          "pathName": "pages/uploadProject/uploadProject",
+          "name": "homepage",
+          "pathName": "pages/homepage/homepage",
           "query": "",
           "scene": null
         },
@@ -107,6 +100,12 @@
         {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/my-project/my-project",
+          "pathName": "pages/my-project/my-project",
           "query": "",
           "scene": null
         },
