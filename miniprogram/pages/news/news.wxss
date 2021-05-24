@@ -1,7 +1,8 @@
 /* miniprogram/pages/news/news.wxss */
-page{
+page {
   margin-bottom: 118rpx;
 }
+
 .comment-container {
   margin-top: 27rpx;
   padding: 27rpx 36rpx;
@@ -12,23 +13,37 @@ page{
 .news-footer {
   height: 118rpx;
   width: 100%;
+  padding: 0 31rpx;
   position: fixed;
   bottom: 0;
   background: white;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
-.comment-input{
+.comment-input {
   border-radius: 91rpx;
   height: 72rpx;
-  background: rgb(248, 248, 248);
-  flex:1;
+  background: #F8F8F8;
+  flex: 1;
   display: flex;
 }
 
-.comment-input .icon{
-  line-height:72rpx;
-  margin-left:18rpx;
+.comment-input text {
+  line-height: 72rpx;
+  margin-left: 18rpx;
+  flex-shrink: 0;
+}
+
+.comment-input input {
+  flex: 1;
+  height: 100%;
+  margin-left: 9rpx;
+}
+
+.link{
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
 }
