@@ -8,11 +8,11 @@
     <tab-group bindonTabChange="onTabChange" id="tab-group" box-class="tabs"></tab-group>
     <!-- 示范项目 -->
     <view wx-if="{{curTabIdx == 0}}" class="container projects">
-      <project-item wx:for="{{[1,2,3,4]}}"></project-item>
+      <project-item wx:for="{{demoList}}" wx:key="_id" project="{{item}}"></project-item>
     </view>
     <!-- 新闻 -->
     <view wx-if="{{curTabIdx == 1}}" class="container news">
-      <news wx:for="{{newsList}}" news="{{news}}" wx:for-item="news" wx:key="_id"></news>
+      <news wx:for="{{newsList}}" news="{{item}}"  wx:key="_id"></news>
     </view>
     <!-- 设计师 -->
     <view wx-if="{{curTabIdx == 2}}" class="container designers">

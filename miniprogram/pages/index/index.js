@@ -20,7 +20,7 @@ Page({
       icon: 'fas fa-pen'
     }],
     curTabIdx: 0,
-    exemplaryProject: [],
+    demoList: [],
     newsList: [],
     designerList: [],
   },
@@ -33,23 +33,45 @@ Page({
 
   requestData: async function () {
     const that = this
+    db.collection('example_project')
+      .orderBy('create_time', 'desc')
+      .get()
+      .then(async (res) => {
+        const fileList = []
+        let demoResult = res.data
+        // 首页数据只取第一张！
+        for (let i = 0, len = demoResult.length; i < len; i++) {
+          fileList.push(demoResult[i].image_list[0])
+        }
+        var tempFileURLList = await getTempFileURL(fileList)
+        // 更新filURL
+        for (let i = 0, len = demoResult.length; i < len; i++) {
+          demoResult[i].image = tempFileURLList[i]
+        }
+        that.setData({
+          demoList: demoResult
+        })
+        console.log(that.data.demoList)
+      })
+
+
     db.collection('news')
       .orderBy('create_time', 'desc')
       .get()
       .then(async (res) => {
         const fileList = []
-        let exemplaryProjectResult = res.data
+        let newsResult = res.data
         // 首页数据只取第一张！
-        for (let i = 0, len = exemplaryProjectResult.length; i < len; i++) {
-          fileList.push(exemplaryProjectResult[i].image_list[0])
+        for (let i = 0, len = newsResult.length; i < len; i++) {
+          fileList.push(newsResult[i].image_list[0])
         }
         var tempFileURLList = await getTempFileURL(fileList)
         // 更新filURL
-        for (let i = 0, len = exemplaryProjectResult.length; i < len; i++) {
-          exemplaryProjectResult[i].image = tempFileURLList[i]
+        for (let i = 0, len = newsResult.length; i < len; i++) {
+          newsResult[i].image = tempFileURLList[i]
         }
         that.setData({
-          newsList: exemplaryProjectResult
+          newsList: newsResult
         })
       })
     db.collection('designer')
@@ -57,9 +79,8 @@ Page({
       .get()
       .then(async (res) => {
         that.setData({
-          designerList:res.data
+          designerList: res.data
         })
-        console.log(res)
       })
   },
 
