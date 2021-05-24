@@ -1,0 +1,46 @@
+<view class="project-state-panel">
+  <view class="nav">
+    <!-- <view class="finish">项目已完成</view> -->
+    <view>
+      <view class="md fs24">check_circle</view>
+      <view class="fs14">提交</view>
+    </view>
+
+    <view>
+      <view class="md fs24">rate_review</view>
+      <view class="fs14">提交</view>
+    </view>
+
+    <view>
+      <view class="fas fa-pen fs24"></view>
+      <view class="fs14">设计</view>
+    </view>
+
+    <view>
+      <view class="md fs24">poll</view>
+      <view class="fs14">投票中</view>
+    </view>
+
+    <view>
+      <view class="fas fa-gavel fs24"></view>
+      <view class="fs14">施工</view>
+    </view>
+  </view>
+  <image class="image regular" data-type="项目已完成"></image>
+  <view class="content fs14">
+    <text class="gray-weak">名称：</text>
+    <text class="bold">改造项目的名字</text>
+
+    <text class="gray-weak">类型：</text>
+    <text class="bold">畸形空间</text>
+
+    <text class="gray-weak">编号：</text>
+    <text class="bold">00001111222233334444</text>
+
+    <text class="gray-weak">状态：</text>
+    <text class="bold">改造完成</text>
+
+    <text class="gray-weak">完成时间：</text>
+    <text class="bold">2020-02-14 15:12:00</text>
+  </view>
+</view>

@@ -18,7 +18,7 @@ Page({
   data: {
     userPhoto: "/images/user.png",
     nickname: " ",
-    logged: false,
+    logged: true,
     disabled: true,
     userType: 0,
   },

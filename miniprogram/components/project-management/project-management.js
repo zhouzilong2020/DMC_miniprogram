@@ -1,7 +1,7 @@
-// components/my-project.js
+// components/project-management/project-management.js
 Component({
-  options: {
-    addGlobalClass: true
+  options:{
+    addGlobalClass:true,
   },
   /**
    * 组件的属性列表

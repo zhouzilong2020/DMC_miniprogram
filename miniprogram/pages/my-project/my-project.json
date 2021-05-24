@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "project-management": "../../components/project-management/project-management",
+    "my-project": "../../components/my-project/my-project"
+  }
+}

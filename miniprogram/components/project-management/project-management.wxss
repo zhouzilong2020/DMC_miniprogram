@@ -1,0 +1,33 @@
+/* components/project-management/project-management.wxss */
+.project-management {
+  padding: 9rpx 36rpx 24rpx;
+  border-radius: 0 0 47rpx 47rpx;
+  background: white;
+}
+
+.state-tabs {
+  display: flex;
+  background-color: #f7f7f7;
+  border-radius: 27rpx;
+  position: relative;
+}
+
+.state-tab {
+  border-radius: 27rpx;
+  padding: 40rpx 0 36rpx 0;
+  text-align: center;
+  flex: 1;
+}
+
+.state-tab.is-active {
+  color: white;
+  background: rgb(12, 177, 255);
+}
+
+.create-button {
+  background-color: rgb(26, 173, 25);
+  border-radius: 27rpx;
+  padding: 20rpx;
+  text-align: center;
+  margin-top: 33rpx;
+}

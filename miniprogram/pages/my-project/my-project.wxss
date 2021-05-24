@@ -1,0 +1,60 @@
+/* miniprogram/pages/my-project/my-project.wxss */
+
+.recent-projects {
+  white-space: nowrap;
+  padding: 33rpx 40rpx;
+}
+
+.recent-projects scroll-view{
+  margin-top:24rpx;
+}
+
+.recent-projects .empty{
+  height:232rpx;
+  text-align:center;
+  line-height:232rpx
+}
+
+.recent-project-item {
+  width: 261rpx;
+  display: inline-block;
+}
+
+.recent-project-item+.recent-project-item {
+  margin-left: 29rpx;
+}
+
+.recent-project-item image {
+  width: 261rpx;
+  height: 145rpx;
+  border-radius: 18rpx;
+  position: relative;
+}
+
+.recent-project-item image::before {
+  content: attr(data-state);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
+  padding: 7rpx 18rpx;
+  border-radius: 18rpx 0 18rpx 0;
+}
+
+.recent-project-item .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.relevant-projects {
+  padding: 40rpx 31rpx 16rpx;
+  background: white;
+  border-radius: 47rpx;
+  box-shadow: 0 4rpx 11rpx 0 rgba(230, 230, 230, 0.4);
+  display: grid;
+  grid-template-rows: repeat(auto-fit,1fr);
+  row-gap: 22rpx;
+}

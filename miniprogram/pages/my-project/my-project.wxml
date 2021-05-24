@@ -1,0 +1,24 @@
+<!--miniprogram/pages/my-project/my-project.wxml-->
+<view>
+  <project-management></project-management>
+  <view class="recent-projects">
+    <view class="fs16 bold">最近参与的改造计划</view>
+    <scroll-view scroll-x>
+      <block wx:for="{{[1,2,3,4,5]}}">
+        <view class="recent-project-item">
+          <image class="white fs14"
+            src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg"
+            data-state="施工中"></image>
+          <view class="title fs14 bold">上海市延吉街道社区什么改造</view>
+        </view>
+      </block>
+
+      <!--
+      <view class="fs12 gray-weak empty">暂时还没有参与</view>-->
+    </scroll-view>
+  </view>
+  <view class="relevant-projects">
+    <my-project wx:for="{{[1,2,3,4,5]}}"></my-project>
+    <view class="fs12 gray-weak" style="margin-top:120rpx;text-align:center">没有更多了</view>
+  </view>
+</view>

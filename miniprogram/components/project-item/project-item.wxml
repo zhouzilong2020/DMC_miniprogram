@@ -1,6 +1,6 @@
 <!--components/project-item.wxml-->
 <view class="project-item">
-  <image class="image regular" data-type="景观">
+  <image class="image regular" data-type="景观" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg">
     <view class="heat">
       <text class="md fs14">whatshot</text>
       <text class="fs12">2888</text>

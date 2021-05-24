@@ -40,8 +40,8 @@
         },
         {
           "id": -1,
-          "name": "pages/homepage_grid/homepage_grid",
-          "pathName": "pages/homepage_grid/homepage_grid",
+          "name": "pages/homepage/homepage",
+          "pathName": "pages/homepage/homepage",
           "query": "",
           "scene": null
         },
@@ -107,6 +107,12 @@
         {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/my-project/my-project",
+          "pathName": "pages/my-project/my-project",
           "query": "",
           "scene": null
         }
