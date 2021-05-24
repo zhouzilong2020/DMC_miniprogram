@@ -18,13 +18,11 @@ Page({
       icon: 'fas fa-pen'
     }],
     curTabIdx: 0,
-    referenceImageData: [],
-    imageData: null,
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    interval: 2000,
-    duration: 500
+    data: {
+      exemplaryProject: [],
+      news: [],
+      designer: [],
+    },
   },
 
   onLoad: function () {
@@ -32,36 +30,37 @@ Page({
     that.requestData()
     that.pushData()
   },
+
   requestData: function () {
     const that = this
-    db.collection('cases').orderBy('_createTime', 'asc').get().then((res) => {
-      var fileList = []
-      var data = res.data
-      for (var i = 0, len = data.length; i < len; i++) {
-        if (data[i].img_src.length) {
-          fileList.push(data[i].img_src[0])
-        } else {
-          fileList.push(data[i].img_src)
-        }
-      }
-      wx.cloud.getTempFileURL({
-        fileList: fileList,
-        success: res => {
-          var pathData = res.fileList
-          var result = []
-          for (var i = 0, len = pathData.length; i < len; i++) {
-            result.push({
-              src: pathData[i].tempFileURL,
-              title: data[i].title,
-              _id: data[i]._id
-            })
-          }
-          that.setData({
-            referenceImageData: result
-          })
-        }
-      })
+    that.data.test.a = [1,1,]
+    
+    that.setData({
+      test:that.data.test
     })
+    console
+
+    // let exemplaryProjectResult = []
+    // db.collection('news')
+    //   .orderBy('create_time', 'desc')
+    //   .get()
+    //   .then(res => {
+    //     const fileList = []
+    //     exemplaryProjectResult = res.data
+    //     console.log(exemplaryProjectResult)
+    //     for (let i = 0, len = exemplaryProjectResult.length; i < len; i++) {
+    //       fileList.push(exemplaryProjectResult[i].image_list[0])
+    //     }
+    //     wx.cloud.getTempFileURL({
+    //       fileList: fileList,
+    //       success: res => {
+    //         const tempFileUrlList = res.fileList
+    //         for (let i = 0, len = tempFileUrlList.length; i < len; i++) {
+    //           exemplaryProjectResult[i].image = tempFileUrlList[i]
+    //         }
+    //       }
+    //     })
+    //   })
   },
   pushData: function () {
 
