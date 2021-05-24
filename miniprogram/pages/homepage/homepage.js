@@ -16,6 +16,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userTypeConverter: ['居民', '管理员', '设计师'],
     userPhoto: "/images/user.png",
     nickname: " ",
     logged: true,
@@ -27,24 +28,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that = this
     //先检查是否有登录信息
     whoAmI().then(res => {
+      console.log(res)
       // 存储了登录信息, 直接获取
       this.setData({
-        userPhoto: res.avatar,
-        nickName: res.nickname,
+        avatar: res.avatar,
+        nickname: res.nickname,
         logged: true,
-        userType: res.type,
+        // FIXME 这里需要处理一下
+        userType: '居民',
       })
     }).catch(e => {
       // 没有存储登录信息,重新登录
       login().then(res => {
         console.log(res)
         this.setData({
-          userPhoto: res.avatar,
-          nickName: res.nickname,
+          avatar: res.avatar,
+          nickname: res.nickname,
           logged: true,
-          userType: res.type,
+          // FIXME 这里需要处理一下
+          userType: '居民',
         })
       }).catch(err => {
         this.setData({

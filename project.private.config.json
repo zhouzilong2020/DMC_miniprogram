@@ -99,6 +99,12 @@
           "pathName": "pages/search/search",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/my-project/my-project",
+          "pathName": "pages/my-project/my-project",
+          "query": "",
+          "scene": null
         }
       ]
     }

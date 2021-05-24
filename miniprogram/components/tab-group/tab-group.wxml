@@ -6,5 +6,5 @@
       <text class="{{tab.icon}} fs19"></text>
     </view>
   </block>
-  <view class="active-bar" id="activeBar" style="width: {{barWidth}};left:{{barLeft}}"></view>
+  <view class="active-bar" id="activeBar" style="width: {{barWidth}}; left:{{barLeft}}"></view>
 </view>

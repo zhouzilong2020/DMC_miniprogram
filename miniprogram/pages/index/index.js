@@ -1,7 +1,9 @@
 // miniprogram/pages/index/index.js
 const db = wx.cloud.database();
 const app = getApp();
-
+import {
+  getTempFileURL
+} from "../../utils/download"
 Page({
   /**
    * 页面的初始数据
@@ -18,13 +20,9 @@ Page({
       icon: 'fas fa-pen'
     }],
     curTabIdx: 0,
-    referenceImageData: [],
-    imageData: null,
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    interval: 2000,
-    duration: 500
+    demoList: [],
+    newsList: [],
+    designerList: [],
   },
 
   onLoad: function () {
@@ -32,37 +30,60 @@ Page({
     that.requestData()
     that.pushData()
   },
-  requestData: function () {
+
+  requestData: async function () {
     const that = this
-    db.collection('cases').orderBy('_createTime', 'asc').get().then((res) => {
-      var fileList = []
-      var data = res.data
-      for (var i = 0, len = data.length; i < len; i++) {
-        if (data[i].img_src.length) {
-          fileList.push(data[i].img_src[0])
-        } else {
-          fileList.push(data[i].img_src)
+    db.collection('example_project')
+      .orderBy('create_time', 'desc')
+      .get()
+      .then(async (res) => {
+        const fileList = []
+        let demoResult = res.data
+        // 首页数据只取第一张！
+        for (let i = 0, len = demoResult.length; i < len; i++) {
+          fileList.push(demoResult[i].image_list[0])
         }
-      }
-      wx.cloud.getTempFileURL({
-        fileList: fileList,
-        success: res => {
-          var pathData = res.fileList
-          var result = []
-          for (var i = 0, len = pathData.length; i < len; i++) {
-            result.push({
-              src: pathData[i].tempFileURL,
-              title: data[i].title,
-              _id: data[i]._id
-            })
-          }
-          that.setData({
-            referenceImageData: result
-          })
+        var tempFileURLList = await getTempFileURL(fileList)
+        // 更新filURL
+        for (let i = 0, len = demoResult.length; i < len; i++) {
+          demoResult[i].image = tempFileURLList[i]
         }
+        that.setData({
+          demoList: demoResult
+        })
+        console.log(that.data.demoList)
       })
-    })
+
+
+    db.collection('news')
+      .orderBy('create_time', 'desc')
+      .get()
+      .then(async (res) => {
+        const fileList = []
+        let newsResult = res.data
+        // 首页数据只取第一张！
+        for (let i = 0, len = newsResult.length; i < len; i++) {
+          fileList.push(newsResult[i].image_list[0])
+        }
+        var tempFileURLList = await getTempFileURL(fileList)
+        // 更新filURL
+        for (let i = 0, len = newsResult.length; i < len; i++) {
+          newsResult[i].image = tempFileURLList[i]
+        }
+        that.setData({
+          newsList: newsResult
+        })
+      })
+    db.collection('designer')
+      .orderBy('create_time', 'desc')
+      .get()
+      .then(async (res) => {
+        that.setData({
+          designerList: res.data
+        })
+      })
   },
+
   pushData: function () {
 
   },

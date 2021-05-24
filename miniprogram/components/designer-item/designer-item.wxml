@@ -1,5 +1,5 @@
 <!--components/designer-item/designer-item.wxml-->
 <view>
-  <image class="image white regular" data-name="张丽" data-title="城市微新团队\n设计师"></image>
-  <view class="fs14 bold title">做一个有着持续高产热情的创作者</view>
+  <image class="image white regular" data-name="{{name}}" data-title="城市微新团队\n设计师"></image>
+  <view class="fs14 bold title">{{style}}</view>
 </view>

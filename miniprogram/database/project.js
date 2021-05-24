@@ -13,7 +13,7 @@ import {
  * @param {*} context 
  * @param {*} payload 
  */
-export function getrelevantPublishedProject(context, payload) {
+export function getrelevantProject(context, payload) {
   return new Promise((resolve, reject) => {
     try {
       var _project_ids = payload.relevant_project_id.concat(payload.published_project_id)

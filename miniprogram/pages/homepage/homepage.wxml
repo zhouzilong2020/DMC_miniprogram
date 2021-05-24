@@ -1,18 +1,19 @@
 <!--miniprogram/pages/homepage/homepage.wxml-->
 <view>
 	<view class="user-info">
-		<view class="avatar-container">
-			<image class="avatar" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg">
-			</image>
+		<!-- 微信头像 -->
+		<image class="avatar" src="{{avatar}}">
 			<view class="sub-icon fas fa-users fs15"></view>
-		</view>
+		</image>
 
 		<view class="content">
-			<view class="fs18 bold">一个人</view>
+			<!-- 昵称 -->
+			<view class="fs18 bold">{{nickname}}</view>
 			<view>
 				<view class="identity gray-weak">
 					<text class="fas fa-address-card fs14"></text>
-					<text class="fs10" style="margin-left:9rpx">居民</text>
+					<!-- 用户类型 -->
+					<text class="fs10" style="margin-left:9rpx">{{userType}}</text>
 				</view>
 			</view>
 			<view class=" gray-weak">
