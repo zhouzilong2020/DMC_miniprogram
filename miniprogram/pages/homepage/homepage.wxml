@@ -1,10 +1,11 @@
 <!--miniprogram/pages/homepage/homepage.wxml-->
 <view>
 	<view class="user-info">
-		<!-- 微信头像 -->
-		<image class="avatar" src="{{avatar}}">
+		<view class="avatar-container">
+			<image class="avatar" src="{{avatar}}">
+			</image>
 			<view class="sub-icon fas fa-users fs15"></view>
-		</image>
+		</view>
 
 		<view class="content">
 			<!-- 昵称 -->

@@ -21,9 +21,9 @@
   </view>
   <view class="search" style="bottom:85rpx">
     <text class="fas fa-search gray fs18" style="margin-left:29rpx"></text>
-    <input class="fs18" placeholder="搜索改造项目/设计师"></input>
-    <text class="vertical-line" style="right:80rpx;"></text>
-    <view class="fa-stack-fs18 gray" style="right:22rpx">
+    <input class="fs14 gray-weak" placeholder="搜索改造项目/设计师" style="margin-left:14rpx"></input>
+    <text class="vertical-line" style="margin-right:58rpx;"></text>
+    <view class="fa-stack-fs18 gray" style="margin-right:22rpx">
       <text class="fas fa-expand fa-stack-1x fs18"></text>
       <text class="fas fa-minus fa-stack-1x fs14"></text>
     </view>
