@@ -11,8 +11,8 @@
       <text class="fs16 bold">项目设计方案成功提交啦！</text>
       <text class="fs11">12月31日 周日 14:00</text>
     </view>
-    <view class="horizon-line"></view>
-    <view class="vote-result-button">
+    <view class="horizon-line" wx:if="{{buttonShow}}"></view>
+    <view class="vote-result-button" wx:if="{{buttonShow}}">
       <text class="md fs20">poll</text>
       <text class="fs14 bold" style="margin-left:4rpx">查看结果</text>
     </view>

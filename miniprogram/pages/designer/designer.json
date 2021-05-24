@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "designer-detail":"../../components/designer-detail/designer-detail"
+  }
+}

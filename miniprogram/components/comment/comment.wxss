@@ -1,6 +1,6 @@
 /* components/comment/comment.wxss */
 .comment{
-  padding: 36rpx;
+  padding: 36rpx 0;
   background: white;
   display: flex;
 }

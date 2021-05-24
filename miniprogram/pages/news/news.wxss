@@ -1,0 +1,34 @@
+/* miniprogram/pages/news/news.wxss */
+page{
+  margin-bottom: 118rpx;
+}
+.comment-container {
+  margin-top: 27rpx;
+  padding: 27rpx 36rpx;
+  border-radius: 18rpx;
+  background: white;
+}
+
+.news-footer {
+  height: 118rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.comment-input{
+  border-radius: 91rpx;
+  height: 72rpx;
+  background: rgb(248, 248, 248);
+  flex:1;
+  display: flex;
+}
+
+.comment-input .icon{
+  line-height:72rpx;
+  margin-left:18rpx;
+  flex-shrink: 0;
+}

@@ -1,0 +1,21 @@
+<!--miniprogram/pages/designer/designer.wxml-->
+<view style="background:#EEEEEE">
+  <designer-detail></designer-detail>
+  <view class="design-experience">
+    <view>
+      <text class="fs16 bold">设计案例</text>
+      <text class="fs14" style="margin-left:13rpx">（共4次设计经历）</text>
+    </view>
+    <view class="project-container">
+      <!-- <block wx:for="{{[1,2,3]}}">
+        <view>
+          <image class="image"
+            src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg"></image>
+          <view class="fs14 bold title">做一个有着持续高产热情的创作者</view>
+        </view>
+      </block> -->
+     
+    </view>
+    <view class="fs14 gray-weak">还没有收录该设计师的案例哦</view>
+  </view>
+</view>

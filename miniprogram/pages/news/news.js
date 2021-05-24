@@ -1,4 +1,4 @@
-// miniprogram/pages/editUserInfo/editUserInfo.js
+// miniprogram/pages/news/news.js
 Page({
 
   /**

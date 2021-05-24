@@ -7,7 +7,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    buttonShow: {
+      type: Boolean,
+      value: false,
+    }
   },
 
   /**

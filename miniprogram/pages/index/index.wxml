@@ -16,29 +16,7 @@
     <view wx-if="{{curTabIdx == 2}}" class="container designers">
       <designer-item wx:for="{{[1,2,3,4]}}"></designer-item>
     </view>
-
-    <!-- 文章详情 -->
-    <view class="container row-item">
-      <article></article>
-    </view>
-    <!-- 投票消息 -->
-    <view class="container row-item">
-      <message wx:for="{{[1,2]}}"></message>
-    </view>
-    <!-- 我的项目 -->
-    <view class="container row-item">
-      <my-project wx:for="{{[1,2]}}"></my-project>
-    </view>
-
-    <view class="container row-item">
-      <news-recent wx:for="{{[1,2]}}"></news-recent>
-    </view>
   </view>
-
-
-<project-state-panel></project-state-panel>
-<project-management></project-management>
-
 
   <!-- footer -->
   <view class="footer weui-footer weui-footer_fixed-bottom">

@@ -1,0 +1,12 @@
+/* miniprogram/pages/project/project.wxss */
+page{
+  background:white;
+  min-height: 100%;
+  margin: 0;
+}
+
+.timelines{
+  margin-top: 20rpx;
+  display: grid;
+  row-gap: 27rpx;
+}

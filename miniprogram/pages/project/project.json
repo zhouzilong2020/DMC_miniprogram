@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "project-state-panel":"../../components/project-state-panel/project-state-panel",
+    "project-timeline":"../../components/project-timeline/project-timeline"
+  }
+}

@@ -1,30 +1,15 @@
 <view class="project-state-panel">
   <view class="nav">
-    <!-- <view class="finish">项目已完成</view> -->
-    <view>
-      <view class="md fs24">check_circle</view>
-      <view class="fs14">提交</view>
-    </view>
+    <view wx:if="{{currentState>=projectStates.length}}" class="finish">项目已完成</view>
+    <block wx:else>
+      <block wx:for="{{projectStates}}" wx:for-index="i" wx:key="name">
+        <view class="project-state" style="color:{{i===currentState?'#10B0FF':(i<currentState?'#2F9B13':'#C6C7C6')}}">
+          <view class="{{item.icon}} fs24"></view>
+          <view class="fs14">{{item.name}}</view>
+        </view>
+      </block>
+    </block>
 
-    <view>
-      <view class="md fs24">rate_review</view>
-      <view class="fs14">提交</view>
-    </view>
-
-    <view>
-      <view class="fas fa-pen fs24"></view>
-      <view class="fs14">设计</view>
-    </view>
-
-    <view>
-      <view class="md fs24">poll</view>
-      <view class="fs14">投票中</view>
-    </view>
-
-    <view>
-      <view class="fas fa-gavel fs24"></view>
-      <view class="fs14">施工</view>
-    </view>
   </view>
   <image class="image regular" data-type="项目已完成"></image>
   <view class="content fs14">

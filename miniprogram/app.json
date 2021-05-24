@@ -5,19 +5,16 @@
   },
   "pages": [
     "pages/index/index",
-    "pages/cases/cases1/cases1",
-    "pages/editUserInfo/editUserInfo",
-    "pages/uploadProject/uploadProject",
     "pages/homepage/homepage",
     "pages/mes_fail/mes_fail",
     "pages/mes_success/mes_success",
     "pages/map/map",
-    "pages/detail/detail",
-    "pages/allProject/allProject",
-    "pages/rollPicture/rollPicture",
     "pages/questionnaire/questionnaire",
     "pages/test-page/test-page",
-    "pages/my-project/my-project"
+    "pages/my-project/my-project",
+    "pages/project/project",
+    "pages/designer/designer",
+    "pages/news/news"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

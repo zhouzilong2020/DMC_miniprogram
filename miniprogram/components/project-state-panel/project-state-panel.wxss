@@ -41,3 +41,9 @@
   column-gap: 31rpx;
   padding: 20rpx 34rpx 27rpx;
 }
+
+.project-state{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "news-detail":"../../components/news-detail/article",
+    "comment":"../../components/comment/comment"
+  }
+}

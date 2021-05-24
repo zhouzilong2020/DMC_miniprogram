@@ -25,13 +25,6 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/editUserInfo/editUserInfo",
-          "pathName": "pages/editUserInfo/editUserInfo",
-          "query": "",
-          "scene": null
-        },
-        {
           "id": 6,
           "name": "上传畸形地块表格",
           "pathName": "pages/uploadProject/uploadProject",
@@ -53,21 +46,9 @@
           "scene": null
         },
         {
-          "name": "pages/rollPicture/rollPicture",
-          "pathName": "pages/rollPicture/rollPicture",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/allProject/allProject",
           "pathName": "pages/allProject/allProject",
           "query": "projectId=d1cc6d125f28c73a0046dfea2f8189ef",
-          "scene": null
-        },
-        {
-          "name": "components/switchCard/switchCard",
-          "pathName": "components/switchCard/switchCard",
-          "query": "",
           "scene": null
         },
         {
@@ -84,27 +65,6 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/cases/cases1",
-          "pathName": "pages/cases/cases1",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/cases/cases1/cases1",
-          "pathName": "pages/cases/cases1/cases1",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "components/process/process",
-          "pathName": "components/process/process",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
           "query": "",
@@ -113,6 +73,24 @@
         {
           "name": "pages/my-project/my-project",
           "pathName": "pages/my-project/my-project",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/project/project",
+          "pathName": "pages/project/project",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/designer/designer",
+          "pathName": "pages/designer/designer",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/news/news",
+          "pathName": "pages/news/news",
           "query": "",
           "scene": null
         }

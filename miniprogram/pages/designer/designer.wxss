@@ -1,0 +1,29 @@
+/* miniprogram/pages/designer/designer.wxss */
+.design-experience{
+  padding:33rpx 38rpx;
+  margin-top: 25rpx;
+  border-radius: 47rpx;
+  background: white;
+}
+
+.project-container{
+  margin-top: 34rpx;
+  display: grid;
+  grid-template-columns: repeat(2,calc(50% - 12rpx));
+  column-gap: 24rpx;
+  row-gap: 24rpx;
+  position: relative;
+}
+
+.image{
+  height: 181rpx;
+  width: 326rpx;
+  border-radius: 18rpx;
+}
+
+.title{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

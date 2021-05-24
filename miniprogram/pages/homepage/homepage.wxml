@@ -1,9 +1,12 @@
 <!--miniprogram/pages/homepage/homepage.wxml-->
 <view>
 	<view class="user-info">
-		<image class="avatar">
+		<view class="avatar-container">
+			<image class="avatar" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg">
+			</image>
 			<view class="sub-icon fas fa-users fs15"></view>
-		</image>
+		</view>
+
 		<view class="content">
 			<view class="fs18 bold">一个人</view>
 			<view>
