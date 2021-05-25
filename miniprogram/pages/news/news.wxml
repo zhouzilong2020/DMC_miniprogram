@@ -1,6 +1,6 @@
 <!--miniprogram/pages/news/news.wxml-->
 <view>
-  <news-detail></news-detail>
+  <news-detail news="{{news}}"></news-detail>
   <view class="comment-container">
     <view class="fs16 bold">评论</view>
     <comment wx:for="{{[1,2]}}"></comment>
