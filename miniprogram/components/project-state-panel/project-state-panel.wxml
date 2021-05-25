@@ -23,7 +23,7 @@
     <text class="bold">{{_id}}</text>
 
     <text class="gray-weak">状态：</text>
-    <text class="bold">改造完成</text>
+    <text class="bold">{{projectStates[currentState].name+'中'}}</text>
 
     <text class="gray-weak">更新时间：</text>
     <text class="bold">{{updateTime}}</text>

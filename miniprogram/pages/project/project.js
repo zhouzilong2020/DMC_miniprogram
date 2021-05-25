@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    project: {}
+    project: {},
+    statusTimeList :[],
   },
 
   /**
@@ -22,9 +23,12 @@ Page({
       .get()
       .then(res => {
         this.setData({
-          project: res.data
+          project: res.data,
+          // 注意这里的time list 是从早到晚，分别对应了5个阶段        
+          statusTimeList: res.data.status_time_list
         })
         console.log(this.data.project)
+        console.log(this.data.statusTimeList)
       })
   },
 

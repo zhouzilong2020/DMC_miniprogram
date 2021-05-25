@@ -43,7 +43,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    currentState: 0,
+    
     projectStates: [{
         name: '提交',
         icon: 'fas fa-check-circle'
@@ -57,11 +57,11 @@ Component({
         icon: 'fas fa-pen'
       },
       {
-        name: '投票中',
+        name: '投票',
         icon: 'fas fa-poll'
       },
       {
-        name: '施工中',
+        name: '施工',
         icon: 'fas fa-gavel'
       }
     ]
