@@ -30,10 +30,12 @@
 			<text class="fs14">消息中心</text>
 		</view>
 
-		<view class="function-item">
-			<text class="md fs26" style="color:#4C85ED">library_books</text>
-			<text class="fs14">我的项目</text>
-		</view>
+		<!-- <navigator url="../my-project/my-project.wxml"> -->
+			<view class="function-item">
+				<text class="md fs26" style="color:#4C85ED">library_books</text>
+				<text class="fs14">我的项目</text>
+			</view>
+		<!-- </navigator> -->
 
 		<view class="function-item">
 			<text class="fas fa-star fs26" style="color:#FF9663"></text>

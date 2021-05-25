@@ -14,18 +14,18 @@
   <image class="image regular" data-type="项目已完成"></image>
   <view class="content fs14">
     <text class="gray-weak">名称：</text>
-    <text class="bold">改造项目的名字</text>
+    <text class="bold">{{title}}</text>
 
     <text class="gray-weak">类型：</text>
-    <text class="bold">畸形空间</text>
+    <text class="bold">{{spaceType}}</text>
 
     <text class="gray-weak">编号：</text>
-    <text class="bold">00001111222233334444</text>
+    <text class="bold">{{_id}}</text>
 
     <text class="gray-weak">状态：</text>
     <text class="bold">改造完成</text>
 
-    <text class="gray-weak">完成时间：</text>
-    <text class="bold">2020-02-14 15:12:00</text>
+    <text class="gray-weak">更新时间：</text>
+    <text class="bold">{{updateTime}}</text>
   </view>
 </view>

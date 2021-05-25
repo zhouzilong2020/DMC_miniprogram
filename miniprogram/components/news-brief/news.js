@@ -50,7 +50,8 @@ Component({
           // 通过eventChannel向被打开页面传送数据
           res.eventChannel.emit('forwardNews', {
             data: {
-              news: that.data.news
+              news: that.data.news,
+              canComment: true,
             }
           })
         }

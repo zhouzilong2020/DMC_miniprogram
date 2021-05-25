@@ -107,9 +107,9 @@
           "scene": null
         },
         {
-          "name": "pages/news/news",
-          "pathName": "pages/news/news",
-          "query": "",
+          "name": "pages/project/project",
+          "pathName": "pages/project/project",
+          "query": "_id=79550af26099d44b15d677b93106c1e6",
           "scene": null
         }
       ]

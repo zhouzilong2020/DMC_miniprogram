@@ -7,36 +7,62 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    currentState:{
+    currentState: {
       type: Number,
-      value: 5,
+      value: 3,
+    },
+    updateTime: {
+      type: Date,
+      value: "yyyy-MM--dd--hh--ss",
+      observer: function (newVal) {
+        // your code
+        this.setData({
+          updateTime: new Date(newVal).Format('yyyy-MM-dd hh:mm:ss')
+        })
+      }
+    },
+    title: {
+      type: String,
+      value: "一个空间的名字",
+    },
+    spaceType: {
+      type: Number,
+      value: 1,
+    },
+    _id: {
+      type: String,
+      value: "79550af26099d44b15d677b93106c1e6",
     },
   },
+
+  lifetimes: {
+  },
+
 
   /**
    * 组件的初始数据
    */
   data: {
-    projectStates:[
-      {
-        name:'提交',
-        icon:'fas fa-check-circle'
+    currentState: 0,
+    projectStates: [{
+        name: '提交',
+        icon: 'fas fa-check-circle'
       },
       {
-        name:'评审',
-        icon:'fas fa-users'
+        name: '评审',
+        icon: 'fas fa-users'
       },
       {
-        name:'设计',
-        icon:'fas fa-pen'
+        name: '设计',
+        icon: 'fas fa-pen'
       },
       {
-        name:'投票中',
-        icon:'fas fa-poll'
+        name: '投票中',
+        icon: 'fas fa-poll'
       },
       {
-        name:'施工中',
-        icon:'fas fa-gavel'
+        name: '施工中',
+        icon: 'fas fa-gavel'
       }
     ]
   },

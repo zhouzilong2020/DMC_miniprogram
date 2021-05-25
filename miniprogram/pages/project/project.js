@@ -1,3 +1,7 @@
+import {
+  db
+} from "../../utils/config"
+
 // miniprogram/pages/project/project.js
 Page({
 
@@ -5,14 +9,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    project: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const _id = options._id
+    db.collection('project1')
+      .doc(_id)
+      .get()
+      .then(res => {
+        this.setData({
+          project: res.data
+        })
+        console.log(this.data.project)
+      })
   },
 
   /**

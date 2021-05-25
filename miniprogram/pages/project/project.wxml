@@ -1,8 +1,12 @@
 <!--miniprogram/pages/project/project.wxml-->
 <view style="padding:0 40rpx;box-sizing:border-box">
-  <project-state-panel></project-state-panel>
+  <project-state-panel title="{{project.title}}" _id="{{project._id}}" currentState="{{project.status}}"
+  updateTime="{{project.update_time}}">
+  </project-state-panel>
+
   <view class="timelines">
-    <project-timeline wx:for="{{[1,2]}}"></project-timeline>
-    <project-timeline button-show></project-timeline>
+    <project-timeline wx:for="{{[1,2,3,4,5]}}">
+    </project-timeline>
+    <project-timeline button-show="{{false}}"></project-timeline>
   </view>
 </view>

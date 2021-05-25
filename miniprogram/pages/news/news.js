@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    canComment:false,
     news: {},
   },
 
@@ -17,8 +18,10 @@ Page({
     // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
     eventChannel.on('forwardNews', res => {
       const news = res.data.news
+      console.log(res.data)
       that.setData({
-        news: news
+        news: news,
+        canComment:res.data.canComment
       })
     })
 

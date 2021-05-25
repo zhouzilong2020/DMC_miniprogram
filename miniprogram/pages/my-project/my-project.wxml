@@ -8,12 +8,13 @@
       <!-- 最近计划 -->
       <block wx:for="{{relevantProjectList}}" wx:key="{{item._id}}">
         <view class="recent-project-item">
-          <image class="white fs14" src="{{item.image}}" data-state="施工中"></image>
-          <view class="title fs14 bold">{{item.title}}</view>
-        </view>
+          <navigator url="{{'../project/project?_id='+item._id}}">
+            <image class="white fs14" src="{{item.image}}" data-state="施工中"></image>
+            <view class="title fs14 bold">{{item.title}}</view>
+          </navigator>
+        </view>>
       </block>
-      <!--
-      <view class="fs12 gray-weak empty">暂时还没有参与</view>-->
+      <view wx:if="{{relevantProjectList.length===0}}" class="fs12 gray-weak empty">暂时还没有参与</view>
     </scroll-view>
   </view>
 

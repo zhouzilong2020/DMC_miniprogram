@@ -37,6 +37,21 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onTap: function () {
+      const that = this
+      wx.navigateTo({
+        url: `../../pages/news/news?_id=${that.data.project._id}`,
+        events: {},
+        success: res => {
+          // 通过eventChannel向被打开页面传送数据
+          res.eventChannel.emit('forwardNews', {
+            data: {
+              news: that.data.project,
+              canComment: false
+            }
+          })
+        }
+      })
+    }
   }
 })
