@@ -33,6 +33,20 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onTap: function (e) {
+      const that = this
+      wx.navigateTo({
+        url: `../../pages/designer/designer?_id=${that.data.designer._id}`,
+        events: {},
+        success: res => {
+          // 通过eventChannel向被打开页面传送数据
+          res.eventChannel.emit('forwardDesigner', {
+            data: {
+              designer: that.data.designer
+            }
+          })
+        }
+      })
+    }
   }
 })

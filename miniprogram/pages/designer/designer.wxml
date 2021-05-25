@@ -1,10 +1,10 @@
 <!--miniprogram/pages/designer/designer.wxml-->
 <view style="background:#EEEEEE">
-  <designer-detail></designer-detail>
+  <designer-detail designer="{{designer}}"></designer-detail>
   <view class="design-experience">
     <view>
       <text class="fs16 bold">设计案例</text>
-      <text class="fs14" style="margin-left:13rpx">（共4次设计经历）</text>
+      <text class="fs14" style="margin-left:13rpx">（共{{1}}次设计经历）</text>
     </view>
     <view class="project-container">
       <!-- <block wx:for="{{[1,2,3]}}">

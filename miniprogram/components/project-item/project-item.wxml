@@ -1,5 +1,5 @@
 <!--components/project-item.wxml-->
-<view class="project-item">
+<view class="project-item" bindtap="onTap">
   <image class="image regular" data-type="景观" src="{{image}}">
     <view class="heat">
       <text class="md fs14">whatshot</text>

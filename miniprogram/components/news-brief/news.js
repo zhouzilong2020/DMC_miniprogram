@@ -42,7 +42,20 @@ Component({
    */
   methods: {
     onTap: function (e) {
-      console.log("navigate to detail page")
+      const that = this
+      wx.navigateTo({
+        url: `../../pages/news/news?_id=${that.data.news._id}`,
+        events: {},
+        success: res => {
+          // 通过eventChannel向被打开页面传送数据
+          res.eventChannel.emit('forwardNews', {
+            data: {
+              news: that.data.news,
+              canComment: true,
+            }
+          })
+        }
+      })
     },
   }
 })

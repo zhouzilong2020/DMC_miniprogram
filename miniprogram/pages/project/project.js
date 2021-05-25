@@ -1,3 +1,7 @@
+import {
+  db
+} from "../../utils/config"
+
 // miniprogram/pages/project/project.js
 Page({
 
@@ -5,14 +9,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    project: {},
+    statusTimeList :[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const _id = options._id
+    db.collection('project1')
+      .doc(_id)
+      .get()
+      .then(res => {
+        this.setData({
+          project: res.data,
+          // 注意这里的time list 是从早到晚，分别对应了5个阶段        
+          statusTimeList: res.data.status_time_list
+        })
+        console.log(this.data.project)
+        console.log(this.data.statusTimeList)
+      })
   },
 
   /**
