@@ -104,11 +104,11 @@
 .search input {
   height: 100%;
   flex: 1;
-  width: 100%;
   color: rgba(119, 119, 119, 100);
   border: none;
   padding: 18rpx 0;
   box-sizing: border-box;
+  line-height: 65rpx;
 }
 
 .vertical-line {
@@ -117,9 +117,9 @@
 }
 
 .fa-stack-fs18 {
-  display: inline-block;
   height: 33rpx;
   width: 33rpx;
   line-height: 33rpx;
   vertical-align: middle;
+  position: relative;
 }
