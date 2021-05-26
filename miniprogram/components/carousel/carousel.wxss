@@ -88,7 +88,8 @@
   position: absolute;
   right: 45rpx;
   top: 176rpx;
-  width: 300rpx;
+  width:301rpx;
+  height:194rpx
 }
 
 .search {

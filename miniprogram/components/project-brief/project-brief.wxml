@@ -1,0 +1,10 @@
+<!--components/project-brief/project-brief.wxml-->
+<view>
+  <image class="image white regular" data-name="{{name}}" data-title="城市微新团队\n设计师">
+    <view class="heat">
+      <text class="md fs14">whatshot</text>
+      <text class="fs12">123</text>
+    </view>
+  </image>
+  <view class="fs14 bold title">我爱工作</view>
+</view>

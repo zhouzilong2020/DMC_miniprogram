@@ -7,23 +7,26 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    tabs: {
+      type: Array,
+      value: [{
+        label: '示范项目',
+        icon: 'fas fa-info'
+      }, {
+        label: '近期动态',
+        icon: 'fas fa-building'
+      }, {
+        label: '设计师',
+        icon: 'fas fa-pen'
+      }]
+    },
   },
   externalClasses: ['box-class'],
   /**
    * 组件的初始数据
    */
   data: {
-    tabs: [{
-      label: '示范项目',
-      icon: 'fas fa-info'
-    }, {
-      label: '近期动态',
-      icon: 'fas fa-building'
-    }, {
-      label: '设计师',
-      icon: 'fas fa-pen'
-    }],
+
     curTabIdx: 0,
     barWidth: 0,
     barLeft: 0
@@ -54,7 +57,7 @@ Component({
         })
         .exec();
 
-      this.triggerEvent('onTabChange', {
+      this.triggerEvent('TabChange', {
         id: e.currentTarget.id
       }, {
         bubbles: true

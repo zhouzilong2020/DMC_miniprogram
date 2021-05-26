@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "tab-group":"../../components/tab-group/tab-group",
+    "news-recent":"../../components/news-recent/news-recent",
+    "designer-item":"../../components/designer-item/designer-item",
+    "project-brief":"../../components/project-brief/project-brief"
+  }
 }

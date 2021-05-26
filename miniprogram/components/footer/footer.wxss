@@ -1,0 +1,16 @@
+/* components/footer/footer.wxss */
+.footer {
+  padding: 18rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  width: 80rpx;
+  height: 25rpx;
+}

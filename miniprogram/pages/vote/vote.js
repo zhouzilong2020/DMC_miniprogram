@@ -1,4 +1,4 @@
-// miniprogram/pages/search/search.js
+// miniprogram/pages/vote/vote.js
 Page({
 
   /**
@@ -7,16 +7,13 @@ Page({
   data: {
     tabs:[
       {
-        label:"全部"
+        label:'全部'
       },
       {
-        label:"改造项目"
+        label:'待完成'
       },
       {
-        label:"最近动态"
-      },
-      {
-        label:"设计师"
+        label:'已完成'
       }
     ]
   },

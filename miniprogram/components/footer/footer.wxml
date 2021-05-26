@@ -1,0 +1,5 @@
+<!--components/footer/footer.wxml-->
+<view class="footer">
+  <image class="logo" src="../../images/company.png"></image>
+  <view class="fs10 gray">Copyright 2019-2021 同济大学城市“微新“团队</view>
+</view>

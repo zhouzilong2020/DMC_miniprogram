@@ -1,1 +1,26 @@
 /* miniprogram/pages/search/search.wxss */
+.search-input {
+  margin: 36rpx;
+  height: 65rpx;
+  background: rgb(238, 238, 238);
+  border-radius: 18rpx;
+  display: flex;
+  align-items: center;
+}
+
+.search-input input {
+  flex: 1;
+  padding: 0 14rpx;
+}
+
+.search-input text {
+  flex-shrink: 0;
+  margin: 0 14rpx;
+}
+
+.two-column-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 25rpx / 2));
+  column-gap: 25rpx;
+  row-gap: 33rpx;
+}

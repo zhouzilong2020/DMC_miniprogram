@@ -9,7 +9,7 @@
           <text class="fs28 bold " style="margin-top: 7rpx;">{{item.title}}</text>
           <text class="fs20 absolute" style="bottom: 172rpx;">{{litem.ocation}}</text>
           <text class="fs14 absolute" style="bottom: 141rpx;">{{item.create_time}}</text>
-          <image src="{{item.image}}" mode="widthFix"></image>
+          <image src="{{item.image}}" mode="aspectFit"></image>
         </view>
       </swiper-item>
     </block>

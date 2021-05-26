@@ -1,7 +1,9 @@
 /* miniprogram/pages/index/index.wxss */
-page{
-  margin-bottom: 123rpx;
+page {
+  margin-bottom: calc(123rpx - 47rpx);
+  min-height: calc(100% - 123rpx);
 }
+
 .main {
   background: #FDFDFD;
   border-radius: 47rpx;
@@ -29,17 +31,17 @@ page{
   row-gap: 18rpx;
 }
 
-.container.designers{
+.container.designers {
   grid-template-columns: repeat(2, calc(50% - 18rpx / 2));
   column-gap: 18rpx;
   row-gap: 25rpx;
 }
 
-.container.news{
-  grid-template-columns: repeat(1,100%);
+.container.news {
+  grid-template-columns: repeat(1, 100%);
   row-gap: 25rpx;
 }
 
-.footer {
-  position: relative;
+footer {
+  bottom: 47rpx;
 }

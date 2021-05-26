@@ -111,6 +111,29 @@
           "pathName": "pages/project/project",
           "query": "_id=79550af26099d44b15d677b93106c1e6",
           "scene": null
+        },
+        {
+          "name": "pages/publish/publish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/published-project/published-project",
+          "pathName": "pages/published-project/published-project",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/vote/vote",
+          "pathName": "pages/vote/vote",
+          "scene": null
         }
       ]
     }

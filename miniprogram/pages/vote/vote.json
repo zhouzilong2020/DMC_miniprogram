@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tab-group":"../../components/tab-group/tab-group",
+    "vote-item":"../../components/vote-item/vote-item"
+  }
+}

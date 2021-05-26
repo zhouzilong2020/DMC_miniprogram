@@ -5,14 +5,14 @@
     <view style="width: 100%; background: #d1d1d1; min-height: 100px"></view>
   </carousel>
   <view class="main">
-    <tab-group bindonTabChange="onTabChange" id="tab-group" box-class="tabs"></tab-group>
+    <tab-group bindTabChange="onTabChange" id="tab-group" box-class="tabs"></tab-group>
     <!-- 示范项目 -->
     <view wx-if="{{curTabIdx == 0}}" class="container projects">
       <project-item wx:for="{{demoList}}" wx:key="_id" project="{{item}}"></project-item>
     </view>
     <!-- 新闻 -->
     <view wx-if="{{curTabIdx == 1}}" class="container news">
-      <news wx:for="{{newsList}}" news="{{item}}"  wx:key="_id"></news>
+      <news wx:for="{{newsList}}" news="{{item}}" wx:key="_id"></news>
     </view>
     <!-- 设计师 -->
     <view wx-if="{{curTabIdx == 2}}" class="container designers">
@@ -22,10 +22,5 @@
   </view>
 
   <!-- footer -->
-  <view class="footer weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__links">
-      <a href="javascript:home();" class="weui-footer__link">微新</a>
-    </view>
-    <view class="weui-footer__text">Copyright &copy; 2019-2021 城市“微新”团队</view>
-  </view>
+  <footer></footer>
 </view>

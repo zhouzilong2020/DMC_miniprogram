@@ -1,0 +1,11 @@
+<!--miniprogram/pages/published-project/published-project.wxml-->
+<view>
+  <view class="project-container">
+    <my-project></my-project>
+    <my-project></my-project>
+    <my-project></my-project>
+  </view>
+  <view class="dividing-line"></view>
+  <view class="fs12 gray-weak" style="margin:45rpx 0;text-align:center">没有更多了</view>
+  <footer></footer>
+</view>

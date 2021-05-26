@@ -1,16 +1,13 @@
-// components/vote-item/vote-item.js
+// components/project-brief/project-brief.js
 Component({
-  options: {
-    addGlobalClass: true,
+  options:{
+    addGlobalClass:true
   },
   /**
    * 组件的属性列表
    */
   properties: {
-    isFinished:{
-      type:Boolean,
-      value:false
-    }
+
   },
 
   /**
