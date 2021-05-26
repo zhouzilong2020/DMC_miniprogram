@@ -1,7 +1,8 @@
 /* components/designer-item/designer-item.wxss */
 .image{
   border-radius: 18rpx;
-  height: 250rpx;
+  height: 0;
+  padding-top: 76.67%;
   width: 100%;
   background: #FF8D8D;
   position: relative;

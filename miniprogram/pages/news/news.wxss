@@ -1,6 +1,7 @@
 /* miniprogram/pages/news/news.wxss */
 page {
   margin-bottom: 118rpx;
+  min-height: calc(100% - 118rpx);
 }
 
 .comment-container {

@@ -1,0 +1,10 @@
+<!--miniprogram/pages/message/message.wxml-->
+<view>
+  <view class="message-container">
+    <message></message>
+    <message></message>
+  </view>
+  <view class="dividing-line"></view>
+  <view class="fs12 gray-weak" style="margin:45rpx 0;text-align:center">没有更多了</view>
+  <footer></footer>
+</view>

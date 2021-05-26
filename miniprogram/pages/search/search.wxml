@@ -1,5 +1,21 @@
 <!--miniprogram/pages/search/search.wxml-->
-<view>
-  
+<view style="background: white">
+  <view class="search-input">
+    <input class="fs14 gray" placeholder="上海" />
+    <text class="md gray fs18">cancel</text>
+  </view>
+  <tab-group tabs="{{tabs}}"></tab-group>
+  <view style="margin-top:40rpx;padding:0 36rpx">
+    <!-- <view>
+      <news-recent></news-recent>
+      <news-recent></news-recent>
+    </view>
+    <view class="two-column-container">
+      <designer-item></designer-item>
+      <designer-item></designer-item>
+      <project-brief></project-brief>
+    </view> -->
+    <view class="gray-weak fs14" style="padding:17rpx;text-align:center">没有找到相关结果</view>
+  </view>
+  <footer></footer>
 </view>
-

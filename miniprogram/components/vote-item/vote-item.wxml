@@ -1,5 +1,5 @@
 <!--components/vote-item/vote-item.wxml-->
-<view class="vote-item regular">
+<view class="vote-item {{isFinished?'is-finish':''}} regular">
   <text class="fs12 gray-weak">投票号：5017650443265541</text>
   <text class="fs16 bold" style="margin-top:40rpx">上海市延吉街道改造成果\n民众满意程度调查</text>
   <view class="flex align-middle align-self-end">

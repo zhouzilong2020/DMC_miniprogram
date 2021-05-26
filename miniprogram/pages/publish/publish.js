@@ -1,24 +1,37 @@
-// miniprogram/pages/search/search.js
+// miniprogram/pages/publish/publish.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabs:[
-      {
-        label:"全部"
-      },
-      {
-        label:"改造项目"
-      },
-      {
-        label:"最近动态"
-      },
-      {
-        label:"设计师"
+    spaceTypes: ['aaa', 'bbb', 'ccc'],
+    spaceTypeIdx: -1,
+    region: null,
+  },
+
+  bindSpaceTypeChange(e) {
+    this.setData({
+      spaceTypeIdx: e.detail.value
+    })
+  },
+
+  bindRegionChange(e) {
+    this.setData({
+      region: e.detail.value
+    })
+  },
+
+  bindUploadImage(e) {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
       }
-    ]
+    })
   },
 
   /**

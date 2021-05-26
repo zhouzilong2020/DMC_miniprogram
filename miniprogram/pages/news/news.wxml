@@ -2,21 +2,20 @@
 <view>
   <news-detail news="{{news}}"></news-detail>
 
-
-
-
-  <view class="comment-container" wx:if="{{canComment}}">
+  <view class="comment-container" >
     <view class="fs16 bold">评论</view>
-    <comment wx:for="{{[1,2]}}"></comment>
+    <block wx:if="{{canComment}}">
+      <comment wx:for="{{[1,2]}}"></comment>
     <view class="fs12 gray-weak" style="text-align:center">没有更多了</view>
-    <!-- <view wx:if="{{}}" class="fs12 gray-weak" style="text-align:center">还没有人评论哦</view> -->
+    </block>
+    <view wx:else class="fs12 gray-weak" style="text-align:center">还没有人评论哦</view>
   </view>
 
 
-  <view class="news-footer" wx:if="{{canComment}}">
+  <view class="news-footer">
     <view class="comment-input">
       <text class="md fs19 gray icon">mode_edit</text>
-      <input placeholder="添加评论" />
+      <input disabled="{{!canComment}}" placeholder="{{canComment?'添加评论':'评论已被禁用'}}" />
     </view>
     <view class="link gray" style="margin-left:83rpx">
       <text class="far fa-star fs26"></text>
@@ -27,6 +26,6 @@
       <text class="fs12" style="margin-left:11rpx">534</text>
     </view>
   </view>
-
+  <footer></footer>
 
 </view>

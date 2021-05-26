@@ -1,0 +1,74 @@
+/* miniprogram/pages/publish/publish.wxss */
+.publish {
+  padding: 29rpx 36rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  row-gap: 29rpx;
+}
+
+.selector {
+  padding: 25rpx 27rpx;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.selector text {
+  flex-shrink: 0;
+}
+
+.selector .value {
+  margin-left: 43rpx;
+  margin-right: 18rpx;
+  text-align: right;
+  flex: 1;
+  flex-shrink: unset;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.image-upload {
+  padding: 25rpx 27rpx;
+  background: white;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 27rpx;
+}
+
+.image-empty {
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+  border-radius: 5rpx;
+  border: 2px solid rgb(242, 241, 242);
+}
+
+.image-empty::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+textarea {
+  padding: 45rpx 36rpx;
+  background: white;
+  height: 178rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 304rpx;
+  height: 89rpx;
+  text-align: center;
+  line-height: 89rpx;
+  margin: 0 auto;
+  border-radius: 179rpx;
+  background: rgb(12, 177, 255);
+}

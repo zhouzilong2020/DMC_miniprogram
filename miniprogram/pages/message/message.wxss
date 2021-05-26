@@ -1,0 +1,11 @@
+/* miniprogram/pages/message/message.wxss */
+.message-container {
+  padding: 25rpx 36rpx;
+  display: flex;
+  flex-direction: column;
+  row-gap: 18rpx;
+}
+
+.dividing-line{
+  border: 1px solid white;
+}

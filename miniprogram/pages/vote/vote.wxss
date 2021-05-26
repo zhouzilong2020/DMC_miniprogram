@@ -1,0 +1,11 @@
+/* miniprogram/pages/vote/vote.wxss */
+.vote-container{
+  padding: 18rpx 36rpx 51rpx;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20rpx;
+}
+
+.dividing-line{
+  border: 1px solid white;
+}

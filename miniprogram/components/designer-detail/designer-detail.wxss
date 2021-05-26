@@ -16,6 +16,7 @@
   padding-left: 176rpx;
   display: flex;
   flex-direction: column;
+  min-height: 98rpx;
 }
 
 .avatar {
@@ -33,6 +34,10 @@
   border-radius: 127rpx;
   background: rgb(238, 238, 238);
   padding: 0 16rpx;
+}
+
+.label + .label{
+  margin-left: 9rpx;
 }
 
 .detail-main{

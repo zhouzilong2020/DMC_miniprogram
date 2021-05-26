@@ -23,4 +23,5 @@
     <my-project wx:for="{{[1,2,3,4,5]}}"></my-project>
     <view class="fs12 gray-weak" style="margin-top:120rpx;text-align:center">没有更多了</view>
   </view>
+  <footer></footer>
 </view>

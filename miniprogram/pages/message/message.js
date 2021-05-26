@@ -1,24 +1,11 @@
-// miniprogram/pages/search/search.js
+// miniprogram/pages/message/message.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabs:[
-      {
-        label:"全部"
-      },
-      {
-        label:"改造项目"
-      },
-      {
-        label:"最近动态"
-      },
-      {
-        label:"设计师"
-      }
-    ]
+
   },
 
   /**

@@ -1,22 +1,24 @@
 /* components/tab-group/tab-group.wxss */
 .tab-group {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   position: relative;
   width: 100%;
+  padding: inherit;
+  background: inherit;
 }
 
 .tab {
+  flex: 1;
   background: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgba(84, 159, 223, 0.3);
+  color: rgba(167, 168, 167, 100);
   padding-bottom: 16rpx;
-  transition:all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.tab:active{
+.tab:active {
   background: #F7F7F7;
 }
 
@@ -28,5 +30,5 @@
   position: absolute;
   bottom: 0;
   border-bottom: 4rpx solid rgba(84, 159, 223, 100);
-  transition:all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }

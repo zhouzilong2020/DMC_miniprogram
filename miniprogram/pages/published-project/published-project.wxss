@@ -1,0 +1,11 @@
+/* miniprogram/pages/published-project/published-project.wxss */
+.project-container {
+  padding: 43rpx 31rpx;
+  display: flex;
+  flex-direction: column;
+  row-gap: 22rpx;
+}
+
+.dividing-line{
+  border: 1px solid white;
+}
