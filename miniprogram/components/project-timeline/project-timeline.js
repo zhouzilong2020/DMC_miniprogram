@@ -17,7 +17,6 @@ Component({
         this.setData({
           timeStamp: new Date(newEvl).Format('yyyy-MM-dd')
         })
-      
       }
     }
 

@@ -10,7 +10,7 @@ Page({
    */
   data: {
     project: {},
-    statusTimeList :[],
+    statusTimeList: [],
   },
 
   /**
@@ -29,6 +29,9 @@ Page({
         })
         console.log(this.data.project)
         console.log(this.data.statusTimeList)
+      })
+      .catch(err => {
+        console.log(err)
       })
   },
 
