@@ -1,5 +1,5 @@
 /* miniprogram/pages/my-project/my-project.wxss */
-page{
+page {
   margin-bottom: 123rpx;
   min-height: calc(100% - 123rpx);
 }
@@ -9,14 +9,14 @@ page{
   padding: 33rpx 40rpx;
 }
 
-.recent-projects scroll-view{
-  margin-top:24rpx;
+.recent-projects scroll-view {
+  margin-top: 24rpx;
 }
 
-.recent-projects .empty{
-  height:232rpx;
-  text-align:center;
-  line-height:232rpx
+.recent-projects .empty {
+  height: 232rpx;
+  text-align: center;
+  line-height: 232rpx
 }
 
 .recent-project-item {
@@ -54,11 +54,11 @@ page{
 }
 
 .relevant-projects {
-  padding: 40rpx 31rpx 16rpx;
+  padding: 40rpx 30rpx 16rpx;
   background: white;
   border-radius: 47rpx;
   box-shadow: 0 4rpx 11rpx 0 rgba(230, 230, 230, 0.4);
   display: grid;
-  grid-template-rows: repeat(auto-fit,1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
   row-gap: 22rpx;
 }

@@ -40,6 +40,11 @@
   margin-top: 27rpx;
 }
 
+.image-container>image {
+  height: inherit;
+  width: inherit;
+}
+
 .image-empty {
   height: 0;
   padding-top: 100%;
@@ -71,4 +76,8 @@ textarea {
   margin: 0 auto;
   border-radius: 179rpx;
   background: rgb(12, 177, 255);
+}
+
+.disabled {
+  background: #6A6A6A;
 }

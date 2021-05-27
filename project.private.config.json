@@ -19,15 +19,14 @@
           "scene": null
         },
         {
-          "name": "pages/questionnaire/questionnaire",
-          "pathName": "pages/questionnaire/questionnaire",
-          "query": "",
+          "name": "pages/mes_success/mes_success",
+          "pathName": "pages/mes_success/mes_success",
+          "query": "_id=asdasd",
           "scene": null
         },
         {
-          "id": 6,
-          "name": "上传畸形地块表格",
-          "pathName": "pages/uploadProject/uploadProject",
+          "name": "上传",
+          "pathName": "pages/publish/publish",
           "query": "",
           "scene": null
         },
@@ -65,9 +64,9 @@
           "scene": null
         },
         {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
-          "query": "",
+          "name": "pages/project/project",
+          "pathName": "pages/project/project",
+          "query": "_id=28ee4e3e60af3e781d1a1c245d25f108",
           "scene": null
         },
         {
@@ -133,6 +132,7 @@
         {
           "name": "pages/vote/vote",
           "pathName": "pages/vote/vote",
+          "query": "",
           "scene": null
         }
       ]

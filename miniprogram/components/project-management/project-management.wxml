@@ -2,10 +2,14 @@
 <view class="project-management">
   <view class="flex justify-space-between align-middle">
     <text class="fs20 bold">我的畸形空间改造</text>
-    <view class="blue flex align-middle">
-      <text class="fs24 md">book</text>
-      <text class="fs16 bold">管理我的项目</text>
-    </view>
+
+    <navigator url="../../pages/published-project/published-project">
+      <view class="blue flex align-middle">
+        <text class="fs24 md">book</text>
+        <text class="fs16 bold">管理我的项目</text>
+      </view>
+    </navigator>
+
   </view>
   <view class="state-tabs" style="margin-top:38rpx">
     <view class="state-tab is-active">
@@ -21,5 +25,7 @@
       <view class="fs18 bold">1项</view>
     </view>
   </view>
-  <view class="create-button fs18 white bold">发布一个畸形空间</view>
+  <navigator url='../../pages/publish/publish'>
+    <view class="create-button fs18 white bold">发布一个畸形空间</view>
+  </navigator>
 </view>

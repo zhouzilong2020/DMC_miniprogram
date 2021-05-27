@@ -22,13 +22,14 @@ Page({
       .doc(_id)
       .get()
       .then(res => {
+        console.log(res)
         this.setData({
           project: res.data,
           // 注意这里的time list 是从早到晚，分别对应了5个阶段        
           statusTimeList: res.data.status_time_list
         })
-        console.log(this.data.project)
-        console.log(this.data.statusTimeList)
+        // console.log(this.data.project)
+        // console.log(this.data.statusTimeList)
       })
       .catch(err => {
         console.log(err)

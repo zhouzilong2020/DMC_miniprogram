@@ -38,7 +38,7 @@ export function getrelevantProject(context, payload) {
  * @param {*} context user_id
  * @param {*} payload 由需要上传的project所有的属性，这里的img中的url应该是已经上传完毕的云数据库中的url
  */
-export function publishProject(context, payload) {
+export function publishProject(payload) {
   return new Promise((resolve, reject) => {
     try {
       var _new_project = {
@@ -47,8 +47,8 @@ export function publishProject(context, payload) {
       // 更新project 特殊字段
       _new_project[project.status_time] = _new_project[project.create_time]
       _new_project[project.status] = 0
-
-      db.collection('project')
+    
+      db.collection('project1')
         .add({
           data: {
             ..._new_project

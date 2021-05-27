@@ -5,12 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:'',
+    _id: '',
   },
 
-  showState(){
-    wx.redirectTo({
-      url: '../myProject/myProject',
+  showState() {
+    wx.navigateTo({
+      url: '../project/project?_id=' + this.data._id,
     })
   },
 
@@ -19,7 +19,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      id: options.id,
+      _id: options._id,
     })
   },
 

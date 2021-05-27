@@ -3,6 +3,12 @@
     "kbone": true,
     "weui": true
   },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.6",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
   "pages": [
     "pages/index/index",
     "pages/homepage/homepage",
@@ -37,8 +43,7 @@
   },
   "tabBar": {
     "custom": true,
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index"
       },
       {
@@ -53,6 +58,6 @@
     ]
   },
   "usingComponents": {
-    "footer":"./components/footer/footer"
+    "footer": "./components/footer/footer"
   }
 }

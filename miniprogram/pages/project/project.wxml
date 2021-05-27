@@ -1,11 +1,12 @@
 <!--miniprogram/pages/project/project.wxml-->
 <view style="padding:0 40rpx;box-sizing:border-box">
   <project-state-panel title="{{project.title}}" _id="{{project._id}}" currentState="{{project.status}}"
-    updateTime="{{project.update_time}}">
+    updateTime="{{project.update_time}}" image="{{project.image}}" spaceType="{{project.space_type}}">
   </project-state-panel>
 
   <view class="timelines">
-    <project-timeline wx:for="{{statusTimeList}}" wx:key="*this" wx:for-index="idx" timeStamp="{{item}}" step="{{4-idx}}">
+    <project-timeline wx:for="{{statusTimeList}}" wx:key="*this" wx:for-index="idx" timeStamp="{{item}}"
+      step="{{idx}}">
     </project-timeline>
   </view>
   <footer></footer>

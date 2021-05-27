@@ -11,6 +11,10 @@ Component({
       type: Number,
       value: 3,
     },
+    image:{
+      type:String,
+      value:'',
+    },
     updateTime: {
       type: Date,
       value: "yyyy-MM--dd--hh--ss",
@@ -35,15 +39,14 @@ Component({
     },
   },
 
-  lifetimes: {
-  },
+  lifetimes: {},
 
 
   /**
    * 组件的初始数据
    */
   data: {
-    
+    spaceTypes: ['商业类畸形空间', '休闲型畸形空间', '文化型畸形空间', '社交性畸形空间', '废弃型畸形空间'],
     projectStates: [{
         name: '提交',
         icon: 'fas fa-check-circle'

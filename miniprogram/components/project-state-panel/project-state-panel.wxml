@@ -11,13 +11,13 @@
     </block>
 
   </view>
-  <image class="image regular" data-type="项目已完成"></image>
+  <image class="image regular"  src="{{image}}" data-type="项目已完成"></image>
   <view class="content fs14">
     <text class="gray-weak">名称：</text>
     <text class="bold">{{title}}</text>
 
     <text class="gray-weak">类型：</text>
-    <text class="bold">{{spaceType}}</text>
+    <text class="bold">{{spaceTypes[spaceType]}}</text>
 
     <text class="gray-weak">编号：</text>
     <text class="bold">{{_id}}</text>

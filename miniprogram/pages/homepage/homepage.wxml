@@ -25,22 +25,26 @@
 		<text class="fas fa-chevron-right gray-weak"></text>
 	</view>
 	<view class="functions-container">
-		<view class="function-item">
-			<text class="fas fa-envelope fs26" style="color:#FE506A"></text>
-			<text class="fs14">消息中心</text>
-		</view>
+		<navigator url="../message/message">
+			<view class="function-item">
+				<text class="fas fa-envelope fs26" style="color:#FE506A"></text>
+				<text class="fs14">消息中心</text>
+			</view>
+		</navigator>
 
-		<!-- <navigator url="../my-project/my-project.wxml"> -->
+		<navigator url="../published-project/published-project">
 			<view class="function-item">
 				<text class="md fs26" style="color:#4C85ED">library_books</text>
 				<text class="fs14">我的项目</text>
 			</view>
-		<!-- </navigator> -->
+		</navigator>
 
-		<view class="function-item">
-			<text class="fas fa-star fs26" style="color:#FF9663"></text>
-			<text class="fs14">我的投票</text>
-		</view>
+		<navigator url="../vote/vote">
+			<view class="function-item">
+				<text class="fas fa-star fs26" style="color:#FF9663"></text>
+				<text class="fs14">我的投票</text>
+			</view>
+		</navigator>
 
 		<view class="function-item">
 			<text class="md fs26" style="color:#6DC562">assessment</text>
