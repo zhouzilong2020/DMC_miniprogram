@@ -52,6 +52,7 @@ Page({
         })
       })
   },
+  
   setStatistic: function (projectList, isMyPublished = false) {
     const that = this
     var o_cnt = 0

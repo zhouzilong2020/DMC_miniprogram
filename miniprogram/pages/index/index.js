@@ -1,6 +1,11 @@
 // miniprogram/pages/index/index.js
 const db = wx.cloud.database();
-const app = getApp();
+import {
+  whoAmI,
+  login,
+  getUserProfileAndAddUser
+} from '../../utils/userInfo'
+
 import {
   getTempFileURL
 } from "../../utils/download"
@@ -25,10 +30,9 @@ Page({
     designerList: [],
   },
 
-  onLoad: function () {
+  onLoad: async function () {
     const that = this
     that.requestData()
-    that.pushData()
   },
 
   requestData: async function () {
@@ -82,10 +86,6 @@ Page({
           designerList: res.data
         })
       })
-  },
-
-  pushData: function () {
-
   },
 
   onTabChange: function (e) {

@@ -19,9 +19,9 @@
           "scene": null
         },
         {
-          "name": "pages/mes_success/mes_success",
-          "pathName": "pages/mes_success/mes_success",
-          "query": "_id=asdasd",
+          "name": "pages/homepage/homepage",
+          "pathName": "pages/homepage/homepage",
+          "query": "",
           "scene": null
         },
         {
@@ -63,9 +63,9 @@
           "scene": null
         },
         {
-          "name": "pages/project/project",
-          "pathName": "pages/project/project",
-          "query": "_id=28ee4e3e60af3e781d1a1c245d25f108",
+          "name": "pages/test-page/test-page",
+          "pathName": "pages/test-page/test-page",
+          "query": "",
           "scene": null
         },
         {

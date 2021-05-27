@@ -3,12 +3,13 @@
 <view class="container">
   <view class="userinfo">
     <block wx:if="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称profile </button>
-      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <button disabled="{{!hasChecked && !hasUserInfo}}" wx:if="{{canIUseGetUserProfile}}"
+        bindtap="getUserProfileAndAddUser"> 获取头像昵称profile
+      </button>
     </block>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatar}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickname}}</text>
     </block>
   </view>
 </view>

@@ -16,7 +16,7 @@ export async function whoAmI() {
       }
       // 登录失败
       else {
-        console.log('no userInfo in storage, begin to login !')
+        console.log('no userInfo in storage, need to login or register!')
         reject()
       }
     } catch (error) {
@@ -35,27 +35,81 @@ export async function login() {
       name: 'login',
       data: {}
     }).then((res) => {
+      console.log(res)
       const _user_open_id = res.result.openid
-      db.collection('user').where({
-        _openid: res.result.openid
-      }).get().then((res) => {
-        数据库中有该用户
-        if (res.data.length) {
-          var _user_info = res.data[0]
-          // console.log('in getting userIndo res', _user_info)
-          wx.setStorageSync('userInfo', _user_info)
-          resolve(_user_info)
-        } else { // 数据库中没有该用户，插入一条新的，这里需要getUserProfile，需要获取用户权限
-          reject({
-            code: 404
-          })
-        }
-      }).catch((err) => {
-        reject(err);
-      })
+      db.collection('user')
+        .where({
+          _openid: _user_open_id
+        })
+        .get()
+        .then((res) => {
+          // 数据库中有该用户
+          if (res.data.length) {
+            console.log(res)
+            var _user_info = res.data[0]
+            // console.log('in getting userIndo res', _user_info)
+            wx.setStorageSync('userInfo', _user_info)
+            resolve(_user_info)
+          } else { // 数据库中没有该用户，插入一条新的，这里需要getUserProfile，需要获取用户权限
+            reject("没有该用户")
+          }
+        }).catch((err) => {
+          console.log('re')
+          reject(err);
+        })
     }).catch((err) => {
       reject(err);
     })
+  })
+}
+
+export async function addUser(payload) {
+  const _cur_date = new Date().toString()
+  return new Promise((resolve, reject) => {
+    try {
+      const data = {
+        nickname: payload.nickName,
+        avatar: payload.avatarUrl,
+        mobile: null,
+        location: null,
+        // 1 for citizen
+        type: 1,
+        // project key
+        relevant_project_id_list: [],
+
+        // 这里直接通过_openid来获取
+        // my_project_id_list: [],
+
+        // questionnaire key
+        // {id, done:true/false}
+        questionnarie_id_list: [],
+
+        // message key
+        // {id, read:true/false}
+        message_id_list: [],
+
+        // comment key
+        punlished_comment_id_list: [],
+
+        // time
+        last_login_time: _cur_date,
+        create_time: _cur_date,
+        update_time: _cur_date,
+      }
+      db.collection('user')
+        .add({
+          data,
+          success: res => {
+            wx.setStorageSync('userInfo', data)
+            resolve(data)
+          },
+          fail: err => {
+            reject(err)
+          }
+        })
+    } catch (err) {
+      reject(err)
+    }
   })
 }
 
