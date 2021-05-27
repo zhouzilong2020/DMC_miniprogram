@@ -16,7 +16,7 @@ Component({
   data: {
     title: '“活力四射”-发起睦邻活动',
     subtitle: '——上海市杨浦区延吉新村街道第二睦邻中心',
-    author: '一个发稿人',
+    author: '城市微新团队',
     contentHtml:'',
     createTime: '2020-03-08',
     image: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg',

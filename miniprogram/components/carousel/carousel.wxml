@@ -2,8 +2,8 @@
 <view class="carousel">
   <swiper class="swiper" indicator-dots="{{false}}" autoplay="{{true}}" circular="{{true}}"
     bindanimationfinish="changeFinish" bindtransition="change">
-    <block wx:for="{{carouselList}}" wx:for-index="i" wx:key="*this">
-      <swiper-item class="swiper-item">
+    <block  wx:for="{{carouselList}}" wx:for-index="i" wx:key="relevent_news_id">
+      <swiper-item data-newsid="{{item.relevent_news_id}}" bindtap="onTap" class="swiper-item">
         <view class="carousel-item regular white {{currentIdx==i?'':'is-out'}}">
           <text class="fs12 white-weak">实际改造项目</text>
           <text class="fs28 bold " style="margin-top: 7rpx;">{{item.title}}</text>

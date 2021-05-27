@@ -9,7 +9,7 @@ Page({
   },
 
   showState() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../project/project?_id=' + this.data._id,
     })
   },

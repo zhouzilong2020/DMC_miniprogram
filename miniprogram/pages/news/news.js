@@ -1,28 +1,43 @@
 // miniprogram/pages/news/news.js
+import {
+  db
+} from "../../utils/config"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    canComment:false,
+    canComment: false,
     news: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
+    const _id = options._id
     const that = this
     const eventChannel = this.getOpenerEventChannel()
     // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
-    eventChannel.on('forwardNews', res => {
-      const news = res.data.news
-      console.log(res.data)
-      that.setData({
-        news: news,
-        canComment:res.data.canComment
-      })
+    eventChannel.on('forwardNews', async (res) => {
+      // console.log(res.data)
+      // 上一个页面传进来了news
+      if (res.data.news) {
+        // console.log("have news inside")
+        that.setData({
+          news: res.data.news,
+          canComment: res.data.canComment
+        })
+      } else { // 没有的话需要自己获取
+        // console.log("do not have news inside", _id)
+        const newsRes = (await db.collection('news').doc(_id).get()).data
+        // console.log(newsRes)
+        that.setData({
+          news: newsRes,
+          canComment: res.data.canComment
+        })
+      }
     })
 
   },

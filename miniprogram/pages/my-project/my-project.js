@@ -52,7 +52,7 @@ Page({
         })
       })
   },
-  
+
   setStatistic: function (projectList, isMyPublished = false) {
     const that = this
     var o_cnt = 0
@@ -77,5 +77,12 @@ Page({
       completeCnt: that.data.completeCnt + c_cnt,
     })
   },
-
+  onShow: function () {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
+  }
 })

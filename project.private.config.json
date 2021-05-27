@@ -25,8 +25,8 @@
           "scene": null
         },
         {
-          "name": "上传",
-          "pathName": "pages/publish/publish",
+          "name": "vote",
+          "pathName": "pages/vote/vote",
           "query": "",
           "scene": null
         },
@@ -75,8 +75,8 @@
           "scene": null
         },
         {
-          "name": "pages/project/project",
-          "pathName": "pages/project/project",
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
           "query": "",
           "scene": null
         },

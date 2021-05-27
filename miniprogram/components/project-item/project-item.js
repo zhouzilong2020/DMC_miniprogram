@@ -21,14 +21,17 @@ Component({
   },
   lifetimes: {
     ready: function () {
-      console.log(this.data)
+      // console.log(this.data)
       const that = this
+      const project = that.data.project
       this.setData({
-        publishData: new Date(that.data.project.create_time).Format("yyyy-MM-dd"),
-        title: that.data.project.title,
-        content: filterRichtext(that.data.project.content),
-        image: that.data.project.image,
-        viewCnt: that.data.project.view_cnt,
+        publishData: new Date(project.create_time).Format("yyyy-MM-dd"),
+        title: project.title,
+        content: filterRichtext(project.content),
+        image: project.image,
+        viewCnt: project.view_cnt,
+        location: project.location,
+        spaceType: project.spaceType,
       })
       // console.log(this.data)
     },
