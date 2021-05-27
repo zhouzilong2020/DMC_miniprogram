@@ -1,7 +1,8 @@
 <!--miniprogram/pages/map/map.wxml-->
 
 <view class='map'>
-  <map  longitude="{{longitude}}" latitude="{{latitude}}" scale="16"  markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location >
+  <map longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers="{{markerList}}" bindmarkertap="onMarkertap"
+    bindregionchange="regionchange" show-location>
     <cover-view class="cover">
       <cover-image class="cover-icon" src="{{path}}"></cover-image>
     </cover-view>
