@@ -49,7 +49,7 @@ Page({
             title: that.data.title,
             status: 1, // 新发布状态,待评审
             status_time_list: [timestamp],
-            image: fileIdList,
+            image_list: fileIdList,
             location: that.data.location,
             space_type: that.data.spaceTypes[that.data.spaceTypeIdx],
             // questionnaire key

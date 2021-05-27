@@ -1,15 +1,16 @@
 <!--miniprogram/pages/my-project/my-project.wxml-->
 <view>
   <!-- 顶部panel -->
-  <project-management></project-management>
+  <project-management ongoingCnt="{{ongoingCnt}}" completeCnt="{{completeCnt}}" publishCnt="{{publishCnt}}">
+  </project-management>
   <view class="recent-projects">
     <view class="fs16 bold">最近参与的改造计划</view>
     <scroll-view scroll-x>
       <!-- 最近计划 -->
-      <block wx:for="{{relevantProjectList}}" wx:key="{{item._id}}">
+      <block wx:for="{{relevantProjectList}}" wx:key="_id">
         <view class="recent-project-item">
           <navigator url="{{'../project/project?_id='+item._id}}">
-            <image class="white fs14" src="{{item.image}}" data-state="施工中"></image>
+            <image class="white fs14" src="{{item.image_list[0]}}" data-state="施工中"></image>
             <view class="title fs14 bold">{{item.title}}</view>
           </navigator>
         </view>>
@@ -20,7 +21,11 @@
 
   <view class="relevant-projects">
     <view class="fs16 bold">与我相关的畸形空间</view>
-    <my-project wx:for="{{[1,2,3,4,5]}}"></my-project>
+    <my-project wx:for="{{myProjectList}}" create_time="{{item.create_time}}" update_time="{{item.update_time}}"
+      title="{{item.location.name+'  '+item.title}}" status="{{item.status}}" image="{{item.image_list[0]}}"
+      _id="{{item._id}}" wx:key="_id">
+    </my-project>
+
     <view class="fs12 gray-weak" style="margin-top:40rpx;text-align:center">没有更多了</view>
   </view>
   <footer></footer>

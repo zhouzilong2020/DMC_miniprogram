@@ -1,14 +1,16 @@
 <!--components/my-project.wxml-->
-<view class="my-project">
-  <image class="image" data-type="改造中"></image>
-  <view class="info">
-    <view>
-      <text class="fs14 bold title">上海市延吉路社区什么时候改造呢上海市延吉路社区什么时候改造呢</text>
-      <text class="fs11 content">废弃形畸形空</text>
-    </view>
-    <view class="fs10 gray-weak">
-      <view>2020-05-21</view>
-      <view style="text-align: right;margin-top: 9rpx;">最后更新于2020-05-21</view>
+<navigator url="{{'../../pages/project/project?_id='+_id}}">
+  <view class="my-project">
+    <image class="image" src="{{image}}" data-type="{{statuses[status]+'中'}}"></image>
+    <view class="info">
+      <view>
+        <text class="fs14 bold title">{{title}}</text>
+        <text class="fs11 content">{{spaceTypes[spaceType]}}</text>
+      </view>
+      <view class="fs10 gray-weak">
+        <view>{{create_time}}</view>
+        <view style="text-align: right;margin-top: 9rpx;">最后更新于{{update_time}}</view>
+      </view>
     </view>
   </view>
-</view>
+</navigator>

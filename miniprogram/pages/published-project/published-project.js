@@ -1,3 +1,11 @@
+import {
+  db,
+  _
+} from "../../utils/config"
+import {
+  whoAmI
+} from "../../utils/userInfo"
+
 // miniprogram/pages/published-project/published-project.js
 Page({
 
@@ -5,14 +13,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    publishedProjectList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: async function (options) {
+    const userInfo = await whoAmI()
+    // 得到所有peoject id list
+    const projectResult = (await db.collection('project1')
+      .orderBy('update_time', 'desc')
+      .where({
+        _openid: userInfo._openid
+      })
+      .get()).data
+    console.log(projectResult)
+    this.setData({
+      publishedProjectList: projectResult
+    })
+    console.log(this.data.publishedProjectList)
   },
 
   /**

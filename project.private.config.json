@@ -31,9 +31,8 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/homepage/homepage",
-          "pathName": "pages/homepage/homepage",
+          "name": "pages/published-project/published-project",
+          "pathName": "pages/published-project/published-project",
           "query": "",
           "scene": null
         },

@@ -11,7 +11,7 @@
     </block>
 
   </view>
-  <image class="image regular"  src="{{image}}" data-type="项目已完成"></image>
+  <image class="image regular" src="{{image}}" data-type="项目已完成"></image>
   <view class="content fs14">
     <text class="gray-weak">名称：</text>
     <text class="bold">{{title}}</text>

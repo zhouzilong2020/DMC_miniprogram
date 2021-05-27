@@ -14,15 +14,15 @@
   <view class="state-tabs" style="margin-top:38rpx">
     <view class="state-tab is-active">
       <view class="fs14">正在进行中</view>
-      <view class="fs18 bold">1项</view>
+      <view class="fs18 bold">{{ongoingCnt}}项</view>
     </view>
     <view class="state-tab">
-      <view class="fs14">累计参与</view>
-      <view class="fs18 bold">7项</view>
+      <view class="fs14">已发布</view>
+      <view class="fs18 bold">{{publishCnt}}项</view>
     </view>
     <view class="state-tab">
-      <view class="fs14">已经完成</view>
-      <view class="fs18 bold">1项</view>
+      <view class="fs14">已完成</view>
+      <view class="fs18 bold">{{completeCnt}}项</view>
     </view>
   </view>
   <navigator url='../../pages/publish/publish'>

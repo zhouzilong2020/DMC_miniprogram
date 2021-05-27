@@ -11,7 +11,6 @@
   min-height: 100%;
   flex-shrink: 0;
   border-radius: 36rpx;
-  background: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3026939796,485761977&fm=26&gp=0.jpg');
   position: relative;
 }
 
