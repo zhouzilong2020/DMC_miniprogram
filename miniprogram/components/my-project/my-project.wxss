@@ -3,6 +3,15 @@
   background: white;
   box-shadow: 0 4rpx 11rpx 0 rgba(0, 0, 0, 0.4);
   display: flex;
+  transition: border-radius 0.3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.my-project.auto-moving {
+  transition: all 0.3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.my-project.to-delete {
+  border-radius: 36rpx 0 0 36rpx;
 }
 
 .image {
@@ -45,4 +54,26 @@
 .content {
   display: block;
   margin-top: 9rpx;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 138rpx;
+  background: rgb(226, 113, 113);
+  border-radius: 0 36rpx 36rpx 0;
+}
+
+.delete-button::before {
+  content: "删除";
+  color: white;
+  font-size: 29rpx;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

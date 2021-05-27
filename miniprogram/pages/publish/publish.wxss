@@ -37,17 +37,18 @@
 .image-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fit,auto);
   margin-top: 27rpx;
 }
 
 .image-container>image {
-  height: inherit;
-  width: inherit;
+  height: 158rpx;
+  width: 158rpx;
 }
 
 .image-empty {
-  height: 0;
-  padding-top: 100%;
+  height: 158rpx;
+  width: 158rpx;
   position: relative;
   border-radius: 5rpx;
   border: 2px solid rgb(242, 241, 242);

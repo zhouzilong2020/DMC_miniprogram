@@ -1,6 +1,8 @@
 <!--components/my-project.wxml-->
-<navigator url="{{'../../pages/project/project?_id='+_id}}">
-  <view class="my-project">
+<view style="position:relative;z-index:0">
+  <view class="my-project {{autoMoving?'auto-moving':''}} {{left<-maxClientX/3?'to-delete':''}}"
+    bindtouchstart="projecTouchStart" bindtouchmove="projectTouchMove" bindtouchend="projecTouchEnd"
+    style="transform:translateX({{left}}px)">
     <image class="image" src="{{image}}" data-type="{{statuses[status]+'中'}}"></image>
     <view class="info">
       <view>
@@ -13,4 +15,5 @@
       </view>
     </view>
   </view>
-</navigator>
+  <view class="delete-button"></view>
+</view>

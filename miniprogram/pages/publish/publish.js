@@ -101,7 +101,6 @@ Page({
   bindUploadImage(e) {
     const that = this
     wx.chooseImage({
-      count: 3,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success(res) {

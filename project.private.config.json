@@ -25,8 +25,8 @@
           "scene": null
         },
         {
-          "name": "上传",
-          "pathName": "pages/publish/publish",
+          "name": "pages/test-page/test-page",
+          "pathName": "pages/test-page/test-page",
           "query": "",
           "scene": null
         },

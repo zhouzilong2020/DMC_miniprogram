@@ -28,8 +28,7 @@
 
     <view class="image-container">
       <image class="image" wx:for="{{tempFilePaths}}" wx:key="*this" src="{{item}}"></image>
-      <view class="fa fa-camera image-empty fs24 gray-weak"
-        bindtap="{{tempFilePaths.length < 3 ? 'bindUploadImage':''}}"></view>
+      <view class="fa fa-camera image-empty fs24 gray-weak" bindtap="bindUploadImage"></view>
     </view>
   </view>
 
