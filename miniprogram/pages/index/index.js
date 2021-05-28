@@ -49,7 +49,6 @@ Page({
         }
       })
     })
-    
     const that = this
     that.requestData()
   },
