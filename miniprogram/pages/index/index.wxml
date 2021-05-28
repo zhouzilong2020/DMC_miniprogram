@@ -20,6 +20,19 @@
       </designer-item>
     </view>
   </view>
+  <view class="disable-mask">
+    <view class="authorize-window">
+      <view class="text">
+        <view class="bold title">asdasd</view>
+        <view class="gray content">adjsidjasdasd</view>
+      </view>
+
+      <view class="bold fs18" style="display:flex">
+        <view class="button">取消</view>
+        <view class="button blue">确定</view>
+      </view>
+    </view>
+  </view>
 
   <!-- footer -->
   <footer></footer>

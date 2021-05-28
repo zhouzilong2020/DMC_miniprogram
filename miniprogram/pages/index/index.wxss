@@ -45,3 +45,48 @@ page {
 footer {
   bottom: 47rpx;
 }
+
+.authorize-window {
+  background: white;
+  width: 600rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.authorize-window .text {
+  padding: 50rpx;
+}
+
+.authorize-window .text .title,
+.content {
+  text-align: center;
+}
+
+.authorize-window .text .title+.content {
+  margin-top: 20rpx;
+}
+
+.authorize-window .button {
+  padding: 25rpx 0;
+  text-align: center;
+  flex: 1;
+  border: 1px solid rgba(230, 230, 230, 0.4)
+}
+
+.authorize-window .button:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.disable-mask{
+  position:absolute;
+  height:100%;
+  width:100%;
+  z-index:10;
+  background:rgba(0,0,0,0.5);
+  top:0;
+  left:0
+}

@@ -31,6 +31,11 @@ Page({
   },
 
   onLoad: async function () {
+  //  wx.showModal({
+  //    title:"asdasd",
+  //    content:"adjsidjasdasd",
+  //    cancelColor: 'cancelColor',
+  //  })
     const that = this
     that.requestData()
   },
