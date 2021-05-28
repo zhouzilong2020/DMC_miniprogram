@@ -11,10 +11,13 @@
       <text class="fs16 bold">{{content[step]}}</text>
       <text class="fs11">最后更新于 {{timeStamp}}</text>
     </view>
-    <view class="horizon-line" wx:if="{{step===3}}"></view>
-    <view class="vote-result-button" wx:if="{{step===3}}">
-      <text class="md fs20">poll</text>
-      <text class="fs14 bold" style="margin-left:4rpx">查看结果</text>
-    </view>
+    <block wx:if="{{step===2 || step===3}}">
+      <view class="horizon-line"></view>
+      <view bindtap="onTap" class="button {{disabled ? 'inactive':'active'}}">
+
+        <text class="md fs20">poll</text>
+        <text class="fs14 bold" style="margin-left:4rpx">{{step===2 ? '去投票':'查看结果'}}</text>
+      </view>
+    </block>
   </view>
 </view>

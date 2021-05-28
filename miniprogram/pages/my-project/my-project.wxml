@@ -12,8 +12,8 @@
       <block wx:for="{{relevantProjectList}}" wx:key="_id">
         <view class="recent-project-item">
           <navigator url="{{'../project/project?_id='+item._id}}">
-            <image class="white fs14" src="{{item.image_list[0]}}" data-state="施工中"></image>
-            <view class="title fs14 bold">{{item.title}}</view>
+            <image class="white fs14" src="{{item.image_list[0]}}" data-state="{{statuses[item.status]+'中'}}"></image>
+            <view class="title fs14 bold">{{item.location.name + ' | ' + item.title}}</view>
           </navigator>
         </view>>
       </block>

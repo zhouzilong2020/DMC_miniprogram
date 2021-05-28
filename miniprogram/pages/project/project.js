@@ -26,7 +26,7 @@ Page({
         this.setData({
           project: res.data,
           // 注意这里的time list 是从早到晚，分别对应了5个阶段        
-          statusTimeList: res.data.status_time_list
+          statusTimeList: res.data.status_time_list.reverse()
         })
         // console.log(this.data.project)
         // console.log(this.data.statusTimeList)
