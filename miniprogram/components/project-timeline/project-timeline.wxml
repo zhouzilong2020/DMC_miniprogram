@@ -3,13 +3,13 @@
 
   <view class="flex align-middle">
     <text class="far fa-clock fs20 gray"></text>
-    <text class="fs12" style="margin-left:14rpx">{{timeStamp}}</text>
+    <text class="fs12" style="margin-left:14rpx">{{_timeStamp}}</text>
   </view>
 
   <view class="event">
     <view class="flex justify-space-between align-middle">
       <text class="fs16 bold">{{content[step]}}</text>
-      <text class="fs11">最后更新于 {{timeStamp}}</text>
+      <text class="fs11">最后更新于 {{_timeStamp}}</text>
     </view>
     <block wx:if="{{step===2 || step===3}}">
       <view class="horizon-line"></view>

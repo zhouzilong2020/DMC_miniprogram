@@ -65,15 +65,17 @@ Page({
     })
     scanCode()
       .then(e => {
+        console.log(e)
         wx.showToast({
-          title: e,
+          title: String(e),
         })
         that.clearStatistic()
         that.requestData()
       })
       .catch(e => {
+        console.log(e)
         wx.showToast({
-          title: e,
+          title: String(e),
           icon: 'error'
         })
 

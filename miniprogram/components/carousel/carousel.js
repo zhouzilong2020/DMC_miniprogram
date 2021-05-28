@@ -54,6 +54,7 @@ Component({
       })
     },
     onTap(e) {
+      console.log(e)
       wx.navigateTo({
         url: `../../pages/news/news?_id=${e.currentTarget.dataset.newsid}`,
         events: {},
@@ -62,6 +63,7 @@ Component({
           res.eventChannel.emit('forwardNews', {
             data: {
               canComment: false,
+              news:null,
             }
           })
         }

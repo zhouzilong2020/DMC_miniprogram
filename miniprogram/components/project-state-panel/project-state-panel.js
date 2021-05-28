@@ -11,18 +11,19 @@ Component({
       type: Number,
       value: 3,
     },
-    image:{
-      type:String,
-      value:'',
+    image: {
+      type: String,
+      value: '',
     },
     updateTime: {
       type: Date,
       value: "yyyy-MM--dd--hh--ss",
       observer: function (newVal) {
-        // your code
+        
         this.setData({
-          updateTime: new Date(newVal).Format('yyyy-MM-dd hh:mm:ss')
+          _updateTime: new Date(newVal).Format('yyyy-MM-dd hh:mm:ss')
         })
+        
       }
     },
     title: {
@@ -40,8 +41,7 @@ Component({
   },
 
   lifetimes: {
-    ready:function(){
-    }
+    ready: function () {}
   },
 
 
@@ -49,6 +49,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    _updateTime:'',
     spaceTypes: ['商业类畸形空间', '休闲型畸形空间', '文化型畸形空间', '社交性畸形空间', '废弃型畸形空间'],
     projectStates: [{
         name: '提交',

@@ -22,7 +22,7 @@
   </view>
 
   <!-- mask-登陆 -->
-  <view wx:if="{{!isConfirmed && !isRegistered}}" class="disable-mask" catchtouchmove="nofunction">
+  <view wx:if="{{isMasked}}" class="disable-mask" catchtouchmove="nofunction">
     <view class="authorize-window">
       <view class="text">
         <view class="bold title">授权提示</view>

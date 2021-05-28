@@ -26,6 +26,6 @@
     <text class="bold">{{projectStates[currentState].name+'中'}}</text>
 
     <text class="gray-weak">更新时间：</text>
-    <text class="bold">{{updateTime}}</text>
+    <text class="bold">{{_updateTime}}</text>
   </view>
 </view>

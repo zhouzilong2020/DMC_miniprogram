@@ -31,7 +31,7 @@ Component({
       value: '2020-05-21',
       observer: function (evl) {
         this.setData({
-          update_time: new Date(evl).Format('yyyy-MM-dd')
+          _update_time: new Date(evl).Format('yyyy-MM-dd')
         })
       }
     },
@@ -40,7 +40,7 @@ Component({
       value: '2020-05-21',
       observer: function (evl) {
         this.setData({
-          create_time: new Date(evl).Format('yyyy-MM-dd')
+          _create_time: new Date(evl).Format('yyyy-MM-dd')
         })
       }
     },
@@ -52,6 +52,8 @@ Component({
    * 组件的初始数据
    */
   data: {
+    _create_time:'',
+    _update_time:'',
     statuses: ['提交', '评审', '设计', '投票', '施工', ],
     spaceTypes: ['商业类畸形空间', '休闲型畸形空间', '文化型畸形空间', '社交性畸形空间', '废弃型畸形空间'],
     left: 0,

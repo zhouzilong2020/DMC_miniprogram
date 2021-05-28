@@ -27,7 +27,7 @@ Component({
       type: Date,
       observer: function (newEvl) {
         this.setData({
-          timeStamp: new Date(newEvl).Format('yyyy-MM-dd')
+          _timeStamp: new Date(newEvl).Format('yyyy-MM-dd')
         })
       }
     }
@@ -37,6 +37,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    _timeStamp:'',
     content: [
       '项目提交成功啦！',
       '项目通过评审啦！',

@@ -10,8 +10,8 @@
         <text class="fs11 content">{{spaceTypes[spaceType]}}</text>
       </view>
       <view class="fs10 gray-weak">
-        <view>{{create_time}}</view>
-        <view style="text-align: right;margin-top: 9rpx;">最后更新于{{update_time}}</view>
+        <view>{{_create_time}}</view>
+        <view style="text-align: right;margin-top: 9rpx;">最后更新于{{_update_time}}</view>
       </view>
     </view>
   </view>

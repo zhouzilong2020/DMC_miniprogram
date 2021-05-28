@@ -31,8 +31,8 @@ Page({
     newsList: [],
     designerList: [],
 
-    isRegistered: true,
-    isConfirmed: false,
+    isMasked: false,
+  
   },
 
   onLoad: async function () {
@@ -49,17 +49,17 @@ Page({
 
   hideMask: function () {
     this.setData({
-      isConfirmed: true,
+      isMasked: false,
     })
-    that.getTabBar().setData({
+    this.getTabBar().setData({
       isMasked: false,
     })
   },
   showMask: function () {
     this.setData({
-      isConfirmed: false,
+      isMasked: true,
     })
-    that.getTabBar().setData({
+    this.getTabBar().setData({
       isMasked: true,
     })
   },
