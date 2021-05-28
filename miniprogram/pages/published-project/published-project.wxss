@@ -3,9 +3,12 @@
   padding: 43rpx 31rpx;
   display: flex;
   flex-direction: column;
-  row-gap: 22rpx;
 }
 
-.dividing-line{
+my-project+my-project {
+  margin-top: 22rpx;
+}
+
+.dividing-line {
   border: 1px solid white;
 }

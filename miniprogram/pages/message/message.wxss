@@ -3,9 +3,12 @@
   padding: 25rpx 36rpx;
   display: flex;
   flex-direction: column;
-  row-gap: 18rpx;
 }
 
-.dividing-line{
+message+message {
+  margin-top: 18rpx;
+}
+
+.dividing-line {
   border: 1px solid white;
 }
