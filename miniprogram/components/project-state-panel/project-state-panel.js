@@ -39,7 +39,10 @@ Component({
     },
   },
 
-  lifetimes: {},
+  lifetimes: {
+    ready:function(){
+    }
+  },
 
 
   /**

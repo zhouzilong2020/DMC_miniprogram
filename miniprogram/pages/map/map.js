@@ -136,10 +136,10 @@ Page({
 
   onMarkertap(e) {
     const _id = this.data.markerIdList[e.detail.markerId]
-    console.log(_id)
+    // console.log(_id)
     // TODO 调整数据库
-    // wx.redirectTo({
-    // url: '../project/project?_id='+_id,
-    // })
+    wx.redirectTo({
+      url: '../project/project?_id=' + _id,
+    })
   }
 })

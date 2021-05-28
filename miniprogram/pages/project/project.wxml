@@ -1,14 +1,15 @@
 <!--miniprogram/pages/project/project.wxml-->
 <view style="padding:0 40rpx;box-sizing:border-box">
   <project-state-panel title="{{project.title}}" _id="{{project._id}}" currentState="{{project.status}}"
-    updateTime="{{project.update_time}}" image="{{project.image}}" spaceType="{{project.space_type}}">
+    updateTime="{{project.update_time}}" image="{{project.image_list[0]}}" spaceType="{{project.space_type}}">
   </project-state-panel>
 
   <view class="timelines">
     <!-- 一共有两个地方会出现按钮，第一个是投票，第二个是查看结果，如果进度为2，则去投票按钮出现，并且active -->
     <!-- 如果进度大于2，则说明投票结束，该btn应当disabled -->
-    <project-timeline wx:for="{{statusTimeList}}" _id="{{project._id}}" wx:key="*this" wx:for-index="idx" timeStamp="{{item}}"
-      step="{{statusTimeList.length - idx - 1}}" disabled="{{idx===2 && statusTimeList.length >2}}">
+    <project-timeline wx:for="{{statusTimeList}}" _id="{{project._id}}" wx:key="*this" wx:for-index="idx"
+      timeStamp="{{item}}" step="{{statusTimeList.length - idx - 1}}"
+      disabled="{{idx===2 && statusTimeList.length >2}}">
     </project-timeline>
   </view>
   <footer></footer>

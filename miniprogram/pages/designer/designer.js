@@ -19,7 +19,7 @@ Page({
       that.setData({
         designer: designer
       })
-      console.log(that.data.designer)
+      // console.log(that.data.designer)
     })
   },
 

@@ -7,6 +7,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    isMasked:false,
     selected: 0,
     list: [{
       iconClass: "fas fa-home",

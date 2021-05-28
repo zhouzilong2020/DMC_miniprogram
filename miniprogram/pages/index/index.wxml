@@ -21,6 +21,22 @@
     </view>
   </view>
 
+  <!-- mask-登陆 -->
+  <view wx:if="{{!isConfirmed && !isRegistered}}" class="disable-mask" catchtouchmove="nofunction">
+    <view class="authorize-window">
+      <view class="text">
+        <view class="bold title">授权提示</view>
+        <view class="gray content">请允许获取您的微信openid用于存储数据</view>
+      </view>
+      <view class="bold fs18" style="display:flex">
+        <!-- <view class="button">取消</view> -->
+        <view bindtap="onAuthorize" class="button blue">授权</view>
+      </view>
+    </view>
+  </view>
+
+
   <!-- footer -->
   <footer></footer>
+
 </view>

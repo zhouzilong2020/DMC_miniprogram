@@ -4,7 +4,8 @@ import {
   whoAmI,
   login,
   getUserProfileAndAddUser,
-  checkIfRegistered
+  checkIfRegistered,
+  addUser
 } from '../../utils/userInfo'
 
 import {
@@ -29,28 +30,55 @@ Page({
     demoList: [],
     newsList: [],
     designerList: [],
+
+    isRegistered: true,
+    isConfirmed: false,
   },
 
   onLoad: async function () {
-    // 没有注册，则授权！
-    checkIfRegistered().catch(e => {
-      wx.getUserProfile({
-        desc: '用于获取您的相关信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-        success: (res) => {
-          addUser(res.userInfo).then(res => {
-            that.setData({
-              userInfo: res.userInfo,
-              hasUserInfo: true,
-            })
-          })
-        },
-        fail: e => {
-          console.log(e, '授权失败')
-        }
-      })
-    })
     const that = this
+    // 没有注册，则授权！
+    checkIfRegistered().then(e => {
+      // console.log(e, "registered")
+    }).catch(e => {
+      that.showMask()
+      // console.log(e, "no registered")
+    })
     that.requestData()
+  },
+
+  hideMask: function () {
+    this.setData({
+      isConfirmed: true,
+    })
+    that.getTabBar().setData({
+      isMasked: false,
+    })
+  },
+  showMask: function () {
+    this.setData({
+      isConfirmed: false,
+    })
+    that.getTabBar().setData({
+      isMasked: true,
+    })
+  },
+
+  onAuthorize: async function () {
+    const that = this
+    this.hideMask()
+    try {
+      var userInfo = (await wx.getUserProfile({
+        desc: 'desc',
+      })).userInfo
+      await addUser(userInfo)
+    } catch {
+      that.hideMask()
+    }
+
+  },
+  nofunction: function () {
+
   },
 
   requestData: async function () {
@@ -107,7 +135,7 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 0
+        selected: 0,
       })
     }
   }

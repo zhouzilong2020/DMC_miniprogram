@@ -66,6 +66,7 @@ export async function login() {
 export async function addUser(payload) {
   const _cur_date = new Date().toString()
   return new Promise((resolve, reject) => {
+    console.log(payload)
     try {
       const data = {
         nickname: payload.nickName,
@@ -115,6 +116,7 @@ export async function addUser(payload) {
 
 export async function checkIfRegistered() {
   return new Promise(async (resolve, reject) => {
+    var userInfo
     try {
       userInfo = await whoAmI()
       resolve(userInfo)

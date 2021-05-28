@@ -22,7 +22,7 @@ Page({
       .doc(_id)
       .get()
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setData({
           project: res.data,
           // 注意这里的time list 是从早到晚，分别对应了5个阶段        

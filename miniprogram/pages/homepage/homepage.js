@@ -126,7 +126,7 @@ Page({
         addUser(null, userInfo)
           .then(res => {
             login().then(res => {
-              console.log(res)
+              // console.log(res)
               this.setData({
                 userPhoto: res.avatar,
                 nickName: res.nickname,
@@ -137,7 +137,7 @@ Page({
           })
       }
     })
-    console.log(e);
+    // console.log(e);
     let userInfo = e.detail.userInfo;
     if (!this.data.logged && userInfo) { //创建一个用户的表
       db.collection("users").add({
@@ -159,7 +159,7 @@ Page({
             logged: true
           });
         });
-        console.log(res);
+        // console.log(res);
       });
     }
     wx.showToast({

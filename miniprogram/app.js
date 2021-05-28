@@ -15,7 +15,7 @@ var app = App({
     }
 
     this.globalData = {}
-    this.userInfo = {}//每个页面都可以使用到！哈哈，
+    this.userInfo = {} //每个页面都可以使用到！哈哈，
     this.position = {}
   }
 })
