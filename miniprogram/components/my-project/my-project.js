@@ -79,7 +79,7 @@ Component({
       } = this.data;
       const curClientX = e.changedTouches[0].clientX;
       let newLeft = curClientX - startClientX;
-      if (newLeft < -maxClientX) {
+      if (newLeft < -maxClientX || newLeft > 0) {
         return;
       }
       this.setData({
