@@ -15,7 +15,7 @@
             <image class="white fs14" src="{{item.image_list[0]}}" data-state="{{statuses[item.status]+'中'}}"></image>
             <view class="title fs14 bold">{{item.location.name + ' | ' + item.title}}</view>
           </navigator>
-        </view>>
+        </view>
       </block>
       <view wx:if="{{relevantProjectList.length===0}}" class="fs12 gray-weak empty">暂时还没有参与</view>
     </scroll-view>

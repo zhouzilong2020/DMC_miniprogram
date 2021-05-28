@@ -65,11 +65,13 @@ page {
 
 .button {
   background-color: white;
-  /* rgb(26, 173, 25); */
   border-radius: 27rpx;
   padding: 20rpx;
   text-align: center;
   margin-top: 33rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .fa-stack-fs18 {
