@@ -31,11 +31,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onLoad: async function () {
+  onLoad: function () {
+    this.requestData()
+  },
+  requestData: async function () {
     const that = this
     // TODO 调整数据库
     const markerResult = (await db.collection('images')
-    .orderBy('timestamp', 'asc')
+      .orderBy('timestamp', 'asc')
       .field({
         formData: true,
         fileID: true,
@@ -50,6 +53,15 @@ Page({
         latitude: marker.formData.latitude,
         longitude: marker.formData.longitude,
         iconPath: marker.fileID[0],
+        callout: {
+          content: 'xxxx畸形空间',
+          color: '#ffffff',
+          borderRadius: '10rpx',
+          padding: '2rpx',
+          borderWidth: '5rpx',
+          bgColor: '#4eb0f9',
+          display:'ALWAYS'
+        },
         width: 40,
         height: 40,
         id: i + 1,
@@ -60,6 +72,9 @@ Page({
       markerList: that.data.markerList.concat(markerList),
       markerIdList: that.data.markerIdList.concat(markerIdList)
     })
+  },
+  onRegionChange: function () {
+
   },
   /**
    * 生命周期函数--监听页面显示
