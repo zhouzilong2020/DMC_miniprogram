@@ -113,19 +113,40 @@ export async function addUser(payload) {
   })
 }
 
-/**
- * 返回用户信息,先检查localstorage,如果没有则登录, 如果二者均失败则reject
- */
-// export async function getUserInfo() {
-//   return new Promise((resolve, reject) => {
-//     whoAmI().then(res => {
-//       resolve(res);
-//     }).catch(e => {
-//       login().then(res => {
-//         resolve(res);
-//       }).catch(e => {
-//         reject(e);
-//       })
-//     })
-//   })
-// }
+export async function checkIfRegistered() {
+  return new Promise(async (resolve, reject) => {
+    try {
+      userInfo = await whoAmI()
+      resolve(userInfo)
+    } catch (e) {
+      try {
+        userInfo = await login()
+        resolve(userInfo)
+      } catch (e) {
+        // 用户未注册
+        reject(e)
+      }
+    }
+  })
+}
+
+export function getUserProfileAndAddUser(e) {
+  return new Promise((resolve, reject) => {
+    wx.getUserProfile({
+      desc: '用于获取您的相关信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        addUser(res.userInfo).then(res => {
+          that.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true,
+          })
+          console.log('注册成功', res)
+          
+        })
+      },
+      fail: e => {
+        console.log(e)
+      }
+    })
+  })
+}

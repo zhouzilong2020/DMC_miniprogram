@@ -47,20 +47,21 @@ export function scanCode() {
               .get()
             // console.log('has such project')
             // 判断用户是否添加过该项目
-            const _openid = wx.getStorageSync('userInfo')._openid
+            const _openid = await wx.getStorageSync('userInfo')._openid
             if (await isScanedBefore(_id, _openid)) {
               reject('重复添加')
+            } else {
+              await db.collection('user')
+                .where({
+                  _openid
+                })
+                .update({
+                  data: {
+                    relevant_project_id_list: _.push(_id)
+                  }
+                })
+              resolve('添加成功')
             }
-            await db.collection('user')
-              .where({
-                _openid
-              })
-              .update({
-                data: {
-                  relevant_project_id_list: _.push(_id)
-                }
-              })
-            resolve('添加成功')
           } catch (e) {
             reject(e)
           }

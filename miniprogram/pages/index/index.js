@@ -3,7 +3,8 @@ const db = wx.cloud.database();
 import {
   whoAmI,
   login,
-  getUserProfileAndAddUser
+  getUserProfileAndAddUser,
+  checkIfRegistered
 } from '../../utils/userInfo'
 
 import {
@@ -31,6 +32,24 @@ Page({
   },
 
   onLoad: async function () {
+    // 没有注册，则授权！
+    checkIfRegistered().catch(e => {
+      wx.getUserProfile({
+        desc: '用于获取您的相关信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+        success: (res) => {
+          addUser(res.userInfo).then(res => {
+            that.setData({
+              userInfo: res.userInfo,
+              hasUserInfo: true,
+            })
+          })
+        },
+        fail: e => {
+          console.log(e, '授权失败')
+        }
+      })
+    })
+    
     const that = this
     that.requestData()
   },

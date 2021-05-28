@@ -27,36 +27,40 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     const that = this
+    var userInfo
     //先检查是否有登录信息
-    whoAmI().then(res => {
-      console.log(res)
+    try {
+      userInfo = await whoAmI()
       // 存储了登录信息, 直接获取
       this.setData({
-        avatar: res.avatar,
-        nickname: res.nickname,
+        avatar: userInfo.avatar,
+        nickname: userInfo.nickname,
         logged: true,
         // FIXME 这里需要处理一下
         userType: '居民',
       })
-    }).catch(e => {
-      // 没有存储登录信息,重新登录
-      login().then(res => {
-        console.log(res)
+    } catch (e) {
+      try {
+        // 没有存储登录信息,重新登录
+        userInfo = await login() 
         this.setData({
-          avatar: res.avatar,
-          nickname: res.nickname,
+          avatar: userInfo.avatar,
+          nickname: userInfo.nickname,
           logged: true,
           // FIXME 这里需要处理一下
           userType: '居民',
         })
-      }).catch(err => {
+      } catch (e) {
+        // 可以选择授权登录了
         this.setData({
           disabled: false,
-        })
-      })
-    })
+        }) 
+        
+        // this.getUserProfile()
+      }
+    }
 
   },
 

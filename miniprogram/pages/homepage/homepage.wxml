@@ -1,7 +1,6 @@
 <!--miniprogram/pages/homepage/homepage.wxml-->
 <view>
 
-
 	<view class="user-info">
 		<view class="avatar-container">
 			<image class="avatar" src="{{avatar}}">
@@ -9,7 +8,7 @@
 			<view class="sub-icon fas fa-users fs15"></view>
 		</view>
 
-		<view class="content">
+		<view class="content" wx:if="userinfo">
 			<!-- 昵称 -->
 			<view class="fs18 bold">{{nickname}}</view>
 			<view>
@@ -21,11 +20,15 @@
 			</view>
 			<view class=" gray-weak">
 				<text class="fas fa-map-marker fs16"></text>
+				<!-- 地址 -->
 				<text class="fs14" style="margin-left:4rpx">上海市延吉街道社区</text>
 			</view>
 		</view>
 		<text class="fas fa-chevron-right gray-weak"></text>
 	</view>
+
+
+
 	<view class="functions-container">
 		<navigator url="../message/message">
 			<view class="function-item">
