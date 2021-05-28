@@ -3,7 +3,7 @@
   <image class="image regular" data-type="{{spaceType}}" src="{{image}}">
     <view class="heat">
       <text class="md fs14">whatshot</text>
-      <text class="fs12">{{viewCnt}}</text>
+      <!-- <text class="fs12">{{viewCnt}}</text> -->
     </view>
   </image>
   <view class="fs14 bold title">{{title}}</view>

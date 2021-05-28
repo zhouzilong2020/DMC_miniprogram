@@ -1,6 +1,7 @@
 // miniprogram/pages/news/news.js
 import {
-  db
+  db,
+  _
 } from "../../utils/config"
 Page({
 

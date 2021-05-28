@@ -60,8 +60,15 @@ Page({
     scanCode()
       .then(e => {
         console.log(e)
+        wx.showToast({
+          title: '加入成功',
+        })
       })
       .catch(e => {
+        wx.showToast({
+          title: '加入失败，请稍后再试',
+          icon: 'error'
+        })
         console.log(e)
       })
   },
