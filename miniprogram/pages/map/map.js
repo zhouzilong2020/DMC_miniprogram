@@ -37,12 +37,21 @@ Page({
   requestData: async function () {
     const that = this
     // TODO 调整数据库
-    const markerResult = (await db.collection('images')
+    // const markerResult = (await db.collection('images')
+    //   .orderBy('timestamp', 'asc')
+    //   .field({
+    //     formData: true,
+    //     fileID: true,
+    //     _id: true
+    //   }).get()).data
+
+    const markerResult = (await db.collection('project1')
       .orderBy('timestamp', 'asc')
       .field({
-        formData: true,
-        fileID: true,
-        _id: true
+        image_list: true,
+        location: true,
+        _id: true,
+        space_type: true,
       }).get()).data
     const markerList = []
     const markerIdList = []
@@ -50,17 +59,17 @@ Page({
       const marker = markerResult[i]
       markerIdList.push(marker._id)
       markerList.push({
-        latitude: marker.formData.latitude,
-        longitude: marker.formData.longitude,
-        iconPath: marker.fileID[0],
+        latitude: marker.location.latitude,
+        longitude: marker.location.longitude,
+        iconPath: marker.image_list[0],
         callout: {
-          content: 'xxxx畸形空间',
+          content: marker.space_type,
           color: '#ffffff',
           borderRadius: '10rpx',
           padding: '2rpx',
           borderWidth: '5rpx',
           bgColor: '#4eb0f9',
-          display:'ALWAYS'
+          display: 'ALWAYS'
         },
         width: 40,
         height: 40,
