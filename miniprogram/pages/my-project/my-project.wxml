@@ -33,7 +33,9 @@
 
   <view class="relevant-projects">
     <view class="fs16 bold">我发布的畸形空间</view>
-    <my-project wx:for="{{myProjectList}}" create_time="{{item.create_time}}" update_time="{{item.update_time}}"
+    <my-project
+      bindDeleteProject="onDeleteProject"
+    wx:for="{{myProjectList}}" create_time="{{item.create_time}}" update_time="{{item.update_time}}"
       title="{{item.location.name+'  '+item.title}}" status="{{item.status}}" image="{{item.image_list[0]}}"
       _id="{{item._id}}" wx:key="_id">
     </my-project>

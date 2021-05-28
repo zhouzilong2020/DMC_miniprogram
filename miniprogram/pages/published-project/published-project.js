@@ -28,11 +28,24 @@ Page({
         _openid: userInfo._openid
       })
       .get()).data
-    console.log(projectResult)
+    // console.log(projectResult)
     this.setData({
       publishedProjectList: projectResult
     })
-    console.log(this.data.publishedProjectList)
+    // console.log(this.data.publishedProjectList)
+  },
+  onDeleteProject: function (e) {
+    const _id = e.detail
+    const publishedProjectList = this.data.publishedProjectList
+    for (let i = 0, len = publishedProjectList.length; i < len; i++) {
+      if (publishedProjectList[i]._id === _id) {
+        publishedProjectList.splice(i, 1)
+        this.setData({
+          publishedProjectList
+        })
+        break
+      }
+    }
   },
 
   /**

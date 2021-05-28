@@ -50,7 +50,6 @@ Page({
         })
         // console.log(that.data.demoList)
       })
-
     db.collection('news')
       .orderBy('create_time', 'desc')
       .get()

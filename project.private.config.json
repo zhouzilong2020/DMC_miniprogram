@@ -69,8 +69,8 @@
           "scene": null
         },
         {
-          "name": "pages/my-project/my-project",
-          "pathName": "pages/my-project/my-project",
+          "name": "pages/vote/vote",
+          "pathName": "pages/vote/vote",
           "query": "",
           "scene": null
         },

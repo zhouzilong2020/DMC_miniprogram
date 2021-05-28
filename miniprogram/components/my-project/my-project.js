@@ -1,4 +1,7 @@
 // components/my-project.js
+import {
+  db
+} from "../../utils/config"
 Component({
   options: {
     addGlobalClass: true
@@ -49,7 +52,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    statuses: ['提交', '评审', '设计', '投票', '施工',],
+    statuses: ['提交', '评审', '设计', '投票', '施工', ],
     spaceTypes: ['商业类畸形空间', '休闲型畸形空间', '文化型畸形空间', '社交性畸形空间', '废弃型畸形空间'],
     left: 0,
     startClientX: 0,
@@ -69,7 +72,11 @@ Component({
       })
     },
     projectTouchMove(e) {
-      const { left, startClientX, maxClientX } = this.data;
+      const {
+        left,
+        startClientX,
+        maxClientX
+      } = this.data;
       const curClientX = e.changedTouches[0].clientX;
       let newLeft = curClientX - startClientX;
       if (newLeft < -maxClientX) {
@@ -83,13 +90,17 @@ Component({
     },
     projecTouchEnd(e) {
       let newLeft = 0;
-      const { left, maxClientX, direction, _id } = this.data;
+      const {
+        left,
+        maxClientX,
+        direction,
+        _id
+      } = this.data;
       if (direction == 0 && left == 0) {
         wx.navigateTo({
           url: '../../pages/project/project?_id=' + _id
         })
-      }
-      else if (direction < 0 && left < -maxClientX / 3) {
+      } else if (direction < 0 && left < -maxClientX / 3) {
         newLeft = -maxClientX;
       }
       this.setData({
@@ -101,6 +112,41 @@ Component({
           autoMoving: false
         })
       }, 3000)
+    },
+
+
+    onDelete(e) {
+      const that = this
+      const _id = e.currentTarget.dataset.id
+      wx.showModal({
+        title: '提示',
+        content: '确定删除该空间吗',
+        success(res) {
+          if (res.confirm) {
+            db.collection('project1')
+              .doc(_id)
+              .remove({
+                success: e => {
+                  wx.showToast({
+                    title: '删除成功',
+                  })
+                  that.triggerEvent('DeleteProject', _id)
+                },
+                fail: e => {
+
+                  wx.showToast({
+                    title: '删除失败',
+                    icon: 'error'
+                  })
+                },
+              })
+          } else if (res.cancel) {
+            // 用户取消删除
+            
+            that.triggerEvent('DeleteProject', _id, null)
+          }
+        }
+      })
     }
-  }
+  },
 })

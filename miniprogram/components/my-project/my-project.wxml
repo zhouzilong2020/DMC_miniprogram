@@ -15,5 +15,5 @@
       </view>
     </view>
   </view>
-  <view class="delete-button"></view>
+  <view data-id="{{_id}}" bindtap="onDelete" class="delete-button"></view>
 </view>
