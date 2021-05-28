@@ -19,13 +19,13 @@ Component({
   },
   lifetimes: {
     ready: function () {
-      console.log(this.data)
+      // console.log(this.data)
       const that = this
       this.setData({
         name: that.data.designer.name,
         style: that.data.designer.style,
       })
-      console.log(this.data)
+      // console.log(this.data)
     },
   },
 

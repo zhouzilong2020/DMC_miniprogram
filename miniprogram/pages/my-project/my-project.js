@@ -5,6 +5,9 @@ import {
 import {
   whoAmI
 } from "../../utils/userInfo"
+import {
+  scanCode
+} from "../../utils/QRcode"
 
 // miniprogram/pages/my-project/my-project.js
 Page({
@@ -19,12 +22,12 @@ Page({
   onLoad: async function () {
     const that = this
     const res = (await db.collection('user').get()).data[0]
-    var releventProjectList = res.relevent_project_id_list
+    var relevantProjectList = res.relevant_project_id_list
     // 得到所有peoject id list
     db.collection('project1')
       .orderBy('update_time', 'desc')
       .where({
-        _id: _.in(releventProjectList)
+        _id: _.in(relevantProjectList)
       })
       .get()
       .then(src => {
@@ -37,7 +40,7 @@ Page({
       })
 
     const userInfo = await whoAmI()
-    // 得到所有peoject id list
+    // 得到所有 用户发布的 peoject id list
     db.collection('project1')
       .orderBy('update_time', 'desc')
       .where({
@@ -52,7 +55,15 @@ Page({
         })
       })
   },
-
+  onCameraOpen: function () {
+    scanCode()
+      .then(e => {
+        console.log(e)
+      })
+      .catch(e => {
+        console.log(e)
+      })
+  },
   setStatistic: function (projectList, isMyPublished = false) {
     const that = this
     var o_cnt = 0
@@ -84,5 +95,5 @@ Page({
         selected: 2
       })
     }
-  },
+  }
 })

@@ -1,17 +1,17 @@
 <!--components/project-item.wxml-->
 <view class="project-item" bindtap="onTap">
-  <image class="image regular" data-type="景观" src="{{image}}">
+  <image class="image regular" data-type="{{spaceType}}" src="{{image}}">
     <view class="heat">
       <text class="md fs14">whatshot</text>
       <text class="fs12">{{viewCnt}}</text>
     </view>
   </image>
-  <view class="fs14 bold title">示例项目名称这是一个示例</view>
+  <view class="fs14 bold title">{{title}}</view>
   <view class="fs10 gray-weak flex justify-space-between">
-    <text>2021-05-06</text>
+    <text>{{publishData}}</text>
     <view>
       <text class="fas fa-map-marker"></text>
-      <text class="regular">示例地点</text>
+      <text class="regular">{{location}}</text>
     </view>
   </view>
 </view>

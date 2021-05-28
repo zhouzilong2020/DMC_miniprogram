@@ -3,6 +3,8 @@
   <!-- 顶部panel -->
   <project-management ongoingCnt="{{ongoingCnt}}" completeCnt="{{completeCnt}}" publishCnt="{{publishCnt}}">
   </project-management>
+
+
   <view class="recent-projects">
     <view class="fs16 bold">最近参与的改造计划</view>
     <scroll-view scroll-x>
@@ -17,10 +19,20 @@
       </block>
       <view wx:if="{{relevantProjectList.length===0}}" class="fs12 gray-weak empty">暂时还没有参与</view>
     </scroll-view>
+
+
+    <view bindtap="onCameraOpen" class="green button">
+      <text style="display: inline-block; vertical-align: middle; margin: 0 25rpx;" class=" fs18 bold">加入改造计划</text>
+      <view class="fa-stack-fs18 gray">
+        <text class="fas fa-expand fa-stack-1x fs18"></text>
+        <text class="fas fa-minus fa-stack-1x fs14"></text>
+      </view>
+    </view>
+
   </view>
 
   <view class="relevant-projects">
-    <view class="fs16 bold">与我相关的畸形空间</view>
+    <view class="fs16 bold">我发布的畸形空间</view>
     <my-project wx:for="{{myProjectList}}" create_time="{{item.create_time}}" update_time="{{item.update_time}}"
       title="{{item.location.name+'  '+item.title}}" status="{{item.status}}" image="{{item.image_list[0]}}"
       _id="{{item._id}}" wx:key="_id">

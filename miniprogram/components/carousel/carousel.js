@@ -1,4 +1,7 @@
 // components/carousel/carousel.js
+import {
+  db
+} from "../../utils/config"
 Component({
   options: {
     addGlobalClass: true
@@ -12,38 +15,23 @@ Component({
    * 组件的初始数据
    */
   data: {
-    carouselList:[],
+    carouselList: [],
     currentIdx: 0
   },
   lifetimes: {
     attached: function () {
       const that = this;
-      const db = wx.cloud.database();
       db.collection('carousel')
         .orderBy('create_time', 'desc')
         .get()
         .then((res) => {
-          const fileList = []
-          const data = res.data
-          var result = data
-          for (let i = 0, len = data.length; i < len; i++) {
-            fileList.push(data[i].image)
+          // console.log(res)
+          var result = res.data
+          for (let i = 0, len = result.length; i < len; i++) {
+            result[i].create_time = new Date(result[i].create_time).Format("yyyy-MM-dd")
           }
-          wx.cloud.getTempFileURL({
-            fileList: fileList,
-            success: res => {
-              const data = res.fileList
-              for (var i = 0, len = data.length; i < len; i++) {
-                result[i].image=data[i].tempFileURL
-              }
-              // handle timestamp
-              for (let i = 0, len = result.length; i <  len; i++){
-                result[i].create_time = new Date(result[i].create_time).Format("yyyy-MM-dd")         
-              }
-              that.setData({
-                carouselList: result
-              })
-            }
+          that.setData({
+            carouselList: result
           })
         })
     }
@@ -65,8 +53,19 @@ Component({
         currentIdx: e.detail.current
       })
     },
-    test(e) {
-      console.log(e);
+    onTap(e) {
+      wx.navigateTo({
+        url: `../../pages/news/news?_id=${e.currentTarget.dataset.newsid}`,
+        events: {},
+        success: res => {
+          // 通过eventChannel向被打开页面传送数据
+          res.eventChannel.emit('forwardNews', {
+            data: {
+              canComment: false,
+            }
+          })
+        }
+      })
     }
   }
 })

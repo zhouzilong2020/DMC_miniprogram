@@ -25,7 +25,7 @@ Component({
   },
   lifetimes: {
     ready: function () {
-      console.log(this.data)
+      // console.log(this.data)
       const that = this
       this.setData({
         publishData: new Date(that.data.news.create_time).Format("yyyy-MM-dd"),

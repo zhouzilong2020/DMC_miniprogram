@@ -170,3 +170,7 @@ text,
 .red {
   color: rgb(226, 113, 113);
 }
+
+.green{
+  color:rgb(26, 173, 25);
+}

@@ -40,6 +40,9 @@ Page({
   async onSubmitForm() {
     const that = this
     try {
+      wx.showLoading({
+        title: '提交中',
+      })
       const fileIdList = await uploadImage(this.data.tempFilePaths)
       const timestamp = new Date().toString()
       // 数据入库
@@ -64,13 +67,17 @@ Page({
         })
       // 发布成功
       if (res) {
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../mes_success/mes_success?_id=' + res._id,
         })
       }
     } catch (err) {
       // 任意一条失败则删除已经成功上传的文件
       deleteImage(err.fileIdList)
+    } finally {
+      wx.showToast({
+        title: '提交成功',
+      })
     }
   },
 
