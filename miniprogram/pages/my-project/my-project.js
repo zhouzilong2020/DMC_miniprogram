@@ -12,6 +12,7 @@ import {
 // miniprogram/pages/my-project/my-project.js
 Page({
   data: {
+    statuses: ['提交', '评审', '设计', '投票', '施工', ],
     ongoingCnt: 0,
     publishCnt: 0,
     completeCnt: 0,
