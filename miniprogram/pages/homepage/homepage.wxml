@@ -1,7 +1,7 @@
 <!--miniprogram/pages/homepage/homepage.wxml-->
 <view>
 
-	
+
 	<view class="user-info">
 		<view class="avatar-container">
 			<image class="avatar" src="{{avatar}}">
@@ -44,12 +44,14 @@
 		<navigator url="../vote/vote">
 			<view class="function-item">
 				<text class="fas fa-star fs26" style="color:#FF9663"></text>
+				<!-- <text class="fas fa-star fs26" style="color:grey"></text> -->
 				<text class="fs14">我的投票</text>
 			</view>
 		</navigator>
 
 		<view class="function-item">
-			<text class="md fs26" style="color:#6DC562">assessment</text>
+			<!-- <text class="md fs26" style="color:#6DC562">assessment</text> -->
+			<text class="md fs26" style="color:grey">assessment</text>
 			<text class="fs14">偏好调查</text>
 		</view>
 	</view>
@@ -61,7 +63,6 @@
 				<text class="far fa-question-circle fs26"></text>
 				<text class="fs14">反馈建议</text>
 			</view>
-
 			<view class="tool-item">
 				<text class="md fs26">home</text>
 				<text class="fs14">关于我们</text>

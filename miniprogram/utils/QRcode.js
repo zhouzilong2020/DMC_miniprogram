@@ -49,7 +49,7 @@ export function scanCode() {
             // 判断用户是否添加过该项目
             const _openid = wx.getStorageSync('userInfo')._openid
             if (await isScanedBefore(_id, _openid)) {
-              reject('have added this project before')
+              reject('重复添加')
             }
             await db.collection('user')
               .where({
@@ -60,12 +60,12 @@ export function scanCode() {
                   relevant_project_id_list: _.push(_id)
                 }
               })
-            resolve('added successfuly')
+            resolve('添加成功')
           } catch (e) {
             reject(e)
           }
         } else {
-          reject('wrong key')
+          reject('扫码错误')
         }
       },
       fail: (res) => {

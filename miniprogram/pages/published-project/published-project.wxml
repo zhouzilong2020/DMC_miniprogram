@@ -2,6 +2,7 @@
 <view>
   <view class="project-container">
     <my-project wx:for="{{publishedProjectList}}" create_time="{{item.create_time}}" update_time="{{item.update_time}}"
+    bindDeleteProject="onDeleteProject"
       title="{{item.location.name+'  '+item.title}}" status="{{item.status}}" image="{{item.image_list[0]}}"
       _id="{{item._id}}" wx:key="_id">
     </my-project>

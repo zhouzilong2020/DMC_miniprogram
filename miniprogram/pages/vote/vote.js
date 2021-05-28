@@ -5,21 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs:[
-      {
-        label:'全部'
+    tabs: [{
+        label: '全部'
       },
       {
-        label:'待完成'
+        label: '待完成'
       },
       {
-        label:'已完成'
+        label: '已完成'
       }
-    ]
+    ],
+    tabId: 0,
+    allList: [{
+      complete: true,
+    }, {
+      complete: false,
+    }, {
+      complete: true,
+    }],
+    todoList: [1, ],
+    doneList: [1, 2]
   },
 
-  onTabChange: function (){
+  onTabChange: function (e) {
+    const id = Number(e.detail.id)
 
+    this.setData({
+      tabId: id
+    })
+    console.log(this.data)
   },
 
   /**

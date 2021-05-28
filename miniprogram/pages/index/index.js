@@ -46,23 +46,15 @@ Page({
       .orderBy('create_time', 'desc')
       .get()
       .then(async (res) => {
-        const fileList = []
         let demoResult = res.data
-        // 首页数据只取第一张！
         for (let i = 0, len = demoResult.length; i < len; i++) {
-          fileList.push(demoResult[i].image_list[0])
-        }
-        var tempFileURLList = await getTempFileURL(fileList)
-        // 更新filURL
-        for (let i = 0, len = demoResult.length; i < len; i++) {
-          demoResult[i].image = tempFileURLList[i]
+          demoResult[i].image = demoResult[i].image_list[0]
         }
         that.setData({
           demoList: demoResult
         })
         // console.log(that.data.demoList)
       })
-
     db.collection('news')
       .orderBy('create_time', 'desc')
       .get()

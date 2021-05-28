@@ -2,7 +2,9 @@
 <view>
   <tab-group tabs="{{tabs}}" bindTabChange="onTabChange" style="padding-top:16rpx;background:white"></tab-group>
   <view class="vote-container">
-    <vote-item is-finished="{{false}}"></vote-item>
+    <vote-item wx:if="{{tabId==0}}" wx:for="{{allList}}" wx:key="*this" is-finished="{{item.complete}}"></vote-item>
+    <vote-item wx:if="{{tabId==1}}" wx:for="{{todoList}}" wx:key="*this"></vote-item>
+    <vote-item wx:if="{{tabId==2}}" wx:for="{{doneList}}" wx:key="*this" is-finished></vote-item>
   </view>
   <view class="dividing-line"></view>
   <view class="fs12 gray-weak" style="margin:45rpx 0;text-align:center">没有更多了</view>

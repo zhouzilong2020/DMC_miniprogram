@@ -16,14 +16,15 @@ Page({
     ongoingCnt: 0,
     publishCnt: 0,
     completeCnt: 0,
-
     relevantProjectList: [],
     myProjectList: [],
   },
-  onLoad: async function () {
-    const that = this
-    const res = (await db.collection('user').get()).data[0]
-    var relevantProjectList = res.relevant_project_id_list
+  onReady: async function () {
+    this.requestData()
+  },
+  requestData: async function () {
+    const userInfo = (await whoAmI())
+    var relevantProjectList = userInfo.relevant_project_id_list
     // 得到所有peoject id list
     db.collection('project1')
       .orderBy('update_time', 'desc')
@@ -39,8 +40,6 @@ Page({
         })
         console.log(this.data.relevantProjectList)
       })
-
-    const userInfo = await whoAmI()
     // 得到所有 用户发布的 peoject id list
     db.collection('project1')
       .orderBy('update_time', 'desc')
@@ -56,13 +55,28 @@ Page({
         })
       })
   },
+
+
+
   onCameraOpen: function () {
+    const that = this
+    wx.showLoading({
+      title: '加载中',
+    })
     scanCode()
       .then(e => {
-        console.log(e)
+        wx.showToast({
+          title: e,
+        })
+        that.clearStatistic()
+        that.requestData()
       })
       .catch(e => {
-        console.log(e)
+        wx.showToast({
+          title: e,
+          icon: 'error'
+        })
+
       })
   },
   setStatistic: function (projectList, isMyPublished = false) {
@@ -95,6 +109,33 @@ Page({
       this.getTabBar().setData({
         selected: 2
       })
+    }
+  },
+  clearStatistic: function () {
+    this.setData({
+      ongoingCnt: 0,
+      publishCnt: 0,
+      completeCnt: 0,
+    })
+  },
+
+  onDeleteProject: function (e) {
+    // 只能删除我发布的，检查表，删除含有该_id的项目，并且重新统计
+    const _id = e.detail
+    const myProjectList = this.data.myProjectList
+    // console.log(myProjectList._id)
+    // console.log(_id)
+    for (let i = 0, len = myProjectList.length; i < len; i++) {
+      if (myProjectList[i]._id === _id) {
+        myProjectList.splice(i, 1)
+        this.setData({
+          myProjectList
+        })
+        this.clearStatistic()
+        this.setStatistic(myProjectList, true)
+        this.setStatistic(this.data.relevantProjectList, true)
+        break
+      }
     }
   }
 })
