@@ -62,3 +62,22 @@ page {
   grid-template-rows: repeat(auto-fit, 1fr);
   row-gap: 22rpx;
 }
+
+.button {
+  background-color: white;
+  /* rgb(26, 173, 25); */
+  border-radius: 27rpx;
+  padding: 20rpx;
+  text-align: center;
+  margin-top: 33rpx;
+}
+
+.fa-stack-fs18 {
+  height: 33rpx;
+  width: 33rpx;
+  line-height: 33rpx;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+
+}
